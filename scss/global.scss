@@ -41,8 +41,8 @@ nav li {
 		background: $lightgrey;
 		width: 100%;
 		height: 100%;
-		padding: 10px;
-		color: grey;
+		padding: 15px 10px;
+		color: black;
 	}
 
 	& a:hover {
@@ -50,8 +50,9 @@ nav li {
 	}
 
 	& h2 {
-		font-weight: normal;
+		font-weight: 100;
 		margin: 0;
 		text-align: center;
+		font-family: "museo-sans", "Helvetica Neue", sans-serif;
 	}
 }
