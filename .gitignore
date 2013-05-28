@@ -1,0 +1,29 @@
+# Sass and Sompass
+.sass-cache/
+
+# OS X
+.DS_Store
+
+# Files that might appear on external disk #
+.Spotlight-V100
+.Trashes
+
+# Linux
+#.*
+*~
+*.sw[a-p]
+!*.swf
+
+# Log
+*.log
+
+# Vim
+*.swp
+*.swo
+.*.sw[a-z]
+*.un~
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
