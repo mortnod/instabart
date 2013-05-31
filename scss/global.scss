@@ -1,10 +1,10 @@
 @import "compass/css3/";
-@import 'bits';
-@import 'normalize';
-@import 'typography';
-@import 'logo';
-@import 'tools';
-
+@import "bits";
+@import "normalize";
+@import "typography";
+@import "logo";
+@import "tools";
+@import "linkbox";
 
 
 // Basic page setup
@@ -15,68 +15,8 @@
 }
 
 // Grid
-#link-grid {
+#grid {
 	width: 630px;
 	margin: 0 auto;
 	margin-top: 5em;
-}
-
-
-// Link box
-.link-box {
-	display: block;
-	width: 200px;
-	height: 200px;
-	list-style: none;
-	margin: 0 10px 10px 0;
-	float: left;
-	//@include box-shadow(rgba(black, 0.15) 1px 3px 3px);
-
-	& a {
-		display: block;
-		text-decoration: none;
-		background: $lightgrey;
-		width: 100%;
-		height: 100%;
-		padding: 20px 10px;
-		color: black;
-	}
-
-	& a:hover {
-		background: $darkgrey;
-	}
-
-}
-
-.link-box
-{
-  	position:relative;
-    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-.link-box.before, .link-box:after
-{
-	content:"";
-    position:absolute;
-    z-index:-1;
-    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
-    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
-    box-shadow:0 0 20px rgba(0,0,0,0.8);
-    top:50%;
-    bottom:0;
-    left:10px;
-    right:10px;
-    -moz-border-radius:100px / 10px;
-    border-radius:100px / 10px;
-}
-.link-box:after
-{
-	right:10px;
-    left:auto;
-    -webkit-transform:skew(8deg) rotate(3deg);
-       -moz-transform:skew(8deg) rotate(3deg);
-        -ms-transform:skew(8deg) rotate(3deg);
-         -o-transform:skew(8deg) rotate(3deg);
-            transform:skew(8deg) rotate(3deg);
 }
