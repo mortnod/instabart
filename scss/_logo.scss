@@ -1,0 +1,40 @@
+.logo {
+	display: block;
+	text-align: center;
+	font-size: 7em;
+	opacity: 0.5;
+	margin: 0 auto;
+	color: rgba(black, 0.8);
+	text-shadow: 1px 4px 6px $lightgrey, 0 0 0 #000, 1px 4px 6px $lightgrey;
+}
+
+/* Don't show shadows when selecting text */
+::-moz-selection { background: hotpink; color: #fff; text-shadow: none; }
+::selection { background: hotpink; color: #fff; text-shadow: none; }
+
+.link-box:hover .logo {
+	opacity: 0.7;
+}
+
+#email .logo,
+#schedule .logo,
+#dinner .logo,
+#grades .logo {
+	font-family: "Glyphicons";
+	font-size: 6em;
+}
+
+#studweb .logo,
+#map .logo,
+#cloudstor .logo,
+#romres .logo {
+	font-family: "Entypo";
+	font-size: 13em;
+	line-height: 0.65em;
+}
+
+#itslearning .logo {
+	font-family: "itslearning";
+	font-size: 5.5em;
+	line-height: 1.5em;
+}

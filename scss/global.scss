@@ -1,8 +1,11 @@
-@import 'normalize';
 @import "compass/css3/";
+@import 'bits';
+@import 'normalize';
+@import 'typography';
+@import 'logo';
+@import 'tools';
 
-$lightgrey: whitesmoke;
-$darkgrey: #eee;
+
 
 // Basic page setup
 * {
@@ -11,29 +14,23 @@ $darkgrey: #eee;
 	padding: 0;
 }
 
-// Toolbox
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 // Grid
-nav {
-	width: 465px;
+#link-grid {
+	width: 630px;
 	margin: 0 auto;
 	margin-top: 5em;
 }
 
 
 // Link box
-nav li {
+.link-box {
 	display: block;
-	width: 150px;
-	height: 150px;
+	width: 200px;
+	height: 200px;
 	list-style: none;
-	margin: 0 5px 5px 0;
+	margin: 0 10px 10px 0;
 	float: left;
+	//@include box-shadow(rgba(black, 0.15) 1px 3px 3px);
 
 	& a {
 		display: block;
@@ -41,7 +38,7 @@ nav li {
 		background: $lightgrey;
 		width: 100%;
 		height: 100%;
-		padding: 15px 10px;
+		padding: 20px 10px;
 		color: black;
 	}
 
@@ -49,10 +46,37 @@ nav li {
 		background: $darkgrey;
 	}
 
-	& h2 {
-		font-weight: 100;
-		margin: 0;
-		text-align: center;
-		font-family: "museo-sans", "Helvetica Neue", sans-serif;
-	}
+}
+
+.link-box
+{
+  	position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.link-box.before, .link-box:after
+{
+	content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.link-box:after
+{
+	right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
 }
