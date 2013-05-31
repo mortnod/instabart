@@ -14,6 +14,10 @@
 	padding: 0;
 }
 
+// Don't show shadows when selecting text
+::-moz-selection { background: hotpink; color: #fff; text-shadow: none; }
+::selection { background: hotpink; color: #fff; text-shadow: none; }
+
 // Grid
 #grid {
 	width: 630px;
