@@ -7,3 +7,11 @@ $(".linkbox").hover(
 		$(this).removeClass("hover");
 	}
 );
+
+// Puts the F in flip
+$('.flip').click(function(){
+  $(this).find('.card').addClass('flipped').mouseleave(function(){
+    $(this).removeClass('flipped');
+  });
+  return false;
+});
