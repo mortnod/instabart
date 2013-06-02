@@ -1,8 +1,24 @@
-@include font-face("Entypo", font-files("../fonts/entypo/entypo.woff", "../fonts/entypo/entypo.ttf", "../fonts/entypo/entypo.svg"), eot("../fonts/entypo/entypo.eot"));
-@include font-face("Glyphicons", font-files("../fonts/glyphicons/glyphicons.woff", "../fonts/glyphicons/glyphicons.ttf", "../fonts/glyphicons/glyphicons.svg"), eot("../fonts/glyphicons/glyphicons.eot"));
-@include font-face("itslearning", font-files("../fonts/itslearning/itslearning.woff", "../fonts/itslearning/itslearning.ttf", "../fonts/itslearning/itslearning.svg"), eot("../fonts/itslearning/itslearning.eot"));
+// @include font-face("Entypo", font-files("../fonts/entypo/entypo.ttf"));
+// @include font-face("Glyphicons", font-files("../fonts/glyphicons/glyphicons.woff", "../fonts/glyphicons/glyphicons.ttf", "../fonts/glyphicons/glyphicons.svg"), eot("../fonts/glyphicons/glyphicons.eot"));
+// @include font-face("itslearning", font-files("../fonts/itslearning/itslearning.woff", "../fonts/itslearning/itslearning.ttf", "../fonts/itslearning/itslearning.svg"), eot("../fonts/itslearning/itslearning.eot"));
 
+@font-face {
+  font-family: 'Entypo';
+  src: url('../fonts/entypo/entypo.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/entypo/entypo.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 
+@font-face {
+  font-family: 'Glyphicons';
+  src: url('../fonts/glyphicons/glyphicons.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/glyphicons/glyphicons.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'itslearning';
+  src: url('../fonts/itslearning/itslearning.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/itslearning/itslearning') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 h2 {
 	font-weight: 100;
 	margin: 0;
