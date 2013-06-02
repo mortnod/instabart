@@ -1,28 +1,34 @@
-// @include font-face("Entypo", font-files("../fonts/entypo/entypo.ttf"));
-// @include font-face("Glyphicons", font-files("../fonts/glyphicons/glyphicons.woff", "../fonts/glyphicons/glyphicons.ttf", "../fonts/glyphicons/glyphicons.svg"), eot("../fonts/glyphicons/glyphicons.eot"));
-// @include font-face("itslearning", font-files("../fonts/itslearning/itslearning.woff", "../fonts/itslearning/itslearning.ttf", "../fonts/itslearning/itslearning.svg"), eot("../fonts/itslearning/itslearning.eot"));
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
 @font-face {
   font-family: 'Entypo';
-  src: url('../fonts/entypo/entypo.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-       url('../fonts/entypo/entypo.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  src: url('../fonts/entypo/entypo.woff') format('woff'),
+       url('../fonts/entypo/entypo.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Glyphicons';
-  src: url('../fonts/glyphicons/glyphicons.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-       url('../fonts/glyphicons/glyphicons.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  src: url('../fonts/glyphicons/glyphicons.woff') format('woff'),
+       url('../fonts/glyphicons/glyphicons.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'itslearning';
-  src: url('../fonts/itslearning/itslearning.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-       url('../fonts/itslearning/itslearning') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  src: url('../fonts/itslearning/itslearning.woff') format('woff'),
+       url('../fonts/itslearning/itslearning') format('truetype');
 }
+
 h2 {
-	font-weight: 100;
+	font-weight: 700;
 	margin: 0;
 	text-align: center;
-	font-family: "museo-sans", "Helvetica Neue", sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 1.9em;
+	color: rgba(black, 0.8);
+    text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
+    opacity: 0.5;
+}
+
+.hover h2 {
+	opacity: 0.8;
 }

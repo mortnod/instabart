@@ -8,8 +8,8 @@
 	text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
 }
 
-.linkbox:hover .logo {
-	opacity: 0.7;
+.linkbox.hover .logo {
+	opacity: 0.8;
 }
 
 #email .logo,
