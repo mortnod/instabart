@@ -1,2 +1,2 @@
 // Add "hover" to the linkbox in focus
-$(".linkbox").hover(function(){$(this).addClass("hover")},function(){$(this).removeClass("hover")});$(".flip").click(function(){$(this).find(".card").addClass("flipped").mouseleave(function(){$(this).removeClass("flipped")});return!1});
+$(".linkbox").hover(function(){$(this).addClass("hover")},function(){$(this).removeClass("hover")});$(".info").click(function(){$(this).parent().parent().addClass("flipped");return!1});$(".close").click(function(){$(this).parent().parent().removeClass("flipped");return!1});

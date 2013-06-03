@@ -9,9 +9,12 @@ $(".linkbox").hover(
 );
 
 // Puts the F in flip
-$('.flip').click(function(){
-  $(this).find('.card').addClass('flipped').mouseleave(function(){
-    $(this).removeClass('flipped');
-  });
+$('.info').click(function(){
+  $(this).parent().parent().addClass('flipped');
+  return false;
+});
+
+$('.close').click(function(){
+  $(this).parent().parent().removeClass('flipped');
   return false;
 });
