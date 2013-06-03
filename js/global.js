@@ -1,22 +1,54 @@
+function css_flip(){
+  $('.info').click(function(){
+    $(this).parent().parent().toggleClass('flipped');
+    return false;
+  });
+}
+
+function jquery_flip(){
+  var box_width = $('.linkbox').width();
+  var margin = box_width / 2 + 'px';
+  box_width += 'px';
+  var compress_css_properties = {
+      height: 0,
+      marginTop: margin,
+      opacity: 0.4
+  };
+  var decompress_css_properties = {
+      height: box_width,
+      marginTop: 0,
+      opacity: 1
+  };
+
+  $(".back").css(compress_css_properties);
+  $(".back").hide();
+
+  //animate width to 0 and margin-top to 1/2 width
+  $('.info').click(function(){
+    $(this).parent().animate(compress_css_properties, 100, function() {
+      $(this).hide();
+      // animate second card to full width and margin-top to 0
+      $(this).siblings('.linkbox').show().animate(decompress_css_properties, 100);
+    });
+  });
+}
+
 // Add "hover" to the linkbox in focus
 $(".linkbox").hover(
-	function(){
-		$(this).addClass("hover");
-		$(this).find(".info").show();
-	},
-	function(){
-		$(this).removeClass("hover");
-		$(this).find(".info").hide();
-	}
+  function(){
+    $(this).addClass("hover");
+    $(this).find(".info").show();
+  },
+  function(){
+    $(this).removeClass("hover");
+    $(this).find(".info").hide();
+  }
 );
 
-// Puts the F in flip
-$('.info').click(function(){
-  $(this).parent().parent().addClass('flipped');
-  return false;
-});
-
-$('.close').click(function(){
-  $(this).parent().parent().removeClass('flipped');
-  return false;
-});
+// Decide whether to use css or jquery to do the card flipping
+if (Modernizr.csstransforms3d){
+  css_flip();
+}
+else {
+  jquery_flip(this);
+}
