@@ -2,9 +2,11 @@
 $(".linkbox").hover(
 	function(){
 		$(this).addClass("hover");
+		$(this).find(".info").show();
 	},
 	function(){
 		$(this).removeClass("hover");
+		$(this).find(".info").hide();
 	}
 );
 
