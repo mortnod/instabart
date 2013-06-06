@@ -1,5 +1,5 @@
 function css_flip(){
-  $('.info').click(function(){
+  $('.flip-button').click(function(){
     $(this).parent().parent().toggleClass('flipped');
     return false;
   });
@@ -24,7 +24,7 @@ function jquery_flip(){
   $(".back").hide();
 
   //animate width to 0 and margin-top to 1/2 width
-  $('.info').click(function(){
+  $('.flip-button').click(function(){
     $(this).parent().animate(compress_css_properties, 100, function() {
       $(this).hide();
       // animate second card to full width and margin-top to 0
@@ -34,14 +34,14 @@ function jquery_flip(){
 }
 
 // Add "hover" to the linkbox in focus
-$(".linkbox").hover(
+$(".front").hover(
   function(){
     $(this).addClass("hover");
-    $(this).find(".info").show();
+    $(this).find(".flip-button").show();
   },
   function(){
     $(this).removeClass("hover");
-    $(this).find(".info").hide();
+    $(this).find(".flip-button").hide();
   }
 );
 

@@ -34,7 +34,7 @@
 	line-height: 1.5em;
 }
 
-.info, .close {
+.flip-button {
   cursor: pointer;
   font-family: "Entypo";
   font-size: 2.5em;
@@ -43,14 +43,13 @@
   bottom: 10px;
   right: 10px;
   opacity: 0.4;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.front .flip-button {
   color: rgba(black, 0.8);
-  text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
-}
-
-.info {
 	display: none;
-}
-
-.info:hover {
-  opacity: 0.7;
+  text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
 }
