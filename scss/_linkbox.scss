@@ -18,7 +18,7 @@
   position: absolute;
   @include box-shadow(rgba(black, 0.4) 0 1px 4px);
 
-  a {
+  &.front a {
     display: block;
     text-decoration: none;
     background: $lightgrey;
@@ -27,7 +27,7 @@
     padding: 20px 10px;
   }
 
-  &.hover a {
+  &.front.hover a {
     background: $hovergrey;
   }
 
