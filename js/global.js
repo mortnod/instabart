@@ -1,6 +1,13 @@
 function css_flip(){
   $('.flip-button').click(function(){
-    $(this).parent().parent().toggleClass('flipped');
+    var card = $(this).parent().parent();
+    if (card.hasClass('flipped')){
+      card.removeClass('flipped');
+    }
+    else {
+      $('.flipped').removeClass('flipped');
+      card.addClass('flipped');
+    }
     return false;
   });
 }
@@ -50,5 +57,5 @@ if (Modernizr.csstransforms3d){
   css_flip();
 }
 else {
-  jquery_flip(this);
+  jquery_flip();
 }
