@@ -22,7 +22,7 @@
 // Grid
 #grid {
   padding-top: 4em;
-	max-width: 630px;
+	max-width: ($cubesize + $margin) * 5;
 	margin: 0 auto;
 }
 
