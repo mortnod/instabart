@@ -13,30 +13,47 @@ function css_flip(){
 }
 
 function jquery_flip(){
-  var box_width = $('.linkbox').width();
-  var margin = box_width / 2 + 'px';
-  box_width += 'px';
-  var compress_css_properties = {
+  var box_height = $('.linkbox').height();
+  var margin = box_height / 2 + 'px';
+  box_height += 'px';
+
+  var compress = {
       height: 0,
       marginTop: margin,
       opacity: 0.4
   };
-  var decompress_css_properties = {
-      height: box_width,
-      marginTop: 0,
-      opacity: 1
+  var decompress = {
+    height: box_height,
+    marginTop: 0,
+    opacity: 1
   };
 
-  $(".back").css(compress_css_properties);
+  var css_properties = {
+    "compress":compress,
+    "decompress":decompress
+  };
+
+  $(".back").css(compress);
   $(".back").hide();
 
   //animate width to 0 and margin-top to 1/2 width
   $('.flip-button').click(function(){
-    $(this).parent().animate(compress_css_properties, 100, function() {
-      $(this).hide();
-      // animate second card to full width and margin-top to 0
-      $(this).siblings('.linkbox').show().animate(decompress_css_properties, 100);
-    });
+    var card = $(this).parent();
+    if (card.hasClass('back')) {
+      animate_jquery_flip($('.back:visible'), css_properties);
+    }
+    else {
+      animate_jquery_flip($('.back:visible'), css_properties);
+      animate_jquery_flip(card, css_properties);
+    }
+  });
+}
+
+function animate_jquery_flip(card, css_properties) {
+  card.animate(css_properties["compress"], 100, function() {
+    $(this).hide();
+    // animate second card to full width and margin-top to 0
+    $(this).siblings('.linkbox').show().animate(css_properties["decompress"], 100);
   });
 }
 
