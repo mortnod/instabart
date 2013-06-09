@@ -18,11 +18,14 @@
        url('../fonts/itslearning/itslearning') format('truetype');
 }
 
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
 h2 {
 	font-weight: 400;
 	margin: 0;
 	text-align: center;
-	font-family: 'PT Sans', sans-serif;
 	font-size: 1.9em;
 }
 
@@ -59,7 +62,6 @@ h2 {
 
 // Footer
 footer {
-  font-family: "PT Sans", sans-serif;
   font-size: 0.8em;
   color: #999;
   text-align: center;

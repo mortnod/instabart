@@ -6,6 +6,8 @@
 @import "tools";
 @import "linkbox";
 @import "flip";
+@import "header";
+@import "footer";
 
 
 // Basic page setup
@@ -21,19 +23,7 @@
 
 // Grid
 #grid {
-  padding-top: 4em;
+  padding-top: 6em;
 	max-width: ($cubesize + $margin) * 5;
 	margin: 0 auto;
-}
-
-// Sticky footer
-html, body {
-	height: 100%;
-}
-#pagewrap {
-	min-height: 100%;
-	margin: 0 auto -2em; /* the bottom margin is the negative value of the footer's height */
-}
-footer, .push {
-	height: 2em; /* .push must be the same height as .footer */
 }
