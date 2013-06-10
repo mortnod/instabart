@@ -23,10 +23,10 @@
 
 // Grid
 #grid {
-  @include breakpoint(fat){ max-width: 5 * $cubesize + $margin; padding-top: 6em;}
-  @include breakpoint(cat){ max-width: 4 * $cubesize + $margin; padding-top: 2em;}
-  @include breakpoint(bat){ max-width: 3 * $cubesize + $margin; padding-top: 1em;}
-  @include breakpoint(ant){ max-width: 2 * $cubesize + $margin; padding-top: 1em;}
+  @include breakpoint(fat){ width: 5 * $cubesize + $margin; padding-top: 6em;}
+  @include breakpoint(cat){ width: 4 * $cubesize + $margin; padding-top: 2em;}
+  @include breakpoint(bat){ width: 3 * $cubesize + $margin; padding-top: 1em;}
+  @include breakpoint(ant){ width: 2 * $cubesize + $margin; padding-top: 1em;}
   margin: 0 auto;
   padding-left: 10px;
 }
