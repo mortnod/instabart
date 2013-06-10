@@ -1,22 +1,22 @@
 .logo {
-	display: block;
-	text-align: center;
-	opacity: 0.5;
-	margin: 0 auto;
-	color: rgba(black, 0.8);
-	text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
+  display: block;
+  text-align: center;
+  opacity: 0.5;
+  margin: 0 auto;
+  color: rgba(black, 0.8);
+  text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
 }
 
 .linkbox.hover .logo {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 #email .logo,
 #schedule .logo,
 #dinner .logo,
 #grades .logo {
-	font-family: "Glyphicons";
-	font-size: 6em;
+  font-family: "Glyphicons";
+  font-size: 6em;
 }
 
 #studweb .logo,
@@ -24,15 +24,15 @@
 #cloudstor .logo,
 #romres .logo,
 #it-hjelp .logo {
-	font-family: "Entypo";
-	font-size: 13em;
-	line-height: 0.65em;
+  font-family: "Entypo";
+  font-size: 13em;
+  line-height: 0.65em;
 }
 
 #itslearning .logo {
-	font-family: "itslearning";
-	font-size: 5.5em;
-	line-height: 1.5em;
+  font-family: "itslearning";
+  font-size: 5.5em;
+  line-height: 1.5em;
 }
 
 .flip-button {
@@ -54,7 +54,7 @@
   text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
   display: none;
   .touch & {
-  	display: block;
+    display: block;
   }
 }
 
