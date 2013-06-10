@@ -16,9 +16,18 @@ header {
 
 #logo {
 	height: 80px;
+	width: 88px;
 	opacity: 0.7;
 	float: left;
-	padding-left: $margin;
+	margin-left: $margin;
+
+	.svg & {
+		background: url(../img/logo.svg) no-repeat top left;
+		background-size: 88px 80px;
+	}
+	.no-svg & {
+		background: url(../img/logo.png) no-repeat top left;
+	}
 }
 
 #headertext {
