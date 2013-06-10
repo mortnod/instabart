@@ -1,4 +1,4 @@
-@import "compass/css3/";
+@import "compass/css3";
 @import "bits";
 @import "normalize";
 @import "typography";
@@ -19,11 +19,14 @@
 
 // Don't show shadows when selecting text
 ::-moz-selection { background: hotpink; color: #fff; text-shadow: none; }
-::selection { background: hotpink; color: #fff; text-shadow: none; }
+::selection 		 { background: hotpink; color: #fff; text-shadow: none; }
 
 // Grid
 #grid {
-  padding-top: 6em;
-	max-width: ($cubesize + $margin) * 5;
+	@include breakpoint(fat){ max-width: 5 * $cubesize + $margin; padding-top: 6em;}
+	@include breakpoint(cat){ max-width: 4 * $cubesize + $margin; padding-top: 2em;}
+	@include breakpoint(bat){ max-width: 3 * $cubesize + $margin; padding-top: 1em;}
+	@include breakpoint(ant){ max-width: 2 * $cubesize + $margin; padding-top: 1em;}
 	margin: 0 auto;
+	padding-left: 10px;
 }

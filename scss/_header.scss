@@ -1,12 +1,15 @@
 header {
 	background: #fafafa;
 	height: 100px;
-	padding: $margin;
+	padding: $margin 0;
 	border-bottom: 1px solid #ddd;
 }
 
 #headerwrap {
-	max-width: ($cubesize + $margin) * 5;
+	@include breakpoint(fat){ max-width: 5 * $cubesize + $margin;}
+	@include breakpoint(cat){ max-width: 4 * $cubesize + $margin;}
+	@include breakpoint(bat){ max-width: 3 * $cubesize + $margin;}
+	@include breakpoint(ant){ max-width: 2 * $cubesize + $margin;}
 	margin: 0 auto;
 	position: relative;
 }
@@ -15,8 +18,8 @@ header {
 	height: 80px;
 	opacity: 0.7;
 	float: left;
+	padding-left: $margin;
 }
-
 
 #headertext {
 	float: left;
@@ -28,10 +31,13 @@ header {
 
 	h1 {
 		font-size: 2.5em;
+		@include breakpoint(ant){ margin-top: 0.3em; }
 	}
 
 	h3 {
 		font-weight: normal;
+		@include breakpoint(bat){ font-size: 1em; }
+		@include breakpoint(ant){ display: none; }
 	}
 }
 

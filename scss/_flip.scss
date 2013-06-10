@@ -3,7 +3,7 @@
     @include perspective(800);
   
     .card.flipped {
-      @include transform(rotatex(-180deg));
+      @include transform(rotatey(-180deg));
     }
   
     .card {
@@ -18,7 +18,7 @@
       z-index: 1;
     }
     .card .back {
-      @include transform(rotatex(-180deg));
+      @include transform(rotatey(-180deg));
     }
   }
 }

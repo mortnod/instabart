@@ -1,9 +1,26 @@
 // Settings
-$cubesize: 200px;
+$linkbox: 200px;
 $margin: 10px;
+$cubesize: $linkbox + $margin;
 
 // Colors
 $lightgrey: whitesmoke;
 $hovergrey: #eee;
 $orange: #f78145;
 $backgrey: #666;
+
+// Breakpoints
+@mixin breakpoint($point) {
+	@if $point == fat {
+		@media (min-width: 5 * $cubesize + $margin) { @content; }
+	}
+	@else if $point == cat {
+		@media (max-width: 5 * $cubesize + $margin) { @content; }
+	}
+	@else if $point == bat {
+		@media (max-width: 4 * $cubesize + $margin) { @content; }
+	}
+	@else if $point == ant {
+		@media (max-width: 3 * $cubesize + $margin) { @content; }
+	}
+}

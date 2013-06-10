@@ -13,18 +13,18 @@ function css_flip(){
 }
 
 function jquery_flip(){
-  var box_height = $('.linkbox').height();
-  var margin = box_height / 2 + 'px';
-  box_height += 'px';
+  var box_width = $('.linkbox').width();
+  var margin = box_width / 2 + 'px';
+  box_width += 'px';
 
   var compress = {
-      height: 0,
-      marginTop: margin,
+      width: 0,
+      marginLeft: margin,
       opacity: 0.4
   };
   var decompress = {
-    height: box_height,
-    marginTop: 0,
+    width: box_width,
+    marginLeft: 0,
     opacity: 1
   };
 
