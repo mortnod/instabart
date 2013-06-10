@@ -58,7 +58,7 @@ function animate_jquery_flip(card, css_properties) {
 }
 
 // Add "hover" to the linkbox in focus
-$(".front").hover(
+$(".no-touch .front").hover(
   function(){
     $(this).addClass("hover");
     $(this).find(".flip-button").show();
