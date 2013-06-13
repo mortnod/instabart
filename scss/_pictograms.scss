@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'pictograms';
+  src: url('../fonts/pictograms.woff') format('woff'),
+       url('../fonts/pictograms.ttf') format('truetype');
+}
+
+i {
+  font-family: "pictograms";
+  font-style: normal;
+  display: block;
+  color: rgba(black, 0.8);
+  text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
+}
+
+.pictogram {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 6em;
+  opacity: 0.5;
+
+  .hover & {
+    opacity: 0.8;
+  }
+}
+
+.itslearning:after { content:"\e00e"; font-size: 0.9em; }
+.email:after       { content:"\e00a"; font-size: 0.7em; }
+.schedule:after    { content:"\e008"; font-size: 1em; }
+.studweb:after     { content:"\e006"; font-size: 1.1em; }
+.dinner:after      { content:"\e009"; }
+.map:after         { content:"\e000"; font-size: 1.1em; }
+.cloudstor:after   { content:"\e002"; font-size: 1.2em; }
+.grades:after      { content:"\e00b"; }
+.romres:after      { content:"\e005"; font-size: 1.1em; }
+.it-help:after     { content:"\e007"; font-size: 1.1em; }
+.info:after        { content:"\e003"; }
+.question:after    { content:"\e004"; }
+.warning:after     { content:"\e00c"; }
+.cogwheel:after    { content:"\e00d"; }
+.close:after       { content:"\e001"; }
+
+.email     { padding-top: 0; }
+.studweb   { padding-top: 5px; }
+.dinner    { padding-left: 10px; }
+.map       { padding-top: 5px; }
+.cloudstor { padding-top: 0; }
+.romres    { padding-top: 5px; }
+.it-help   { padding-top: 5px; }
+
+.flip-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  opacity: 0.4;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.front .flip-button {
+  display: none;
+  .touch & {
+    display: block;
+  }
+}
+
+.back .flip-button {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(black, 0.7);
+}
+
+#about-button {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 3em;
+  cursor: pointer;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -1,32 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
-@font-face {
-  font-family: 'Entypo';
-  src: url('../fonts/entypo/entypo.woff') format('woff'),
-       url('../fonts/entypo/entypo.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Glyphicons';
-  src: url('../fonts/glyphicons/glyphicons.woff') format('woff'),
-       url('../fonts/glyphicons/glyphicons.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'itslearning';
-  src: url('../fonts/itslearning/itslearning.woff') format('woff'),
-       url('../fonts/itslearning/itslearning.ttf') format('truetype');
-}
-
 body {
   font-family: 'PT Sans', sans-serif;
 }
 
 h2 {
-	font-weight: 400;
-	margin: 0;
-	text-align: center;
-	font-size: 1.9em;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  font-size: 1.9em;
 }
 
 .front {
