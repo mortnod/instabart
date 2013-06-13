@@ -10,15 +10,6 @@
     width: 100%;
     height: 100%;
   }
-  
-  &:nth-child(9) {
-    @include breakpoint(cat){ margin-left: 25%; }
-    @include breakpoint(bat){ margin-left: 0; }
-  }
-  &:nth-child(10) {
-    @include breakpoint(bat){ margin-left: 33.4%; }
-    @include breakpoint(ant){ margin-left: 0; }
-  }
 
   &:active {
     top: 2px;

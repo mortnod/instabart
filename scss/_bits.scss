@@ -11,11 +11,11 @@ $backgrey: #666;
 
 // Breakpoints
 @mixin breakpoint($point) {
-  @if $point == fat {
-    @media (min-width: 5 * $cubesize + $margin) { @content; }
+  @if $point == cat {
+    @media (min-width: 6 * $cubesize + $margin) { @content; }
   }
-  @else if $point == cat {
-    @media (max-width: 5 * $cubesize + $margin) { @content; }
+  @else if $point == rat {
+    @media (max-width: 6 * $cubesize + $margin) { @content; }
   }
   @else if $point == bat {
     @media (max-width: 4 * $cubesize + $margin) { @content; }

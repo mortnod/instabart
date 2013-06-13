@@ -6,8 +6,8 @@ header {
 }
 
 #headerwrap {
-  @include breakpoint(fat){ max-width: 5 * $cubesize + $margin;}
-  @include breakpoint(cat){ max-width: 4 * $cubesize + $margin;}
+  @include breakpoint(cat){ max-width: 6 * $cubesize + $margin;}
+  @include breakpoint(rat){ max-width: 4 * $cubesize + $margin;}
   @include breakpoint(bat){ max-width: 3 * $cubesize + $margin;}
   @include breakpoint(ant){ max-width: 2 * $cubesize + $margin;}
   margin: 0 auto;
