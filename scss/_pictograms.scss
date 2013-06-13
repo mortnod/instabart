@@ -24,29 +24,31 @@ i {
   }
 }
 
-.itslearning:after { content:"\e00e"; font-size: 0.9em; }
-.email:after       { content:"\e00a"; font-size: 0.7em; }
-.schedule:after    { content:"\e008"; font-size: 1em; }
-.studweb:after     { content:"\e006"; font-size: 1.1em; }
-.dinner:after      { content:"\e009"; }
-.map:after         { content:"\e000"; font-size: 1.1em; }
-.cloudstor:after   { content:"\e002"; font-size: 1.2em; }
-.grades:after      { content:"\e00b"; }
-.romres:after      { content:"\e005"; font-size: 1.1em; }
-.it-help:after     { content:"\e007"; font-size: 1.1em; }
-.info:after        { content:"\e003"; }
-.question:after    { content:"\e004"; }
-.warning:after     { content:"\e00c"; }
-.cogwheel:after    { content:"\e00d"; }
-.close:after       { content:"\e001"; }
+.itslearning:after   { content:"\e00e"; font-size: 0.9em; }
+.email:after         { content:"\e00a"; font-size: 0.7em; }
+.schedule:after      { content:"\e008"; font-size: 1em; }
+.studweb:after       { content:"\e006"; font-size: 1.1em; }
+.dinner:after        { content:"\e009"; }
+.map:after           { content:"\e000"; font-size: 1.1em; }
+.cloudstor:after     { content:"\e002"; font-size: 1.2em; }
+.grades:after        { content:"\e00b"; }
+.romres:after        { content:"\e005"; font-size: 1.1em; }
+.it-help:after       { content:"\e007"; font-size: 1.1em; }
+.farm:after          { content:"\e00f"; font-size: 0.9em; }
+.kundesenteret:after { content:"\e010"; font-size: 0.9em; }
+.info:after          { content:"\e003"; }
+.question:after      { content:"\e004"; }
+.warning:after       { content:"\e00c"; }
+.cogwheel:after      { content:"\e00d"; }
+.close:after         { content:"\e001"; }
 
-.email     { padding-top: 0; }
-.studweb   { padding-top: 5px; }
-.dinner    { padding-left: 10px; }
-.map       { padding-top: 5px; }
-.cloudstor { padding-top: 0; }
-.romres    { padding-top: 5px; }
-.it-help   { padding-top: 5px; }
+.email         { padding-top: 0; }
+.studweb       { padding-top: 5px; }
+.dinner        { padding-left: 10px; }
+.map           { padding-top: 5px; }
+.cloudstor     { padding-top: 0; }
+.romres        { padding-top: 5px; }
+.it-help       { padding-top: 5px; }
 
 .flip-button {
   position: absolute;
