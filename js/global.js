@@ -1,4 +1,19 @@
 $(function() {
+  var taglines = 
+  [
+    "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>.",
+    "Favoritt blant bartebyens studenter siden 1917!",
+    "NTNU-studenter flest har ikke kjennskap til halvbarten av disse linkene",
+    "Hele NTNU samlet under én bart!",
+    "Dekker alle dine behov som NTNU-student... bortsett fra kaffe",
+    "La barten bane vei i NTNUs frodige IT-jungel!"
+  ];
+
+  function random_tagline(){
+    id = Math.floor(Math.random()*taglines.length);
+    return taglines[id];
+  }
+
   function css_flip(){
     $('.flip-button').click(function(){
       var card = $(this).parent().parent();
@@ -77,4 +92,7 @@ $(function() {
   else {
     jquery_flip();
   }
+
+  $("#tagline").html(random_tagline());
+
 });
