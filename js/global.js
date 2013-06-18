@@ -1,5 +1,5 @@
 $(function() {
-  var taglines = 
+  var taglines =
   [
     "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>.",
     "Favoritt blant bartebyens studenter siden 1917!",
