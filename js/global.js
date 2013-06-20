@@ -93,6 +93,17 @@ $(function() {
     jquery_flip();
   }
 
+  // Display random tagline when the page loads
   $("#tagline").html(random_tagline());
 
+  // Make it look like the buttons are pressed down on click
+  $(".front a").mouseup(function(){
+    var flip_box = $(this).parent().parent().parent();
+    flip_box.css("top", "0");
+    flip_box.css("left", "0");
+  }).mousedown(function(){
+    var flip_box = $(this).parent().parent().parent();
+    flip_box.css("top", "2px");
+    flip_box.css("left", "1px");
+  });
 });
