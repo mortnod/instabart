@@ -36,5 +36,8 @@
     padding: 20px 10px;
     background: $backgrey;
     color: white;
+
+    // Hide on load to prevent flashing the back
+    display:none;
   }
 }

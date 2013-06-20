@@ -106,4 +106,11 @@ $(function() {
     flip_box.css("top", "2px");
     flip_box.css("left", "1px");
   });
+
+  // The back of the cards are hidden on load to prevent flashing the back.
+  // After will display them again when the DOM is ready
+  if (Modernizr.csstransforms3d){
+    // Only show back in browsers that supports css transforms, as the jquery_flip animation requires the back to be hidden
+    $(".back").show();
+  }
 });
