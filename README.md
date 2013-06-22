@@ -26,8 +26,8 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 
 ## Contributors
 
-Morten Noddeland - Lead designer/codemonkey/janitor
-David Nilsen - Writer and mustache pun generator
+- Morten Noddeland - Lead designer/codemonkey/janitor
+- David Nilsen - Writer and mustache pun generator
 
 ## License
 Soon...
