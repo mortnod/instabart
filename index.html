@@ -19,7 +19,9 @@
       <h1>Instabart</h1>
       <h3 id="tagline"></h3>
     </div>
-    <i id="about-button" class="question"></i>
+    <a id="about-button" rel="leanModal" name="about" href="#about">
+      <i class="question"></i>
+    </a>
   </div>
 </header>
 
@@ -251,8 +253,16 @@ NTNU-prosjekter, der du kan dele filer med andre.</p>
   Laget av <a href="http://mvn.no">Morten Noddeland</a> (med kjærlighet)
 </footer>
 
+<!-- Hidden modal overlay -->
+<div id="about">
+  <i class="modal_close close"></i>
+  <h2>Om Instabart</h2>
+  <p>[insert placeholder text here]</p>
+</div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/modernizr.js"></script>
+<script src="js/jquery.leanModal.min.js"></script>
 <script src="js/global-ck.js"></script>
 <script type="text/javascript">
 

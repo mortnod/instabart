@@ -113,4 +113,8 @@ $(function() {
     // Only show back in browsers that supports css transforms, as the jquery_flip animation requires the back to be hidden
     $(".back").show();
   }
+
+  // Displays the modal when the question button is clicked
+  $('#about-button').leanModal({ overlay: 0.7, closeButton: ".modal_close" });
+
 });
