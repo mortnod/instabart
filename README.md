@@ -29,5 +29,21 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 - Morten Noddeland - Lead designer/codemonkey/janitor
 - David Nilsen - Writer and mustache pun generator
 
-## License
-Soon...
+## Licenses
+
+#### Instabart
+I don't know yet, but probably a permissive one.
+
+#### Glyphicons 
+Although parts of the Glyphicons pack is free and licensed under [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/), the **webfonts** however is **not**. In other words: If you want to continue development of Instabart using Glyphicons, you'll have to buy your own license.
+
+#### Entypo
+[Creative Commons Attribution-ShareAlike 3.0](http://creativecommons.org/licenses/by-sa/3.0/) and [SIL Open Font License](http://scripts.sil.org/OFL)
+
+#### Other
+The rest of the tools used, is available under the MIT License:
+
+- [jQuery](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
+- [Modernizr](http://modernizr.com/license/)
+- [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)
+- [Icomoon](https://github.com/Keyamoon/IcoMoon-App/blob/master/LICENSE.md)
