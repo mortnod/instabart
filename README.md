@@ -23,6 +23,7 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 - [Entypo](http://entypo.com/) (pictogram font)
 - [Glyphicons](http://glyphicons.com/) (pictogram font)
 - [Icomoon](http://icomoon.io/) (custom font builder)
+- [LeanModal.js](http://leanmodal.finelysliced.com.au/) (modal window)
 
 ## Contributors
 
@@ -47,3 +48,4 @@ The rest of the tools used, is available under the MIT License:
 - [Modernizr](http://modernizr.com/license/)
 - [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)
 - [Icomoon](https://github.com/Keyamoon/IcoMoon-App/blob/master/LICENSE.md)
+- [LeanModal](http://leanmodal.finelysliced.com.au/)
