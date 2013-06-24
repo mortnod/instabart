@@ -11,8 +11,8 @@ $(function() {
   ];
 
   function random_tagline(){
-    id = Math.floor(Math.random()*taglines.length);
-    return taglines[id];
+    random_id = Math.floor(Math.random()*taglines.length);
+    return taglines[random_id];
   }
 
   function css_flip(){
