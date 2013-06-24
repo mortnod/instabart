@@ -3,10 +3,11 @@ $(function() {
   [
     "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>.",
     "Favoritt blant bartebyens studenter siden 1917!",
-    "NTNU-studenter flest har ikke kjennskap til halvbarten av disse linkene",
     "Hele NTNU samlet under én bart!",
     "Dekker alle dine behov som NTNU-student... bortsett fra kaffe",
-    "La barten bane vei i NTNUs frodige IT-jungel!"
+    "La barten bane vei i NTNUs frodige IT-jungel!",
+    "NTNUs IT-tjenester? Gotta know 'em all!"
+    // "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
   ];
 
   function random_tagline(){
