@@ -18,6 +18,8 @@
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
     margin-top: 10px;
+    position: relative;
+    overflow: hidden;
 
     &:first-child {
       @include border-top-radius();
@@ -64,4 +66,33 @@
 // Trigger button
 #about-button {
   text-decoration: none;
+}
+
+// Header pictograms
+.header i {
+  position: absolute;
+  top: 5px;
+  right: 50px;
+  opacity: 0.2;
+  font-size: 3.2em;
+  @include transform(rotate(-25deg));
+
+  &.pow {
+    top: 7px;
+  }
+
+  &.bug {
+    @include transform(rotate(-35deg));
+  }
+
+  &.fire {
+    font-size: 3.6em;
+    top: 0;
+  }
+
+  &.briefcase {
+    font-size: 2.5em;
+    top: 10px;
+    right: 45px;
+  }
 }
