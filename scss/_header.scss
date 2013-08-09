@@ -5,15 +5,6 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
-#headerwrap {
-  @include breakpoint(cat) { max-width: 6 * $cubesize + $margin;}
-  @include breakpoint(rat) { max-width: 4 * $cubesize + $margin;}
-  @include breakpoint(bat) { max-width: 3 * $cubesize + $margin;}
-  @include breakpoint(ant) { max-width: 2 * $cubesize + $margin;}
-  margin: 0 auto;
-  position: relative;
-}
-
 #logo {
   height: 80px;
   width: 88px;

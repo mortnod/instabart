@@ -1,0 +1,22 @@
+html, body {
+  height: 100%; /* This is needed for the sticky footer to work properly */ 
+}
+
+#pagewrap {
+  min-height: 100%;
+  margin: 0 auto -2em; /* NB! Has to be the same (only negative) as the footers height */
+} 
+
+
+#headerwrap {
+  @include breakpoint(cat) { max-width: 6 * $cubesize + $margin;}
+  @include breakpoint(rat) { max-width: 4 * $cubesize + $margin;}
+  @include breakpoint(bat) { max-width: 3 * $cubesize + $margin;}
+  @include breakpoint(ant) { max-width: 2 * $cubesize + $margin;}
+  margin: 0 auto;
+  position: relative;
+}
+
+footer, .push {
+  height: 2em; /* NB! Has to be the same (only positive) as the pagewraps margin */
+}

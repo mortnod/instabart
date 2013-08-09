@@ -24,3 +24,10 @@ $backgrey: #666;
     @media (max-width: 3 * $cubesize + $margin) { @content; }
   }
 }
+
+// Tools
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
