@@ -11,7 +11,7 @@ $(function() {
   ];
 
   function random_tagline(){
-    random_id = Math.floor(Math.random()*taglines.length);
+    var random_id = Math.floor(Math.random()*taglines.length);
     return taglines[random_id];
   }
 
@@ -67,10 +67,10 @@ $(function() {
   }
 
   function animate_jquery_flip(card, css_properties) {
-    card.animate(css_properties["compress"], 100, function() {
+    card.animate(css_properties.compress, 100, function() {
       $(this).hide();
       // animate second card to full width and margin-top to 0
-      $(this).siblings('.linkbox').show().animate(css_properties["decompress"], 100);
+      $(this).siblings('.linkbox').show().animate(css_properties.decompress, 100);
     });
   }
 

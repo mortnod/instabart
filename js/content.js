@@ -1,4 +1,4 @@
-function CardCtrl($scope) {
+var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */ 
   var itslearning = {
     'title':'Itslearning',
     'description':'Ditt interfjes mot alle* emnene du tar ved NTNU - forelesningsfoiler, øvingsoppgaver, beskjeder, den type ting.  *I teorien iallefall.',
@@ -96,32 +96,32 @@ function CardCtrl($scope) {
   };
 
   $scope.cards = [itslearning, email, schedule, studweb, dinner, map, cloudstor, grades, romres, ithjelp, farm, kundesenteret];
-}
+}];
 
-function ModalCtrl($scope) {
+var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */ 
   var about = {
     'title':'Hæ? Hva i alle dager er Instabart?',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
-    'pictogram':'pow',
+    'pictogram':'pow'
   };
 
   var contact = {
     'title':'Snakk med oss!',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
-    'pictogram':'bug',
+    'pictogram':'bug'
   };
 
   var otherServices = {
     'title':'Andre sexy tjenester',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
-    'pictogram':'fire',
+    'pictogram':'fire'
   };
 
   var licensing = {
     'title':'Lisensiering',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
-    'pictogram':'briefcase',
+    'pictogram':'briefcase'
   };
 
   $scope.modalSections = [about, contact, otherServices, licensing];
-}
+}];
