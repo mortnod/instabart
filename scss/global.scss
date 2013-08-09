@@ -3,8 +3,8 @@
 @import "normalize";
 @import "typography";
 @import "pictograms";
-@import "linkbox";
-@import "flip";
+@import "card";
+@import "cardflip";
 @import "header";
 @import "structure";
 @import "modal";
@@ -20,16 +20,6 @@
 // Don't show shadows when selecting text
 ::-moz-selection { background: hotpink; color: #fff; text-shadow: none; }
 ::selection      { background: hotpink; color: #fff; text-shadow: none; }
-
-// Grid
-#grid {
-  @include breakpoint(cat) { width: 6 * $cubesize + $margin; padding-top: 6em;}
-  @include breakpoint(rat) { width: 4 * $cubesize + $margin; padding-top: 2em;}
-  @include breakpoint(bat) { width: 3 * $cubesize + $margin; padding-top: 1em;}
-  @include breakpoint(ant) { width: 2 * $cubesize + $margin; padding-top: 1em;}
-  margin: 0 auto;
-  padding-left: 10px;
-}
 
 #ie-warning {
   display: none;

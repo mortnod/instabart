@@ -1,4 +1,5 @@
-var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */ 
+// Card controller
+var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
   var itslearning = {
     'title':'Itslearning',
     'description':'Ditt interfjes mot alle* emnene du tar ved NTNU - forelesningsfoiler, øvingsoppgaver, beskjeder, den type ting.  *I teorien iallefall.',
@@ -98,7 +99,8 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
   $scope.cards = [itslearning, email, schedule, studweb, dinner, map, cloudstor, grades, romres, ithjelp, farm, kundesenteret];
 }];
 
-var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */ 
+// Modal controller
+var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
   var about = {
     'title':'Hæ? Hva i alle dager er Instabart?',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
@@ -124,4 +126,22 @@ var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to surv
   };
 
   $scope.modalSections = [about, contact, otherServices, licensing];
+}];
+
+// Tagline controller
+var TaglineCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
+  $scope.randomTagline = function(){
+    var taglines = [
+      "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>.",
+      "Favoritt blant bartebyens studenter siden 1917!",
+      "Hele NTNU samlet under én bart!",
+      "Dekker alle dine behov som NTNU-student... bortsett fra kaffe",
+      "La barten bane vei i NTNUs frodige IT-jungel!",
+      "NTNUs IT-tjenester? Gotta know 'em all!"
+      // "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
+    ];
+
+    var random_id = Math.floor(Math.random()*taglines.length);
+    return taglines[random_id];
+  };
 }];

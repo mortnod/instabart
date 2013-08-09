@@ -1,4 +1,4 @@
-.flip {
+.card {
   margin: 0 10px 10px 0;
   float: left;
   display: block;
@@ -6,13 +6,13 @@
   height: $linkbox;
   position: relative;
 
-  .card {
+  .content {
     width: 100%;
     height: 100%;
   }
 }
 
-.linkbox {
+.cardface {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -38,6 +38,6 @@
     color: white;
 
     // Hide on load to prevent flashing the back
-    display:none;
+    display: none;
   }
 }

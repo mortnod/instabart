@@ -23,7 +23,7 @@
       <div id="logo"></div>
       <div id="headertext">
         <h1>Instabart</h1>
-        <h3 id="tagline"></h3>
+        <h3 id="tagline" ng-controller="TaglineCtrl">{{ randomTagline }}</h3>
       </div>
       <a id="about-button" rel="leanModal" name="about" href="#about">
         <i class="question"></i>
@@ -32,16 +32,16 @@
   </header>
 
   <div id="grid" class="clearfix" ng-controller="CardCtrl">
-    <div class="flip" ng-repeat="card in cards">
-      <div class="card" id="{{ card.css_id }}">
-        <div class="linkbox front">
+    <div class="card" ng-repeat="card in cards">
+      <div class="content" id="{{ card.css_id }}">
+        <div class="cardface front">
           <a href="{{ card.link }}">
             <h2>{{card.title}}</h2>
             <i class="pictogram {{ card.pictogram }}"></i>
           </a>
           <i class="flip-button info"></i>
         </div>
-        <div class="linkbox back">
+        <div class="cardface back">
           <a href="{{ card.link }}"><h2>{{card.title}}</h2></a>
           <p ng-bind-html-unsafe="card.description"></p>
           <i class="flip-button close"></i>

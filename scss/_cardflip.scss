@@ -1,0 +1,24 @@
+// Flip the boxes using CSS3
+.csstransforms3d .card {
+  @include perspective(800);
+
+  .content {
+    @include transform-style(preserve-3d);
+    @include transition(0.4s);
+
+    &.flipped {
+      @include transform(rotatey(-180deg));
+    }
+
+    .front {
+      @include backface-visibility(hidden);
+      z-index: 1;
+    }
+    
+    .back {
+      @include transform(rotatey(-180deg));
+      @include backface-visibility(hidden);
+      z-index: 2;
+    }
+  }
+}
