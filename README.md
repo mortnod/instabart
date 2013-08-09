@@ -18,7 +18,9 @@ Email: post@instabart.no
 Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the following is used:
 
 - [jQuery](http://jquery.com/)
+- [AngularJS](http://angularjs.org/) (javascript framework)
 - [Modernizr](http://modernizr.com/) (feature detection)
+- [Normalize](http://necolas.github.io/normalize.css/) (CSS reset alternative)
 - [Sass](http://sass-lang.com/) (CSS preprocessor)
 - [Entypo](http://entypo.com/) (pictogram font)
 - [Glyphicons](http://glyphicons.com/) (pictogram font)
@@ -42,10 +44,11 @@ Although parts of the Glyphicons pack is free and licensed under [Creative Commo
 [Creative Commons Attribution-ShareAlike 3.0](http://creativecommons.org/licenses/by-sa/3.0/) and [SIL Open Font License](http://scripts.sil.org/OFL)
 
 #### Other
-The rest of the tools used, is available under the MIT License:
+The rest of the tools used is available under the MIT License:
 
 - [jQuery](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
 - [Modernizr](http://modernizr.com/license/)
+- [Normalize](http://necolas.github.io/normalize.css/)
 - [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)
 - [Icomoon](https://github.com/Keyamoon/IcoMoon-App/blob/master/LICENSE.md)
 - [LeanModal](http://leanmodal.finelysliced.com.au/)
