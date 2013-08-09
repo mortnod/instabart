@@ -23,7 +23,7 @@
       <div id="logo"></div>
       <div id="headertext">
         <h1>Instabart</h1>
-        <h3 id="tagline" ng-controller="TaglineCtrl">{{ randomTagline }}</h3>
+        <h3 id="tagline" ng-controller="TaglineCtrl" ng-bind-html-unsafe="randomTagline"></h3>
       </div>
       <a id="about-button" rel="leanModal" name="about" href="#about">
         <i class="question"></i>
