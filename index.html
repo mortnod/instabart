@@ -1,56 +1,55 @@
 <!doctype html>
 <html lang="no" ng-app>
+
 <head>
   <meta charset="UTF-8">
   <title>Instabart</title>
   <link rel="icon" type="image/ico" href="img/favicon.ico">
   <link rel="stylesheet" href="css/global.css">
-
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <script src="js/cards.js"></script>
   <!--[if lte IE 8]>
   <link rel="stylesheet" type="text/css" href="css/ie.css" />
   <![endif]-->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="js/content.js"></script>
 </head>
+
 <body>
 <div id="pagewrap">
-<div id="ie-warning">Kondolerer. Nettleseren din er like gammel som dinosaurene. Denne nettsiden kan av den grunn oppføre seg litt rart.</div>
-<header>
-  <div id="headerwrap">
-    <div id="logo"></div>
-    <div id="headertext">
-      <h1>Instabart</h1>
-      <h3 id="tagline"></h3>
-    </div>
-    <a id="about-button" rel="leanModal" name="about" href="#about">
-      <i class="question"></i>
-    </a>
-  </div>
-</header>
+  <div id="ie-warning">Kondolerer. Nettleseren din er like gammel som dinosaurene. Denne nettsiden kan av den grunn oppføre seg litt rart.</div>
 
-
-<div id="grid" class="clearfix" ng-controller="CardCtrl">
-  <div class="flip" ng-repeat="card in cards">
-    <div class="card" id="{{ card.css_id }}">
-      <div class="linkbox front">
-        <a href="{{ card.link }}">
-          <h2>{{card.title}}</h2>
-          <i class="pictogram {{ card.pictogram }}"></i>
-        </a>
-        <i class="flip-button info"></i>
+  <header>
+    <div id="headerwrap">
+      <div id="logo"></div>
+      <div id="headertext">
+        <h1>Instabart</h1>
+        <h3 id="tagline"></h3>
       </div>
-      <div class="linkbox back">
-        <a href="{{ card.link }}"><h2>{{card.title}}</h2></a>
-        <p ng-bind-html-unsafe="card.description"></p>
-        <i class="flip-button close"></i>
+      <a id="about-button" rel="leanModal" name="about" href="#about">
+        <i class="question"></i>
+      </a>
+    </div>
+  </header>
+
+  <div id="grid" class="clearfix" ng-controller="CardCtrl">
+    <div class="flip" ng-repeat="card in cards">
+      <div class="card" id="{{ card.css_id }}">
+        <div class="linkbox front">
+          <a href="{{ card.link }}">
+            <h2>{{card.title}}</h2>
+            <i class="pictogram {{ card.pictogram }}"></i>
+          </a>
+          <i class="flip-button info"></i>
+        </div>
+        <div class="linkbox back">
+          <a href="{{ card.link }}"><h2>{{card.title}}</h2></a>
+          <p ng-bind-html-unsafe="card.description"></p>
+          <i class="flip-button close"></i>
+        </div>
       </div>
     </div>
-  </div>
+  </div><!-- end grid -->
 
-  
-
-</div><!-- end grid -->
-<div class="push"></div>
+  <div class="push"></div>
 </div><!-- end pagewrap -->
 
 <footer>
@@ -58,34 +57,15 @@
 </footer>
 
 <!-- Hidden modal overlay -->
-<div id="about" class="modal">
-  <div class="header">
-    <h2>Hæ? Hva i alle dager er Instabart?</h2>
-    <i class="pow"></i>
-  </div>
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.</p>
-  </div>
-  <div class="header" id="feedback">
-    <h2>Snakk med oss!</h2>
-    <i class="bug"></i>
-  </div>
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.</p>
-  </div>
-  <div class="header">
-    <h2>Andre sexy tjenester</h2>
-    <i class="fire"></i>
-  </div>
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.</p>
-  </div>
-  <div class="header">
-    <h2>Lisensiering</h2>
-    <i class="briefcase"></i>
-  </div>
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.</p>
+<div id="about" class="modal" ng-controller="ModalCtrl">
+  <div class="modal-section" ng-repeat="section in modalSections">
+    <div class="header">
+      <h2>{{ section.title }}</h2>
+      <i class="{{ section.pictogram }}"></i>
+    </div>
+    <div class="content">
+      <p ng-bind-html-unsafe="section.text"></p>
+    </div>
   </div>
   <i class="modal_close close"></i>
 </div>
