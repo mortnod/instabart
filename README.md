@@ -47,7 +47,7 @@ Although parts of the Glyphicons pack is free and licensed under [Creative Commo
 The rest of the tools used is available under the MIT License:
 
 - [jQuery](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
-- [AngularJS](http://angularjs.org/)
+- [AngularJS](https://github.com/angular/angular.js/blob/master/LICENSE)
 - [Modernizr](http://modernizr.com/license/)
 - [Normalize](http://necolas.github.io/normalize.css/)
 - [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)
