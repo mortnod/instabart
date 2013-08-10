@@ -1,6 +1,14 @@
-// Basic modal styling
+// Basic modal styling and positioning
 .modal {
-  width: 600px;
+  max-width: 600px;
+  left: 50%;
+  margin: 10px;
+  margin-left: -300px;
+  @include breakpoint(ant) { 
+    left: 0;
+    margin-left: 10px;
+  }
+
   display: none;
   background: white;
   @include border-radius();

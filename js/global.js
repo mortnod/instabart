@@ -23,5 +23,5 @@ $(function() {
   });
 
   // Displays the modal when the question button is clicked
-  $('#about-button').leanModal({ overlay: 0.7, closeButton: ".modal_close" });
+  $('#about-button').leanModal({ top : 0, overlay: 0.7, closeButton: ".modal_close" });
 });

@@ -102,7 +102,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 // Modal controller
 var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
   var about = {
-    'title':'Hæ? Hva i alle dager er Instabart?',
+    'title':'Hva er Instabart?',
     'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
     'pictogram':'pow'
   };
