@@ -119,13 +119,7 @@ var ModalCtrl = ['$scope', function($scope) { /* Complicated constructor to surv
     'pictogram':'fire'
   };
 
-  var licensing = {
-    'title':'Lisensiering',
-    'text':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, eveniet, a, sapiente illum error quos quas esse quibusdam officia dolor quasi aut magnam tempora. Recusandae expedita deleniti deserunt voluptatibus dolor.',
-    'pictogram':'briefcase'
-  };
-
-  $scope.modalSections = [about, contact, otherServices, licensing];
+  $scope.modalSections = [about, contact, otherServices];
 }];
 
 // Tagline controller
