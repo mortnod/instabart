@@ -1,25 +1,20 @@
-// The modal
+// Basic modal styling
 .modal {
   width: 600px;
   display: none;
   background: white;
   @include border-radius();
   @include box-shadow(rgba(black, 0.7) 0 0px 4px);
+}
 
-  .modal-section {
-    &:first-child .header {
-      @include border-top-radius();
-      margin-top: 0;
-      border-top: 0;
-    }
-  }
-
+// A modal section consist of a header area and a content area
+.modal-section {
   .header {
     background-color: whitesmoke;
+    margin-top: 10px;
     padding: 10px 20px 5px 20px;
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
-    margin-top: 10px;
     position: relative;
     overflow: hidden;
 
@@ -28,6 +23,13 @@
       text-align: left;
       opacity: 0.8;
     }
+  }
+
+  // Curve corners and remove border-top for the first modal-section
+  &:first-child .header {
+    @include border-top-radius();
+    border-top: 0;
+    margin-top: 0;
   }
 
   .content {
@@ -43,6 +45,7 @@
     }
   }
 }
+
 
 // Background fading
 #lean_overlay {
@@ -77,34 +80,4 @@
 // Trigger button
 #about-button {
   text-decoration: none;
-}
-
-// Header pictograms
-.header i {
-  position: absolute;
-  top: 5px;
-  right: 50px;
-  opacity: 0.2;
-  font-size: 3.2em;
-  @include transform(rotate(-25deg));
-
-  &.pow {
-    top: 7px;
-  }
-
-  &.bug {
-    @include transform(rotate(-35deg));
-  }
-
-  &.fire {
-    font-size: 3.6em;
-    top: 0;
-  }
-
-  &.lego {
-    @include transform(rotate(0));
-    font-size: 2.9em;
-    top: 10px;
-    right: 40px;
-  }
 }

@@ -29,3 +29,11 @@ footer, .push {
   margin: 0 auto;
   padding-left: 10px;
 }
+
+[class*='col-'] {
+  float: left;
+}
+
+.col-1-2 {
+  width: 50%;
+}
