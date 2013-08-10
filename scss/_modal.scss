@@ -40,6 +40,7 @@
       font-weight: bold;
       text-align: left;
       opacity: 0.8;
+      @include breakpoint(ant) { font-size: 1.5em; }
     }
   }
 

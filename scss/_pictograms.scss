@@ -104,14 +104,19 @@ i {
 // Modal header pictograms
 .header i {
   position: absolute;
-  top: 5px;
+  bottom: -10px;
   right: 50px;
   opacity: 0.2;
   font-size: 3.2em;
+  @include breakpoint(ant) { 
+    right: 20px; 
+    font-size: 2.6em;
+    bottom: -8px
+  }
   @include transform(rotate(-25deg));
 
   &.pow {
-    top: 7px;
+    @include breakpoint(ant) { right: 30px; }
   }
 
   &.bug {
@@ -120,13 +125,19 @@ i {
 
   &.fire {
     font-size: 3.6em;
-    top: 0;
+    @include breakpoint(ant) { 
+      font-size: 2.9em; 
+    }
   }
 
   &.lego {
     @include transform(rotate(0));
     font-size: 2.9em;
-    top: 10px;
+    bottom: -8px;
     right: 40px;
+    @include breakpoint(ant) { 
+      right: 15px;
+      font-size: 2.3em; 
+    }
   }
 }
