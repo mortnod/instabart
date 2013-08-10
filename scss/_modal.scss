@@ -1,18 +1,28 @@
-// Basic modal styling and positioning
 .modal {
-  max-width: 600px;
+  // Positioning
   left: 50%;
   margin: 10px;
   margin-left: -300px;
+  max-width: 600px;
   @include breakpoint(ant) { 
     left: 0;
     margin-left: 10px;
   }
 
-  display: none;
+  // Styling 
   background: white;
   @include border-radius();
   @include box-shadow(rgba(black, 0.7) 0 0px 4px);
+
+  // Hidden on load
+  display: none;
+
+  // Hack to get margin at the bottom
+  .spacer {
+    height: 10px;
+    margin: 0 0 -10px 0;
+    background: transparent;
+  }
 }
 
 // A modal section consist of a header area and a content area
