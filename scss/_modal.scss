@@ -100,3 +100,27 @@
 #about-button {
   text-decoration: none;
 }
+
+// Other fancy sites/apps (section)
+.modal-section .well {
+  @include border-radius();
+  padding: 10px;
+  -webkit-filter: grayscale(1);
+  transition: 0.15s ease;
+  display: block;
+
+  p {
+    color: black;
+  }
+
+  &:hover {
+    background-color: #eee;
+    -webkit-filter: grayscale(0);
+    color: black;
+  }
+
+  img {
+    margin: 4px 10px 0 0;
+    opacity: 0.7;
+  }
+}

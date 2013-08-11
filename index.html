@@ -59,14 +59,41 @@
 </footer>
 
 <!-- Hidden modal overlay -->
-<div id="about" class="modal" ng-controller="ModalCtrl">
-  <div class="modal-section" ng-repeat="section in modalSections">
+<div id="about" class="modal">
+  <div class="modal-section">
     <div class="header">
-      <h2>{{ section.title }}</h2>
-      <i class="{{ section.pictogram }}"></i>
+      <h2>Hva er Instabart?</h2>
+      <i class="pow"></i>
     </div>
     <div class="content">
-      <p ng-bind-html-unsafe="section.text"></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, asperiores, optio</p>
+    </div>
+  </div>
+  <div class="modal-section">
+    <div class="header">
+      <h2>Snakk med oss!</h2>
+      <i class="bug"></i>
+    </div>
+    <div class="content">
+      <p>Assballs</p>
+    </div>
+  </div>
+  <div class="modal-section">
+    <div class="header">
+      <h2>Andre snasne tjenester</h2>
+      <i class="fire"></i>
+    </div>
+    <div class="content clearfix">
+      <a href="http://bartebuss.no" class="col-1-2 well">
+          <h3>Bartebuss</h3>
+          <img src="img/bartebuss.png" alt="" class="left">
+          <p>Rutetider og sanntidsdata som fungerer på det meste av PC-er, Pad-er og mobiler</p>
+      </a>
+      <a href="https://chrome.google.com/webstore/detail/online-notifier/hfgffimlnajpbenfpaofmmffcdmgkllf" class="col-1-2 well">
+        <h3>Online Notifier</h3>
+        <img src="img/online-notifier.png" alt="" class="left">
+        <p>Få nyhetsmeldinger fra din linjeforening, middagsmeny og sanntiddata fra AtB</p>
+      </a>
     </div>
   </div>
   <div class="modal-section">

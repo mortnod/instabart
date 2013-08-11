@@ -108,10 +108,10 @@ i {
   right: 50px;
   opacity: 0.2;
   font-size: 3.2em;
-  @include breakpoint(ant) { 
-    right: 20px; 
+  @include breakpoint(ant) {
+    right: 20px;
     font-size: 2.6em;
-    bottom: -8px
+    bottom: -8px;
   }
   @include transform(rotate(-25deg));
 
@@ -125,8 +125,8 @@ i {
 
   &.fire {
     font-size: 3.6em;
-    @include breakpoint(ant) { 
-      font-size: 2.9em; 
+    @include breakpoint(ant) {
+      font-size: 2.9em;
     }
   }
 
@@ -135,9 +135,9 @@ i {
     font-size: 2.9em;
     bottom: -8px;
     right: 40px;
-    @include breakpoint(ant) { 
+    @include breakpoint(ant) {
       right: 15px;
-      font-size: 2.3em; 
+      font-size: 2.3em;
     }
   }
 }
