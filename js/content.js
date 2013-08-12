@@ -2,7 +2,7 @@
 var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
   var itslearning = {
     'title':'Itslearning',
-    'description':'Ditt interfjes mot alle* emnene du tar ved NTNU - forelesningsfoiler, øvingsoppgaver, beskjeder, den type ting.  *I teorien iallefall.',
+    'description':'Kanskje den viktigste siden i studenthverdagen - forelesningsfoiler, øvings-oppgaver og beskjeder fra foreleserne i emnene du tar.',
     'link':'https://sats.itea.ntnu.no/sso-wrapper/web/wrapper?target=itslearning',
     'pictogram':'itslearning',
     'css_id':'itslearning'
@@ -10,7 +10,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var email = {
     'title':'Epost',
-    'description':'NTNU-mailkontoen din bør du sjekke jevnlig. Mange foretrekker å videresende fra denne til egen mailadresse - les hvordan <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+en+annen+konto">her</a>.',
+    'description':'Du har signert på at du sjekker NTNU-mailen din jevnlig. Et tips er å videresende disse epostene til din private mailadresse - les hvordan <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+en+annen+konto">her</a>.',
     'link':'https://webmail.stud.ntnu.no/',
     'pictogram':'email',
     'css_id':'email'
@@ -42,8 +42,8 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var map = {
     'title':'Campuskart',
-    'description':'Hjelp, hvor er datasalen Sprokkit? Hva er dette «kjelhuset» alle snakker om? Campusguiden viser vei! (...på Gløshaugen)',
-    'link':'http://app.campusguiden.no/',
+    'description':'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap viser vei! <br>(…på Gløshaugen / St. Olav)',
+    'link':'http://use.mazemap.com/',
     'pictogram':'map',
     'css_id':'map'
   };
@@ -58,7 +58,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var grades = {
     'title':'Karakterer',
-    'description':'Mektigere karakterstatistikk enn du finner på Studweb. Hvilke av emnene du tar i år er typiske stryk-emner? Og slo dere jentene i år?',
+    'description':'Karakterstatistikk for flere år bakover. Hvilke av emnene du tar i år er typiske stryk-emner?',
     'link':'https://innsida.ntnu.no/sso/?target=KarstatProd',
     'pictogram':'grades',
     'css_id':'grades'
@@ -67,14 +67,14 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
   var romres = {
     'title':'Romres',
     'description':'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom finner du <a href="http://www.ntnu.no/studieinformasjon/rom/">her</a>.',
-    'link':'http://www.ntnu.no/studieinformasjon/rom/',
+    'link':'https://romres.ntnu.no/',
     'pictogram':'romres',
     'css_id':'romres'
   };
 
   var ithjelp = {
     'title':'IT-hjelp',
-    'description':'Hvordan koble telefonen automatisk til eduroam? NTNUs IT-hjelp løser alle dine problemer, og et par du ikke visste du hadde.',
+    'description':'Hvordan koble telefonen automatisk til eduroam? Hvordan bruke printerne på campus? NTNUs IT-hjelp løser dine problemer!',
     'link':'https://innsida.ntnu.no/it-hjelp',
     'pictogram':'it-help',
     'css_id':'it-hjelp'
@@ -82,7 +82,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var farm = {
     'title':'Farm',
-    'description':'Savner du Word? Farm gir deg tilgang til programmer, filer og nettsider du ville hatt på en datasal. Domenet er "win-ntnu-no\brukernavn"',
+    'description':'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm">her</a>.',
     'link':'https://farm.ntnu.no/',
     'pictogram':'farm',
     'css_id':'farm'
