@@ -40,7 +40,7 @@
       font-weight: bold;
       text-align: left;
       opacity: 0.8;
-      @include breakpoint(ant) { font-size: 1.5em; }
+      @include breakpoint(ant) { font-size: 1.4em; }
     }
   }
 
@@ -61,6 +61,14 @@
     a {
       text-decoration: none;
       color: rgb(170, 16, 16);
+    }
+
+    p {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -101,6 +109,14 @@
   text-decoration: none;
 }
 
+// About Instabart
+.protip i {
+  display: inline;
+  position: relative;
+  top: 2px;
+  text-shadow: none;
+}
+
 // Other fancy sites/apps (section)
 .modal-section .well {
   @include border-radius();
@@ -111,6 +127,7 @@
 
   p {
     color: black;
+    margin-bottom: 0;
   }
 
   &:hover {

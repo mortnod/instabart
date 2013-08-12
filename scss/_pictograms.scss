@@ -115,7 +115,7 @@ i {
   }
   @include transform(rotate(-25deg));
 
-  &.pow {
+  &.question {
     @include breakpoint(ant) { right: 30px; }
   }
 
