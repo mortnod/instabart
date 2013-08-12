@@ -4,6 +4,12 @@
        url('../fonts/pictograms.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'temp';
+  src: url('../fonts/temp.woff') format('woff'),
+       url('../fonts/temp.ttf') format('truetype');
+}
+
 i {
   font-family: "pictograms";
   font-style: normal;
@@ -54,6 +60,9 @@ i {
 .twitter:after       { content:"\e01b"; }
 .twittercircle:after { content:"\e01c"; }
 .lego:after          { content:"\e01d"; }
+.emailcircle:after   { content:"\e000"; font-family: "temp"; }
+.chat:after          { content:"\e001"; font-family: "temp"; }
+
 
 .email         { padding-top: 0; }
 .studweb       { padding-top: 5px; }
@@ -119,8 +128,14 @@ i {
     @include breakpoint(ant) { right: 30px; }
   }
 
-  &.bug {
-    @include transform(rotate(-35deg));
+  &.chat {
+    @include transform(rotate(-10deg));
+    font-size: 3.1em;
+    bottom: -8px;
+    @include breakpoint(ant) {
+      font-size: 2.4em;
+      bottom: -6px;
+    }
   }
 
   &.fire {

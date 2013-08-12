@@ -38,3 +38,8 @@ footer, .push {
   width: 50%;
   @include breakpoint(ant) { width: 100% }
 }
+
+.col-1-3 {
+  width: 33.33%;
+  @include breakpoint(ant) { width: 100% }
+}

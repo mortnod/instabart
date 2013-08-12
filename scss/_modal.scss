@@ -109,7 +109,7 @@
   text-decoration: none;
 }
 
-// About Instabart
+// About Instabart (modal section)
 .protip i {
   display: inline;
   position: relative;
@@ -117,7 +117,23 @@
   text-shadow: none;
 }
 
-// Other fancy sites/apps (section)
+// Talk to us (modal section)
+.social .well i {
+  display: inline;
+  position: relative;
+  top: 5px;
+  font-size: 3em;
+  opacity: 0.5;
+  transition: 0.15s ease;
+  margin-right: 10px;
+  float: left;
+}
+
+.social .hover .twittercircle { opacity: 1; color: rgba(83, 149, 174, 0.9); }
+.social .hover .githubcircle { opacity: 1; color: rgba(151, 53, 53, 0.9); }
+.social .hover .emailcircle { opacity: 1; color: rgba(108, 150, 58, 0.9); }
+
+// Other fancy sites/apps (modal section)
 .modal-section .well {
   @include border-radius();
   padding: 10px;
@@ -138,6 +154,6 @@
 
   img {
     margin: 4px 10px 0 0;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
