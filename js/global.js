@@ -35,4 +35,26 @@ $(function() {
       $(this).removeClass("hover");
     }
   );
+
+  // If the browser doesn't support css filters, switch between normal and black/white versions manually
+  $(".no-cssfilters #bartebuss img").attr("src", "img/bartebuss-bw.png");
+  $(".no-cssfilters #notifier img").attr("src", "img/online-notifier-bw.png");
+
+  $(".no-cssfilters #bartebuss").hover(
+    function(){
+      $("#bartebuss img").attr("src", "img/bartebuss.png");
+    },
+    function(){
+      $("#bartebuss img").attr("src", "img/bartebuss-bw.png");
+    }
+  );
+
+  $(".no-cssfilters #notifier").hover(
+    function(){
+      $("#notifier img").attr("src", "img/online-notifier.png");
+    },
+    function(){
+      $("#notifier img").attr("src", "img/online-notifier-bw.png");
+    }
+  );
 });
