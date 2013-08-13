@@ -49,7 +49,7 @@ The rest of the tools used is available under the MIT License:
 - [jQuery](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
 - [AngularJS](https://github.com/angular/angular.js/blob/master/LICENSE)
 - [Modernizr](http://modernizr.com/license/)
-- [Normalize](http://necolas.github.io/normalize.css/)
+- [Normalize](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
 - [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)
 - [Icomoon](https://github.com/Keyamoon/IcoMoon-App/blob/master/LICENSE.md)
 - [LeanModal](http://leanmodal.finelysliced.com.au/)
