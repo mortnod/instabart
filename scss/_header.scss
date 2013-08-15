@@ -3,11 +3,18 @@ header {
   height: 100px;
   padding: $margin 0;
   border-bottom: 1px solid #ddd;
+  @include breakpoint (ant) { 
+    height: 60px;
+  }
 }
 
 #logo {
-  height: 80px;
   width: 88px;
+  height: 80px;
+  @include breakpoint (ant) {
+    width: 44px;
+    height: 40px;
+  }
   opacity: 0.7;
   float: left;
   margin-left: $margin;
@@ -15,9 +22,12 @@ header {
   .svg & {
     background: url(../img/logo.svg) no-repeat top left;
     background-size: 88px 80px;
+    @include breakpoint (ant) { background-size: 44px 40px; }
   }
   .no-svg & {
     background: url(../img/logo.png) no-repeat top left;
+    @include breakpoint (ant) { background-size: 44px 40px; }
+
   }
 }
 
@@ -31,7 +41,7 @@ header {
 
   h1 {
     font-size: 2.5em;
-    @include breakpoint(ant) { margin-top: 0.3em; }
+    @include breakpoint(ant) { font-size: 2em; }
   }
 
   h3 {

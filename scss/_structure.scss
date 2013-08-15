@@ -11,7 +11,7 @@ html, body {
   @include breakpoint(cat) { max-width: 6 * $cubesize + $margin;}
   @include breakpoint(rat) { max-width: 4 * $cubesize + $margin;}
   @include breakpoint(bat) { max-width: 3 * $cubesize + $margin;}
-  @include breakpoint(ant) { max-width: 2 * $cubesize + $margin;}
+  @include breakpoint(ant) { width: 100%; }
   margin: 0 auto;
   position: relative;
 }

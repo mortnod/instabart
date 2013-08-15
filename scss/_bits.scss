@@ -26,7 +26,7 @@ $backgrey: #666;
   @else if $point == ant_m {
     @media (max-width: 625px) { @content; }
   }
-    @else if $point == ant_s {
+  @else if $point == ant_s {
     @media (max-width: 540px) { @content; }
   }
   @else if $point == tiny_l {
