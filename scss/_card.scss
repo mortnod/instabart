@@ -3,7 +3,7 @@
   display: block;
   width: $cubesize;
   @include breakpoint(ant) { width: 33.33%;}
-  @include breakpoint(tiny) { width: 50%;}
+  @include breakpoint(tiny_l) { width: 50%;}
   height: $cubesize;
   position: relative;
   padding: 0 10px 10px 0;

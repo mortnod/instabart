@@ -23,8 +23,20 @@ $backgrey: #666;
   @else if $point == ant {
     @media (max-width: 3 * $cubesize + $margin) { @content; }
   }
-  @else if $point == tiny {
-    @media (max-width: 450px) { @content; }
+  @else if $point == ant_m {
+    @media (max-width: 625px) { @content; }
+  }
+    @else if $point == ant_s {
+    @media (max-width: 540px) { @content; }
+  }
+  @else if $point == tiny_l {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $point == tiny_m {
+    @media (max-width: 425px) { @content; }
+  }
+  @else if $point == tiny_s {
+    @media (max-width: 370px) { @content; }
   }
 }
 
@@ -41,4 +53,66 @@ $backgrey: #666;
 
 .right {
   float: right;
+}
+
+// Mixins
+@mixin large-card {
+  h2 {
+    font-size: 1.9em;
+  }
+
+  .back p {
+    line-height: 1.3em;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+
+  .cardface.back {
+    padding: 15px 10px;
+  }
+
+  .flip-button {
+    bottom: 7px;
+    right: 7px;
+  }
+
+  .pictogram {
+    font-size: 5em;
+  }
+}
+
+@mixin medium-card {
+  h2 {
+    font-size: 1.7em;
+  }
+
+  .back p {
+    font-size: 0.8em;
+    margin-top: 2px;
+  }
+
+  .cardface.back {
+    padding: 10px 10px;
+  }
+}
+
+@mixin small-card {
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .back p {
+    line-height: 1.1em;
+    font-size: 0.75em;
+    margin-top: 0;
+  }
+
+  .flip-button {
+    bottom: 4px;
+    right: 4px;
+  }
+
+  .pictogram {
+    font-size: 4em;
+  }
 }
