@@ -1,10 +1,12 @@
 .card {
-  margin: 0 10px 10px 0;
   float: left;
   display: block;
-  width: $linkbox;
-  height: $linkbox;
+  width: $cubesize;
+  @include breakpoint(ant) { width: 33.33%;}
+  @include breakpoint(tiny) { width: 50%;}
+  height: $cubesize;
   position: relative;
+  padding: 0 10px 10px 0;
 
   .content {
     width: 100%;

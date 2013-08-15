@@ -23,6 +23,9 @@ $backgrey: #666;
   @else if $point == ant {
     @media (max-width: 3 * $cubesize + $margin) { @content; }
   }
+  @else if $point == tiny {
+    @media (max-width: 450px) { @content; }
+  }
 }
 
 // Tools

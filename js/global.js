@@ -57,4 +57,14 @@ $(function() {
       $("#notifier img").attr("src", "img/online-notifier-bw.png");
     }
   );
+
+
+  // Keep the 1:1 ratio
+  var card_width = $('.card').outerWidth();
+  $('.card').css({'height':card_width+'px'});
+
+  $(window).resize(function() {
+    card_width = $('.card').outerWidth();
+    $('.card').css({'height':card_width+'px'});
+  });
 });
