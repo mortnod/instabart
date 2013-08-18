@@ -10,7 +10,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var email = {
     'title':'Epost',
-    'description':'Du har signert på at du sjekker NTNU-mailen din jevnlig. Et tips er å videresende disse epostene til din private epostadresse - les hvordan <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+en+annen+konto">her</a>.',
+    'description':'Det forventes at du sjekker NTNU-mailen din jevnlig. Et tips er å videresende disse epostene til din private epostadresse - les hvordan <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+andre+kontoer" id="track-email-extra">her</a>.',
     'link':'https://webmail.stud.ntnu.no/',
     'pictogram':'email',
     'css_id':'email'
@@ -66,7 +66,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var romres = {
     'title':'Romres',
-    'description':'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom finner du <a href="http://www.ntnu.no/studieinformasjon/rom/">her</a>.',
+    'description':'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom finner du <a href="http://www.ntnu.no/studieinformasjon/rom/" id="track-romres-extra">her</a>.',
     'link':'https://romres.ntnu.no/',
     'pictogram':'romres',
     'css_id':'romres'
@@ -82,7 +82,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
 
   var farm = {
     'title':'Farm',
-    'description':'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm">her</a>.',
+    'description':'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm" id="track-farm-extra">her</a>.',
     'link':'https://farm.ntnu.no/',
     'pictogram':'farm',
     'css_id':'farm'

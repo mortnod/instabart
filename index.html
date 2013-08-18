@@ -38,14 +38,14 @@
     <div class="card" ng-repeat="card in cards">
       <div class="content" id="{{ card.css_id }}">
         <div class="cardface front">
-          <a href="{{ card.link }}">
+          <a href="{{ card.link }}" class="track-main">
             <h2>{{card.title}}</h2>
             <i class="pictogram {{ card.pictogram }}"></i>
           </a>
-          <i class="flip-button info"></i>
+          <i class="flip-button info flip-open"></i>
         </div>
         <div class="cardface back">
-          <a href="{{ card.link }}"><h2>{{card.title}}</h2></a>
+          <a href="{{ card.link }}" class="track-main"><h2>{{card.title}}</h2></a>
           <p ng-bind-html-unsafe="card.description"></p>
           <i class="flip-button close"></i>
         </div>
@@ -57,7 +57,7 @@
 </div><!-- end pagewrap -->
 
 <footer>
-  Laget av <a href="http://mvn.no">Morten Noddeland</a> (med kjærlighet)
+  Laget av <a href="http://mvn.no" id="track-mvn">Morten Noddeland</a> (med kjærlighet)
 </footer>
 
 <!-- Hidden modal overlay -->
@@ -81,17 +81,17 @@
       <i class="chat"></i>
     </div>
     <div class="content clearfix">
-      <a href="mailto:post@instabart.no" class="col-1-3 well">
+      <a href="mailto:post@instabart.no" class="col-1-3 well" id="track-email">
         <i class="emailcircle"></i>
         <h3>Epost</h3>
         <p>Send meg en brillefin epost</p>
       </a>
-      <a href="https://twitter.com/mortenvn" class="col-1-3 well">
+      <a href="https://twitter.com/mortenvn" class="col-1-3 well" id="track-twitter">
         <i class="twittercircle"></i>
         <h3>Twitter</h3>
         <p>Kvitre meg litt i øret</p>
       </a>
-      <a href="https://github.com/mortenvn/instabart" class="col-1-3 well">
+      <a href="https://github.com/mortenvn/instabart" class="col-1-3 well" id="track-github">
         <i class="githubcircle"></i>
         <h3>Github</h3>
         <p>Fork koden på Github</p>
@@ -125,21 +125,21 @@
       <div class="col-1-2">
         <ul>
           <li>Svette, tårer og tålmodighet</li>
-          <li><a href="http://jquery.com/">jQuery</a> (JavaScript-bibliotek)</li>
-          <li><a href="http://modernizr.com/">Modernizr</a> (Feature detection)</li>
-          <li><a href="http://sass-lang.com/">Sass</a> (CSS preprocessor)</li>
-          <li><a href="http://entypo.com/">Entypo</a> (Ikonsett)</li>
-          <li><a href="http://leanmodal.finelysliced.com.au/">LeanModal</a> (Modal-vindu)</li>
+          <li><a href="http://jquery.com/" id="track-jquery">jQuery</a> (JavaScript-bibliotek)</li>
+          <li><a href="http://modernizr.com/" id="track-modernizr">Modernizr</a> (Feature detection)</li>
+          <li><a href="http://sass-lang.com/" id="track-sass">Sass</a> (CSS preprocessor)</li>
+          <li><a href="http://entypo.com/" id="track-entypo">Entypo</a> (Ikonsett)</li>
+          <li><a href="http://leanmodal.finelysliced.com.au/" id="track-leanmodal">LeanModal</a> (Modal-vindu)</li>
         </ul>
       </div>
       <div class="col-1-2">
         <ul>
           <li>Deilig HTML5, CSS3 og JavaScript</li>
-          <li><a href="http://angularjs.org/">AngularJS</a> (Webrammeverk)</li>
-          <li><a href="http://necolas.github.io/normalize.css/">Normalize</a> (CSS reset)</li>
-          <li><a href="http://icomoon.io/">Icomoon</a> (Font-bygger)</li>
-          <li><a href="http://glyphicons.com/">Glyphicons</a> (Ikonsett)</li>
-          <li><a href="http://www.youtube.com/watch?v=hkDD03yeLnU">Visual Basic</a> (GUI)</li>
+          <li><a href="http://angularjs.org/" id="track-angular">AngularJS</a> (Webrammeverk)</li>
+          <li><a href="http://necolas.github.io/normalize.css/" id="track-normalize">Normalize</a> (CSS reset)</li>
+          <li><a href="http://icomoon.io/" id="track-icomoon">Icomoon</a> (Font-bygger)</li>
+          <li><a href="http://glyphicons.com/" id="track-glyphicons">Glyphicons</a> (Ikonsett)</li>
+          <li><a href="http://www.youtube.com/watch?v=hkDD03yeLnU" id="track-vb">Visual Basic</a> (GUI)</li>
         </ul>
       </div>
     </div>

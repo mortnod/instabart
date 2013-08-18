@@ -3,7 +3,7 @@ header {
   height: 100px;
   padding: $margin 0;
   border-bottom: 1px solid #ddd;
-  @include breakpoint (ant) { 
+  @include breakpoint (ant) {
     height: 60px;
   }
 }
