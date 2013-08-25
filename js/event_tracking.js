@@ -1,10 +1,18 @@
 $(document).ready(function(){
   // Use this function when tracking external links
-  function trackOutboundLink(link, category, action) {
+  function trackOutboundLink(link, e, category, action) {
+
+    // Send tracking information to Google Analytics
     try {
-    _gaq.push(['_trackEvent', category , action]);
+      _gaq.push(['_trackEvent', category , action]);
     } catch(err){}
+
+    // If cmd or ctrl is pressed (to open the link in a new tab), proceed using the browsers default action
+    if (e.metaKey || e.ctrlKey) return;
     
+    // Otherwise, stop the motherfucker
+    e.preventDefault();
+
     // Small timeout to ensure that the event is tracked
     // before following the link
     setTimeout(function() {
@@ -14,52 +22,52 @@ $(document).ready(function(){
 
   // MAIN LINKS
   // Event tracking for the main links
-  $('#itslearning .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Itslearning'); return false;
+  $('#itslearning .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Itslearning');
   });
 
-  $('#email .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Email'); return false;
+  $('#email .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Email');
   });
 
-  $('#schedule .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Schedule'); return false;
+  $('#schedule .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Schedule');
   });
 
-  $('#studweb .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'StudentWeb'); return false;
+  $('#studweb .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'StudentWeb');
   });
 
-  $('#dinner .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'SIT Dinner'); return false;
+  $('#dinner .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'SIT Dinner');
   });
 
-  $('#map .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Campus Map'); return false;
+  $('#map .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Campus Map');
   });
 
-  $('#filesender .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'FileSender'); return false;
+  $('#filesender .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'FileSender');
   });
 
-  $('#grades .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Grade Statistics'); return false;
+  $('#grades .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Grade Statistics');
   });
 
-  $('#romres .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Room Reservation'); return false;
+  $('#romres .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Room Reservation');
   });
 
-  $('#it-hjelp .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'IT Help'); return false;
+  $('#it-hjelp .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'IT Help');
   });
 
-  $('#farm .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Software Farm'); return false;
+  $('#farm .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Software Farm');
   });
 
-  $('#kundesenteret .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'Kundesenteret'); return false;
+  $('#kundesenteret .track-main').click(function(e){
+    trackOutboundLink(this, e, 'Main Links', 'Kundesenteret');
   });
 
 
@@ -120,82 +128,82 @@ $(document).ready(function(){
     _gaq.push(['_trackEvent', 'Modal', 'Show Modal']);
   });
 
-  $('#track-email').click(function(){
-    trackOutboundLink(this, 'Modal', 'Send Email to Instabart'); return false;
+  $('#track-email').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Send Email to Instabart');
   });
 
-  $('#track-twitter').click(function(){
-    trackOutboundLink(this, 'Modal', 'Follow on Twitter'); return false;
+  $('#track-twitter').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Follow on Twitter');
   });
 
-  $('#track-github').click(function(){
-    trackOutboundLink(this, 'Modal', 'Fork on Github'); return false;
+  $('#track-github').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Fork on Github');
   });
 
-  $('#notifier').click(function(){
-    trackOutboundLink(this, 'Modal', 'Online Notifier'); return false;
+  $('#notifier').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Online Notifier');
   });
 
-  $('#bartebuss').click(function(){
-    trackOutboundLink(this, 'Modal', 'Bartebuss'); return false;
+  $('#bartebuss').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Bartebuss');
   });
 
-  $('#track-jquery').click(function(){
-    trackOutboundLink(this, 'Modal', 'jQuery (built with)'); return false;
+  $('#track-jquery').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'jQuery (built with)');
   });
 
-  $('#track-modernizr').click(function(){
-    trackOutboundLink(this, 'Modal', 'Modernizr (built with)'); return false;
+  $('#track-modernizr').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Modernizr (built with)');
   });
 
-  $('#track-sass').click(function(){
-    trackOutboundLink(this, 'Modal', 'Sass (built with)'); return false;
+  $('#track-sass').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Sass (built with)');
   });
 
-  $('#track-entypo').click(function(){
-    trackOutboundLink(this, 'Modal', 'Entypo (built with)'); return false;
+  $('#track-entypo').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Entypo (built with)');
   });
 
-  $('#track-leanmodal').click(function(){
-    trackOutboundLink(this, 'Modal', 'Lean Modal (built with)'); return false;
+  $('#track-leanmodal').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Lean Modal (built with)');
   });
 
-  $('#track-angular').click(function(){
-    trackOutboundLink(this, 'Modal', 'Angular JS (built with)'); return false;
+  $('#track-angular').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Angular JS (built with)');
   });
 
-  $('#track-normalize').click(function(){
-    trackOutboundLink(this, 'Modal', 'Normalize (built with)'); return false;
+  $('#track-normalize').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Normalize (built with)');
   });
 
-  $('#track-icomoon').click(function(){
-    trackOutboundLink(this, 'Modal', 'Icomoon (built with)'); return false;
+  $('#track-icomoon').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Icomoon (built with)');
   });
 
-  $('#track-glyphicons').click(function(){
-    trackOutboundLink(this, 'Modal', 'Glyphicons (built with)'); return false;
+  $('#track-glyphicons').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Glyphicons (built with)');
   });
 
-  $('#track-vb').click(function(){
-    trackOutboundLink(this, 'Modal', 'Visual Basic (built with)'); return false;
+  $('#track-vb').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Visual Basic (built with)');
   });
 
 
   // OTHER LINKS
   // Links that doesn't fit into the other categories
-  $('#track-mvn').click(function(){
-    trackOutboundLink(this, 'Other Links', 'mvn.no'); return false;
+  $('#track-mvn').click(function(e){
+    trackOutboundLink(this, e, 'Other Links', 'mvn.no');
   });
 
-  $('#track-farm-extra').click(function(){
-    trackOutboundLink(this, 'Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm'); return false;
+  $('#track-farm-extra').click(function(e){
+    trackOutboundLink(this, e, 'Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm');
   });
 
-  $('#track-romres-extra').click(function(){
-    trackOutboundLink(this, 'Other Links', 'http://www.ntnu.no/studieinformasjon/rom/'); return false;
+  $('#track-romres-extra').click(function(e){
+    trackOutboundLink(this, e, 'Other Links', 'http://www.ntnu.no/studieinformasjon/rom/');
   });
 
-  $('#track-email-extra').click(function(){
-    trackOutboundLink(this, 'Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+andre+kontoer'); return false;
+  $('#track-email-extra').click(function(e){
+    trackOutboundLink(this, e, 'Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+andre+kontoer');
   });
 });
