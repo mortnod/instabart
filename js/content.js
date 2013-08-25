@@ -48,12 +48,12 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
     'css_id':'map'
   };
 
-  var cloudstor = {
-    'title':'CloudStor',
-    'description':'Trenger du å sende en diger fil til noen? Når mailbokser og minnepinner kneler, kommer CloudStor til unnsetning!',
-    'link':'https://cloudstor.uninett.no/simplesaml/module.php/core/as_login.php?AuthId=default-sp&ReturnTo=https://cloudstor.uninett.no/index.php?s=upload',
-    'pictogram':'cloudstor',
-    'css_id':'cloudstor'
+  var filesender = {
+    'title':'FileSender',
+    'description':'Trenger du å sende en diger fil til noen? Når mailbokser og minnepinner kneler, kommer FileSender til unnsetning!',
+    'link':'https://filesender.uninett.no/simplesaml/module.php/core/as_login.php?AuthId=default-sp&ReturnTo=https://filesender.uninett.no/index.php?s=upload',
+    'pictogram':'filesender',
+    'css_id':'filesender'
   };
 
   var grades = {
@@ -96,7 +96,7 @@ var CardCtrl = ['$scope', function($scope) { /* Complicated constructor to survi
     'css_id':'kundesenteret'
   };
 
-  $scope.cards = [itslearning, email, schedule, studweb, dinner, map, cloudstor, grades, romres, ithjelp, farm, kundesenteret];
+  $scope.cards = [itslearning, email, schedule, studweb, dinner, map, filesender, grades, romres, ithjelp, farm, kundesenteret];
 }];
 
 // Tagline controller

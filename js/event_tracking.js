@@ -38,8 +38,8 @@ $(document).ready(function(){
     trackOutboundLink(this, 'Main Links', 'Campus Map'); return false;
   });
 
-  $('#cloudstor .track-main').click(function(){
-    trackOutboundLink(this, 'Main Links', 'CloudStor'); return false;
+  $('#filesender .track-main').click(function(){
+    trackOutboundLink(this, 'Main Links', 'FileSender'); return false;
   });
 
   $('#grades .track-main').click(function(){
@@ -89,8 +89,8 @@ $(document).ready(function(){
     _gaq.push(['_trackEvent', 'Card Flips', 'Campus Map']);
   });
 
-  $('#cloudstor .flip-open').click(function(){
-    _gaq.push(['_trackEvent', 'Card Flips', 'CloudStor']);
+  $('#filesender .flip-open').click(function(){
+    _gaq.push(['_trackEvent', 'Card Flips', 'FileSender']);
   });
 
   $('#grades .flip-open').click(function(){
