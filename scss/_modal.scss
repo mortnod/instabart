@@ -137,7 +137,6 @@
 .modal-section .well {
   @include border-radius();
   padding: 10px;
-  -webkit-filter: grayscale(1);
   transition: 0.15s ease;
   display: block;
 
@@ -150,15 +149,19 @@
     color: black;
   }
 
-  &:hover {
-    background-color: #eee;
-    -webkit-filter: grayscale(0);
-    color: black;
-  }
-
   img {
     margin: 4px 10px 0 0;
     opacity: 0.8;
     float: left;
+    -webkit-filter: grayscale(1);
+    transition: 0.15s ease;
+  }
+
+  &:hover {
+    background-color: #eee;
+
+    img {
+      -webkit-filter: grayscale(0);
+    }
   }
 }
