@@ -10,14 +10,16 @@
       @include transform(rotatey(-180deg));
     }
 
-    .front {
+    .cardface {
       @include backface-visibility(hidden);
+    }
+
+    .front {
       z-index: 1;
     }
     
     .back {
       @include transform(rotatey(-180deg));
-      @include backface-visibility(hidden);
       z-index: 2;
     }
   }
