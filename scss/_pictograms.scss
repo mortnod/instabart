@@ -4,12 +4,6 @@
        url('../fonts/pictograms.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'temp';
-  src: url('../fonts/temp.woff') format('woff'),
-       url('../fonts/temp.ttf') format('truetype');
-}
-
 i {
   font-family: "pictograms";
   font-style: normal;
@@ -47,21 +41,13 @@ i {
 .warning:after       { content:"\e00c"; }
 .cogwheel:after      { content:"\e00d"; }
 .close:after         { content:"\e001"; }
-.briefcase:after     { content:"\e011"; }
 .fire:after          { content:"\e012"; }
-.group:after         { content:"\e013"; }
-.bug:after           { content:"\e014"; }
 .megaphone:after     { content:"\e015"; }
-.briefcase2:after    { content:"\e016"; }
-.pow:after           { content:"\e017"; }
-.question2:after     { content:"\e018"; }
-.githubcircle:after  { content:"\e019"; }
-.github:after        { content:"\e01a"; }
-.twitter:after       { content:"\e01b"; }
-.twittercircle:after { content:"\e01c"; }
+.github:after        { content:"\e019"; }
+.twitter:after       { content:"\e01c"; }
 .lego:after          { content:"\e01d"; }
-.emailcircle:after   { content:"\e000"; font-family: "temp"; }
-.chat:after          { content:"\e001"; font-family: "temp"; }
+.emailcircle:after   { content:"\e01e"; }
+.chat:after          { content:"\e01f"; }
 
 
 .email         { padding-top: 0; }
