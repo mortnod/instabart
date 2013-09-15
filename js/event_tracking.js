@@ -31,7 +31,9 @@ $(document).ready(function(){
   });
 
   $('#schedule .track-main').click(function(e){
-    trackOutboundLink(this, e, 'Main Links', 'Schedule');
+    if (localStorage['schedule_clicked'] == "true"){ // Will break if browser DOESN'T support LOCAL STORAGE
+      trackOutboundLink(this, e, 'Main Links', 'Schedule');
+    }
   });
 
   $('#studweb .track-main').click(function(e){
