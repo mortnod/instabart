@@ -19,7 +19,7 @@ function setScheduleLink(){
   }
 }
 
-function closeModal(modal_id){
+function hideModal(modal_id){
   $("#lean_overlay").fadeOut(200);
   $(modal_id).css({ 'display' : 'none' });
 }
@@ -29,11 +29,8 @@ function displayModal(modal_id){
   $('#lean_overlay').fadeTo(200,0.7);
   $(modal_id).css({'display': 'block', 'position': 'absolute', 'opacity': 1, 'z-index': 11000, 'top': '0px'});
   $(modal_id).fadeTo(200,1);
-  $("#lean_overlay").click(function() {
-    closeModal(modal_id);
-  });
-  $(".modal_close").click(function() {
-    closeModal(modal_id);
+  $(".modal_close, #lean_overlay").click(function() {
+    hideModal(modal_id);
   });
 }
 
