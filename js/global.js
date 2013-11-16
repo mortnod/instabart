@@ -13,9 +13,9 @@ function hasClickedScheduleBefore(){
 }
 
 function setScheduleLink(){
-  if (localStorage['schedule']){
+  if (localStorage['schedule_name']){
     var link = $('#schedule a').prop('href');
-    $('#schedule a').prop('href', link + localStorage['schedule']);
+    $('#schedule a').prop('href', link + localStorage['schedule_name']);
   }
 }
 
@@ -123,8 +123,8 @@ $(function() {
     }
   }
 
-  $('#dergen').val(localStorage['schedule']);
+  $('#dergen').val(localStorage['schedule_name']);
   $('#dergen').bind('input', function() {
-    localStorage['schedule'] = $(this).val();
+    localStorage['schedule_name'] = $(this).val();
   });
 });
