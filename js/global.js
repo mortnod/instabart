@@ -1,3 +1,42 @@
+// Locale storage for schedule
+function supportsLocalStorage(){
+  return Modernizr.localstorage;
+}
+
+function hasClickedScheduleBefore(){
+  if (localStorage['schedule_clicked'] == null){
+    return false;
+  }
+  else {
+    return JSON.parse(localStorage['schedule_clicked']);
+  }
+}
+
+function setScheduleLink(){
+  if (localStorage['schedule']){
+    var link = $('#schedule a').prop('href');
+    $('#schedule a').prop('href', link + localStorage['schedule']);
+  }
+}
+
+function closeModal(modal_id){
+  $("#lean_overlay").fadeOut(200);
+  $(modal_id).css({ 'display' : 'none' });
+}
+
+function displayModal(modal_id){
+  $('#lean_overlay').css({ 'display' : 'block', opacity : 0 });
+  $('#lean_overlay').fadeTo(200,0.7);
+  $(modal_id).css({'display': 'block', 'position': 'absolute', 'opacity': 1, 'z-index': 11000, 'top': '0px'});
+  $(modal_id).fadeTo(200,1);
+  $("#lean_overlay").click(function() {
+    closeModal(modal_id);
+  });
+  $(".modal_close").click(function() {
+    closeModal(modal_id);
+  });
+}
+
 $(function() {
   // Add "hover" to the card in focus
   $(".no-touch .front").hover(
@@ -10,8 +49,6 @@ $(function() {
       $(this).find(".flip-button").hide();
     }
   );
-
-
 
   // Make it look like the buttons are pressed down on click
   $(".front a").mouseup(function(){
@@ -71,44 +108,6 @@ $(function() {
   });
 
 
-  // Locale storage for schedule
-  function supportsLocalStorage(){
-    return Modernizr.localstorage;
-  }
-
-  function hasClickedScheduleBefore(){
-    if (localStorage['schedule_clicked'] == null){
-      return false;
-    }
-    else {
-      return JSON.parse(localStorage['schedule_clicked']);
-    }
-  }
-
-  function setScheduleLink(){
-    if (localStorage['schedule']){
-      var link = $('#schedule a').prop('href');
-      $('#schedule a').prop('href', link + localStorage['schedule']);
-    }
-  }
-
-  function closeModal(modal_id){
-    $("#lean_overlay").fadeOut(200);
-    $(modal_id).css({ 'display' : 'none' });
-  }
-
-  function displayModal(modal_id){
-    $('#lean_overlay').css({ 'display' : 'block', opacity : 0 });
-    $('#lean_overlay').fadeTo(200,0.7);
-    $(modal_id).css({'display': 'block', 'position': 'absolute', 'opacity': 1, 'z-index': 11000, 'top': '0px'});
-    $(modal_id).fadeTo(200,1);
-    $("#lean_overlay").click(function() { 
-      closeModal(modal_id);                    
-    });
-    $(".modal_close").click(function() { 
-      closeModal(modal_id);                    
-    });
-  }
   
   if (supportsLocalStorage()){
     if (hasClickedScheduleBefore()){
@@ -128,6 +127,4 @@ $(function() {
   $('#dergen').bind('input', function() {
     localStorage['schedule'] = $(this).val();
   });
-
-
 });

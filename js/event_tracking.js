@@ -31,7 +31,17 @@ $(document).ready(function(){
   });
 
   $('#schedule .track-main').click(function(e){
-    if (localStorage['schedule_clicked'] == "true"){ // Will break if browser DOESN'T support LOCAL STORAGE
+    /* 
+      Only redirect if the card has been clicked before.
+      (A prompt asking if you want to remember the schedule
+      name will be displayed the first time.)
+    */
+    if (supportsLocalStorage()){
+      if (hasClickedScheduleBefore()){
+        trackOutboundLink(this, e, 'Main Links', 'Schedule');
+      }
+    }
+    else {
       trackOutboundLink(this, e, 'Main Links', 'Schedule');
     }
   });
