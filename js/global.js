@@ -109,17 +109,20 @@ $(function() {
       setScheduleLink();
     }
     else {
-      // localStorage['schedule_clicked'] = true;
       $("#schedule a").click(function(e){
         displayModal('#schedule_settings');
-        localStorage['schedule_clicked'] = false;
+        localStorage['schedule_clicked'] = false; // should be true when finished developing
         e.preventDefault();
       });
     }
+
+    $('.schedule-settings-button').click(function(){
+      displayModal('#schedule_settings');
+    });
+    $('#schedule_name').val(localStorage['schedule_name']);
+    $('#schedule_name').bind('input', function() {
+      localStorage['schedule_name'] = $(this).val();
+    });
   }
 
-  $('#dergen').val(localStorage['schedule_name']);
-  $('#dergen').bind('input', function() {
-    localStorage['schedule_name'] = $(this).val();
-  });
 });
