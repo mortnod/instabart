@@ -20,15 +20,13 @@ function setScheduleLink(){
 }
 
 function hideModal(modal_id){
+  $(modal_id).fadeOut(100);
   $("#lean_overlay").fadeOut(200);
-  $(modal_id).css({ 'display' : 'none' });
 }
 
 function displayModal(modal_id){
-  $('#lean_overlay').css({ 'display' : 'block', opacity : 0 });
-  $('#lean_overlay').fadeTo(200,0.7);
-  $(modal_id).css({'display': 'block', 'position': 'absolute', 'opacity': 1, 'z-index': 11000, 'top': '0px'});
-  $(modal_id).fadeTo(200,1);
+  $(modal_id).fadeIn(200);
+  $('#lean_overlay').fadeTo(200, 0.7);
   $(".modal_close, #lean_overlay").click(function() {
     hideModal(modal_id);
   });

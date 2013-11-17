@@ -1,9 +1,12 @@
 .modal {
   // Positioning
+  position: absolute;
   left: 50%;
+  top: 0;
   margin: 10px;
   margin-left: -300px;
   max-width: 600px;
+  z-index: 11000;
   @include breakpoint(ant) { 
     left: 0;
     margin-left: 10px;
