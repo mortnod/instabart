@@ -168,3 +168,27 @@
     }
   }
 }
+
+#schedule_settings {
+  max-width: 400px;
+  margin-left: -200px;
+
+  @include breakpoint(ant) {
+    left: 50%;
+  }
+
+  @include breakpoint(tiny_m) {
+    left: 0;
+    margin-left: 10px;
+  }
+
+  .annotation {
+    color: #777;
+    font-size: 0.8em;
+
+    i {
+      display: inline;
+      color: #777;
+    }
+  }
+}
