@@ -13,7 +13,7 @@ function hasClickedScheduleBefore(){
 }
 
 function setScheduleLink(){
-  $('#schedule a').prop('href', 'http://ntnu.1024.no/' + localStorage['schedule_name']);
+  $('#schedule a').prop('href', 'http://ntnu.1024.no/' + localStorage['schedule_name'].toLowerCase());
 }
 
 function hideModal(modal_id){
