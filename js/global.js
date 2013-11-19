@@ -135,6 +135,7 @@ $(function() {
       });
     }
 
+    $('#schedule .cardface.front').append('<i class="schedule-settings-button cogwheel"></i>')
     $('.schedule-settings-button').click(function(){
       displayModal('#schedule_settings');
     });
