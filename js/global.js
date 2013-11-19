@@ -13,10 +13,7 @@ function hasClickedScheduleBefore(){
 }
 
 function setScheduleLink(){
-  if (localStorage['schedule_name']){
-    var link = $('#schedule a').prop('href');
-    $('#schedule a').prop('href', link + localStorage['schedule_name']);
-  }
+  $('#schedule a').prop('href', 'http://ntnu.1024.no/' + localStorage['schedule_name']);
 }
 
 function hideModal(modal_id){
@@ -30,6 +27,28 @@ function displayModal(modal_id){
   $(".modal_close, #lean_overlay").click(function() {
     hideModal(modal_id);
   });
+}
+
+function schedule_input_is_valid() {
+  return $('#schedule_name').val() !== '';
+}
+
+function remember_schedule_and_redirect(){
+  localStorage['schedule_clicked'] = "true";
+  localStorage['schedule_name'] = $('#schedule_name').val();
+  setScheduleLink();
+  setTimeout(function() {
+      document.location.href = $('#schedule a').prop('href');
+    }, 100);
+}
+
+function forget_schedule_and_redirect(){
+  localStorage['schedule_clicked'] = "true";
+  localStorage['schedule_name'] = '';
+  setScheduleLink();
+  setTimeout(function() {
+      document.location.href = $('#schedule a').prop('href');
+    }, 100);
 }
 
 $(function() {
@@ -119,10 +138,18 @@ $(function() {
     $('.schedule-settings-button').click(function(){
       displayModal('#schedule_settings');
     });
-    $('#schedule_name').val(localStorage['schedule_name']);
-    $('#schedule_name').bind('input', function() {
-      localStorage['schedule_name'] = $(this).val();
+    $('#schedule-yes-button').click(function(){
+      if (schedule_input_is_valid()){
+        remember_schedule_and_redirect();
+      }
+      else {
+        $('#schedule_name').addClass('error');
+      }
     });
+    $('#schedule-no-button').click(function(){
+      forget_schedule_and_redirect();
+    });
+    $('#schedule_name').val(localStorage['schedule_name']);
   }
 
 });
