@@ -151,6 +151,18 @@ $(function() {
       forget_schedule_and_redirect();
     });
     $('#schedule_name').val(localStorage['schedule_name']);
-  }
 
+    // Press enter == remember schedule name and redirect
+    $("#schedule_name").keypress(function(event){
+      if (event.which == 13) {
+        event.preventDefault();
+        if (schedule_input_is_valid()){
+          remember_schedule_and_redirect();
+        }
+        else {
+          $('#schedule_name').addClass('error');
+        }
+      }
+    });
+  }
 });
