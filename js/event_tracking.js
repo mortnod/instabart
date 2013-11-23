@@ -201,6 +201,35 @@ $(document).ready(function(){
   });
 
 
+  // SCHEDULE SETTINGS
+  // Events related to remembering the users schedule
+  $('#schedule-yes-button').click(function(e){
+    if (schedule_input_is_valid()){
+      _gaq.push(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
+    }
+  });
+
+  $('#schedule-no-button').click(function(e){
+    _gaq.push(['_trackEvent', 'Schedule Settings', "No (don't remember schedule)"]);
+  });
+
+  $('#schedule .track-main').click(function(e){
+    if (supportsLocalStorage()){
+      if (!hasClickedScheduleBefore()){
+        _gaq.push(['_trackEvent', 'Schedule Settings', 'Show Settings (first time)']);
+      }
+    }
+  });
+
+  $('.schedule-settings-button').click(function(e){
+    if (hasClickedScheduleBefore()){
+      _gaq.push(['_trackEvent', 'Schedule Settings', 'Show Settings']);
+    }
+    else {
+      _gaq.push(['_trackEvent', 'Schedule Settings', 'Show Settings (first time)']);
+    }
+  });
+
   // OTHER LINKS
   // Links that doesn't fit into the other categories
   $('#track-mvn').click(function(e){
