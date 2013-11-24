@@ -27,6 +27,9 @@ function displayModal(modal_id){
   $(".modal_close, #lean_overlay").click(function() {
     hideModal(modal_id);
   });
+
+  // Fill the remembered schedule name into the input field
+  $('#schedule_name').val(localStorage['schedule_name']);
 }
 
 function schedule_input_is_valid() {
@@ -38,8 +41,8 @@ function remember_schedule_and_redirect(){
   localStorage['schedule_name'] = $('#schedule_name').val();
   setScheduleLink();
   setTimeout(function() {
-      document.location.href = $('#schedule a').prop('href');
-    }, 100);
+    document.location.href = $('#schedule a').prop('href');
+  }, 100);
 }
 
 function forget_schedule_and_redirect(){
@@ -47,50 +50,60 @@ function forget_schedule_and_redirect(){
   localStorage['schedule_name'] = '';
   setScheduleLink();
   setTimeout(function() {
-      document.location.href = $('#schedule a').prop('href');
-    }, 100);
+    document.location.href = $('#schedule a').prop('href');
+  }, 100);
 }
-$(function() {
-  if (supportsLocalStorage()){
-    if (hasClickedScheduleBefore()){
-      setScheduleLink();
+
+function create_schedule_settings_event_listeners(){
+  // When 'cogwheel' icon is clicked, open the modal
+  $('#schedule-settings-button').click(function(){
+    displayModal('#schedule_settings');
+  });
+
+  // When 'yes' button is clicked, either remember settings and redirect or display an error
+  $('#schedule-yes-button').click(function(){
+    if (schedule_input_is_valid()){
+      remember_schedule_and_redirect();
     }
     else {
-      $("#schedule a").click(function(e){
-        displayModal('#schedule_settings');
-        localStorage['schedule_clicked'] = false; // should be true when finished developing
-        e.preventDefault();
-      });
+      $('#schedule_name').addClass('error');
     }
+  });
 
-    $('#schedule .cardface.front').append('<i class="schedule-settings-button cogwheel"></i>')
-    $('.schedule-settings-button').click(function(){
-      displayModal('#schedule_settings');
-    });
-    $('#schedule-yes-button').click(function(){
+  // When 'no' button is clicked, forget schedule name and redirect
+  $('#schedule-no-button').click(function(){
+    forget_schedule_and_redirect();
+  });
+
+  // Press enter == remember schedule name and redirect
+  $("#schedule_name").keypress(function(event){
+    if (event.which == 13) {
+      event.preventDefault();
       if (schedule_input_is_valid()){
         remember_schedule_and_redirect();
       }
       else {
         $('#schedule_name').addClass('error');
       }
-    });
-    $('#schedule-no-button').click(function(){
-      forget_schedule_and_redirect();
-    });
-    $('#schedule_name').val(localStorage['schedule_name']);
+    }
+  });
+}
 
-    // Press enter == remember schedule name and redirect
-    $("#schedule_name").keypress(function(event){
-      if (event.which == 13) {
+$(function() {
+  if (supportsLocalStorage()){
+    if (hasClickedScheduleBefore()){
+      setScheduleLink();
+    } 
+    else {
+      $("#schedule a").click(function(event){
+        displayModal('#schedule_settings');
         event.preventDefault();
-        if (schedule_input_is_valid()){
-          remember_schedule_and_redirect();
-        }
-        else {
-          $('#schedule_name').addClass('error');
-        }
-      }
-    });
+      });
+    }
+
+    // Add the schedule settings button to the HTML
+    $('#schedule .cardface.front').append('<i id="schedule-settings-button" class="cogwheel"></i>');
+    
+    create_schedule_settings_event_listeners();
   }
 });
