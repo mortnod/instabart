@@ -221,7 +221,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.schedule-settings-button').click(function(e){
+  $('#schedule-settings-button').click(function(e){
     if (hasClickedScheduleBefore()){
       _gaq.push(['_trackEvent', 'Schedule Settings', 'Show Settings']);
     }
