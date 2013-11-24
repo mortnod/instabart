@@ -26,6 +26,7 @@ function displayModal(modal_id){
   $('#lean_overlay').fadeTo(200, 0.7);
   $(".modal_close, #lean_overlay").click(function() {
     hideModal(modal_id);
+    $('#schedule_name').removeClass('error');
   });
 
   // Fill the remembered schedule name into the input field
@@ -93,7 +94,7 @@ $(function() {
   if (supportsLocalStorage()){
     if (hasClickedScheduleBefore()){
       setScheduleLink();
-    } 
+    }
     else {
       $("#schedule a").click(function(event){
         displayModal('#schedule_settings');
@@ -103,7 +104,7 @@ $(function() {
 
     // Add the schedule settings button to the HTML
     $('#schedule .cardface.front').append('<i id="schedule-settings-button" class="cogwheel"></i>');
-    
+
     create_schedule_settings_event_listeners();
   }
 });
