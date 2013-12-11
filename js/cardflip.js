@@ -56,7 +56,9 @@ $(function() {
     card.animate(css_properties.compress, 100, function() {
       $(this).hide();
       // animate second card to full width and margin-top to 0
-      $(this).siblings('.cardface').show().animate(css_properties.decompress, 100);
+      $(this).siblings('.cardface').show().animate(css_properties.decompress, 100, function(){
+        $(this).css('width', '');
+      });
     });
   }
 
