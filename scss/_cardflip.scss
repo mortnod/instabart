@@ -1,5 +1,5 @@
 // Flip the boxes using CSS3
-.csstransforms3d .card {
+.csstransforms3d.csstransformspreserve3d .card {
   @include perspective(800);
 
   .content {
