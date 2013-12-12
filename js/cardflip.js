@@ -68,6 +68,9 @@ $(function() {
   }
   else {
     jquery_flip();
+    // For IE10: Since it does not support 'preserve-3d', make the classes reflect this
+    $('html').removeClass('csstransforms3d');
+    $('html').addClass('no-csstransforms3d');
   }
 
   // The back of the cards are hidden on load to prevent flashing the back.
