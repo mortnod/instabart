@@ -112,28 +112,8 @@
   text-decoration: none;
 }
 
-// About Instabart (modal section)
-.protip i {
-  display: inline;
-  position: relative;
-  top: 2px;
-  text-shadow: none;
-}
-
-// Talk to us (modal section)
-.social .well i {
-  display: inline;
-  position: relative;
-  top: 5px;
-  font-size: 3em;
-  opacity: 0.5;
-  transition: 0.15s ease;
-  margin-right: 10px;
-  float: left;
-}
-
-// Other fancy sites/apps (modal section)
-.modal-section .well {
+// The 'well' element (used in 'talk to us' and 'other sites')
+.well {
   @include border-radius();
   padding: 10px;
   transition: 0.15s ease;
@@ -157,6 +137,7 @@
     float: left;
 
     // The ':after' pseudo elements are used for sprite fading
+    // Remember to add a background-image to each picture
     &:after {
       content: "";
       position: absolute;
@@ -166,40 +147,66 @@
       @include transition-duration(0.15s);
       @include transition-timing-function(ease-in-out);
     }
-
-    &.bartebuss {
-      background: url(../img/bartebuss-sprite-2x.png);
-      background-size: 50px 100px;
-      &:after {
-        background: url(../img/bartebuss-sprite-2x.png) 0 50px;
-        background-size: 50px 100px;
-      }
-    }
-
-    &.notifier {
-      background: url(../img/notifier-sprite-2x.png);
-      background-size: 50px 100px;
-      &:after {
-        background: url(../img/notifier-sprite-2x.png) 0 50px;
-        background-size: 50px 100px;
-      }
-    }
   }
 
-  // Add a hover effect to the wells (color version of the images)
   &:hover {
     background-color: #eee;
 
+    // Add a hover effect to the wells (color version of the images)
     .img:after {
       opacity: 1;
     }
-
-    .twitter { opacity: 1; color: rgba(83, 149, 174, 0.9); }
-    .github { opacity: 1; color: rgba(151, 53, 53, 0.9); }
-    .emailcircle { opacity: 1; color: rgba(108, 150, 58, 0.9); }
   }
 }
 
+// About Instabart (modal section)
+.protip i {
+  display: inline;
+  position: relative;
+  top: 2px;
+  text-shadow: none;
+}
+
+// Talk to us (modal section)
+.social .well i {
+  display: inline;
+  position: relative;
+  top: 5px;
+  font-size: 3em;
+  opacity: 0.5;
+  transition: 0.15s ease;
+  margin-right: 10px;
+  float: left;
+}
+
+.well:hover {
+  .twitter { opacity: 1; color: rgba(83, 149, 174, 0.9); }
+  .github { opacity: 1; color: rgba(151, 53, 53, 0.9); }
+  .emailcircle { opacity: 1; color: rgba(108, 150, 58, 0.9); }
+}
+
+// Other sites (modal section)
+.img {
+  &.bartebuss {
+    background: url(../img/bartebuss-sprite-2x.png);
+    background-size: 50px 100px;
+    &:after {
+      background: url(../img/bartebuss-sprite-2x.png) 0 50px;
+      background-size: 50px 100px;
+    }
+  }
+
+  &.notifier {
+    background: url(../img/notifier-sprite-2x.png);
+    background-size: 50px 100px;
+    &:after {
+      background: url(../img/notifier-sprite-2x.png) 0 50px;
+      background-size: 50px 100px;
+    }
+  }
+}
+
+// SCHEDULE MODAL
 #schedule_settings {
   max-width: 400px;
   margin-left: -200px;
