@@ -1,16 +1,4 @@
 $(function() {
-  // Add "hover" to the card in focus
-  $(".no-touch .front").hover(
-    function(){
-      $(this).addClass("hover");
-      $(this).find(".flip-button").show();
-    },
-    function(){
-      $(this).removeClass("hover");
-      $(this).find(".flip-button").hide();
-    }
-  );
-
   // Make it look like the buttons are pressed down on click
   $(".front a").mouseup(function(){
     var flip_box = $(this).parent().parent().parent();
