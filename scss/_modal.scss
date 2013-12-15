@@ -7,12 +7,12 @@
   margin-left: -300px;
   max-width: 600px;
   z-index: 11000;
-  @include breakpoint(ant) { 
+  @include breakpoint(ant) {
     left: 0;
     margin-left: 10px;
   }
 
-  // Styling 
+  // Styling
   background: white;
   @include border-radius();
   @include box-shadow(rgba(black, 0.7) 0 0px 4px);
@@ -152,19 +152,51 @@
     color: black;
   }
 
-  img {
+  .img {
+    position: relative;
+    width: 50px;
+    height: 50px;
     margin: 4px 10px 0 0;
     opacity: 0.8;
     float: left;
-    -webkit-filter: grayscale(1);
-    transition: 0.15s ease;
+
+    // The ':after' pseudo elements are used for sprite fading
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      opacity: 0;
+      @include transition-property(opacity);
+      @include transition-duration(0.15s);
+      @include transition-timing-function(ease-in-out);
+    }
+
+    &.bartebuss {
+      background: url(../img/bartebuss-sprite-2x.png);
+      background-size: 50px 100px;
+      &:after {
+        background: url(../img/bartebuss-sprite-2x.png) 0 50px;
+        background-size: 50px 100px;
+      }
+    }
+
+    &.notifier {
+      background: url(../img/notifier-sprite-2x.png);
+      background-size: 50px 100px;
+      &:after {
+        background: url(../img/notifier-sprite-2x.png) 0 50px;
+        background-size: 50px 100px;
+      }
+    }
   }
 
+  // Add a hover effects to the wells
   &:hover {
     background-color: #eee;
 
-    img {
-      -webkit-filter: grayscale(0);
+    // Show the colored portion of the sprite
+    .img:after {
+      opacity: 1;
     }
   }
 }

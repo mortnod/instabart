@@ -25,7 +25,7 @@ $(function() {
   // Displays the modal when the question button is clicked
   $('#about-button').leanModal({ top : 0, overlay: 0.7, closeButton: ".modal_close" });
 
-  // Add the class "hover" to the social wells. 
+  // Add the class "hover" to the social wells.
   // This will change the color of the icon.
   $(".social .well").hover(
     function(){
@@ -35,29 +35,6 @@ $(function() {
       $(this).removeClass("hover");
     }
   );
-
-  // If the browser doesn't support css filters, switch between normal and black/white versions manually
-  $(".no-cssfilters #bartebuss img").attr("src", "img/bartebuss-bw.png");
-  $(".no-cssfilters #notifier img").attr("src", "img/online-notifier-bw.png");
-
-  $(".no-cssfilters #bartebuss").hover(
-    function(){
-      $("#bartebuss img").attr("src", "img/bartebuss.png");
-    },
-    function(){
-      $("#bartebuss img").attr("src", "img/bartebuss-bw.png");
-    }
-  );
-
-  $(".no-cssfilters #notifier").hover(
-    function(){
-      $("#notifier img").attr("src", "img/online-notifier.png");
-    },
-    function(){
-      $("#notifier img").attr("src", "img/online-notifier-bw.png");
-    }
-  );
-
 
   // Keep the 1:1 ratio
   var card_width = $('.card').outerWidth();
