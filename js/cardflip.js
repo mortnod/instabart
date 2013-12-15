@@ -65,14 +65,9 @@ $(function() {
   // Decide whether to use css or jquery to do the card flipping
   if (Modernizr.csstransforms3d && Modernizr.csstransformspreserve3d){
     css_flip();
+    $(".back").show(); // Show the back of the cards (Hidden by default to prevent flashing on load)
   }
   else {
     jquery_flip();
-  }
-
-  // The back of the cards are hidden on load to prevent flashing the back.
-  if (Modernizr.csstransforms3d && Modernizr.csstransformspreserve3d){
-    // Only show back in browsers that supports css transforms, as the jquery_flip animation requires the back to be hidden
-    $(".back").show();
   }
 });
