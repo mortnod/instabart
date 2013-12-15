@@ -132,10 +132,6 @@
   float: left;
 }
 
-.social .hover .twitter { opacity: 1; color: rgba(83, 149, 174, 0.9); }
-.social .hover .github { opacity: 1; color: rgba(151, 53, 53, 0.9); }
-.social .hover .emailcircle { opacity: 1; color: rgba(108, 150, 58, 0.9); }
-
 // Other fancy sites/apps (modal section)
 .modal-section .well {
   @include border-radius();
@@ -190,14 +186,17 @@
     }
   }
 
-  // Add a hover effects to the wells
+  // Add a hover effect to the wells (color version of the images)
   &:hover {
     background-color: #eee;
 
-    // Show the colored portion of the sprite
     .img:after {
       opacity: 1;
     }
+
+    .twitter { opacity: 1; color: rgba(83, 149, 174, 0.9); }
+    .github { opacity: 1; color: rgba(151, 53, 53, 0.9); }
+    .emailcircle { opacity: 1; color: rgba(108, 150, 58, 0.9); }
   }
 }
 

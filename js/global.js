@@ -25,17 +25,6 @@ $(function() {
   // Displays the modal when the question button is clicked
   $('#about-button').leanModal({ top : 0, overlay: 0.7, closeButton: ".modal_close" });
 
-  // Add the class "hover" to the social wells.
-  // This will change the color of the icon.
-  $(".social .well").hover(
-    function(){
-      $(this).addClass("hover");
-    },
-    function(){
-      $(this).removeClass("hover");
-    }
-  );
-
   // Keep the 1:1 ratio
   var card_width = $('.card').outerWidth();
   $('.card').css({'height':card_width+'px'});
