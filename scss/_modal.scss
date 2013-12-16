@@ -186,23 +186,25 @@
 }
 
 // Other sites (modal section)
-.img {
-  &.bartebuss {
-    background: url(../img/bartebuss-sprite-2x.png);
-    background-size: 50px 100px;
-    &:after {
-      background: url(../img/bartebuss-sprite-2x.png) 0 50px;
-      background-size: 50px 100px;
-    }
-  }
+.bartebuss       { background: url(../img/bartebuss-sprite-1x.png); }
+.bartebuss:after { background: url(../img/bartebuss-sprite-1x.png) 0 50px; }
 
-  &.notifier {
-    background: url(../img/notifier-sprite-2x.png);
+.notifier       { background: url(../img/notifier-sprite-1x.png); }
+.notifier:after { background: url(../img/notifier-sprite-1x.png) 0 50px; }
+
+// On retina screens, use higher resolution
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+  .bartebuss       { background: url(../img/bartebuss-sprite-2x.png); }
+  .bartebuss:after { background: url(../img/bartebuss-sprite-2x.png) 0 50px; }
+
+  .notifier       { background: url(../img/notifier-sprite-2x.png); }
+  .notifier:after { background: url(../img/notifier-sprite-2x.png) 0 50px; }
+
+  .bartebuss, .bartebuss:after,
+  .notifier, .notifier:after {
     background-size: 50px 100px;
-    &:after {
-      background: url(../img/notifier-sprite-2x.png) 0 50px;
-      background-size: 50px 100px;
-    }
   }
 }
 
