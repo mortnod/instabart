@@ -30,7 +30,7 @@
     padding: 20px 10px;
   }
 
-  &.front.hover a {
+  &.front:hover a {
     background: $hovergrey;
   }
 
