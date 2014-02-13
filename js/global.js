@@ -1,13 +1,15 @@
 $(function() {
-  // Make it look like the buttons are pressed down on click
-  $(".front a").mouseup(function(){
-    var flip_box = $(this).parent().parent().parent();
-    flip_box.css("top", "0");
-    flip_box.css("left", "0");
-  }).mousedown(function(){
-    var flip_box = $(this).parent().parent().parent();
-    flip_box.css("top", "2px");
-    flip_box.css("left", "1px");
+  // Make it look like the cards are pressed down on click
+  $(".front a").mousedown(function(){
+    $(this).parents('.card').addClass('active');
+  });
+
+  // Snap the card back to place. This happens when the mouse is released
+  // or when you click and drag outside out of the cards area
+  $('.card').mouseleave(function(){
+    $('.card').removeClass('active');
+  }).mouseup(function(){
+    $('.card').removeClass('active');
   });
 
   // Displays the modal when the question button is clicked

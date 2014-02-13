@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     // If cmd or ctrl is pressed (to open the link in a new tab), proceed using the browsers default action
     if (e.metaKey || e.ctrlKey) return;
-    
+
     // Otherwise, stop the motherfucker
     e.preventDefault();
 
@@ -31,7 +31,7 @@ $(document).ready(function(){
   });
 
   $('#schedule .track-main').click(function(e){
-    /* 
+    /*
       Only redirect if the card has been clicked before.
       (A prompt asking if you want to remember the schedule
       name will be displayed the first time.)
