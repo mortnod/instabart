@@ -2,7 +2,7 @@ Instabart
 =========
 
 ## Introduction
-Instabart is a collection of nifty links that makes life as a NTNU student a tad easier. You can see it in action at [instabart.no](http://instabart.no). 
+Instabart is a collection of nifty links that makes life as a NTNU student a tad easier. You can see it in action at [instabart.no](http://instabart.no).
 
 ## Overly verbose introduction
 As a NTNU student there are lots of useful websites at your disposal. Unfortunately, finding them is nearly impossible. Even if you know what you're looking for, good luck finding it via the [university website](http://xkcd.com/773/).
@@ -18,7 +18,7 @@ Email: post@instabart.no
 Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the following is used:
 
 - [jQuery](http://jquery.com/)
-- [AngularJS](http://angularjs.org/) (javascript framework)
+- [Handlebars](http://handlebarsjs.com/) (template system)
 - [Modernizr](http://modernizr.com/) (feature detection)
 - [Normalize](http://necolas.github.io/normalize.css/) (CSS reset alternative)
 - [Sass](http://sass-lang.com/) (CSS preprocessor)
@@ -37,7 +37,7 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 #### Instabart
 I don't know yet, but probably a permissive one.
 
-#### Glyphicons 
+#### Glyphicons
 Although parts of the Glyphicons pack is free and licensed under [Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/), the **webfonts** however is **not**. In other words: If you want to continue development of Instabart using Glyphicons, you'll have to buy your own license.
 
 #### Entypo
@@ -47,7 +47,7 @@ Although parts of the Glyphicons pack is free and licensed under [Creative Commo
 The rest of the tools used is available under the MIT License:
 
 - [jQuery](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
-- [AngularJS](https://github.com/angular/angular.js/blob/master/LICENSE)
+- [Handlebars](https://github.com/wycats/handlebars.js/blob/master/LICENSEE)
 - [Modernizr](http://modernizr.com/license/)
 - [Normalize](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
 - [Sass](http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html)

@@ -180,8 +180,8 @@ $(document).ready(function(){
     trackOutboundLink(this, e, 'Modal', 'Lean Modal (built with)');
   });
 
-  $('#track-angular').click(function(e){
-    trackOutboundLink(this, e, 'Modal', 'Angular JS (built with)');
+  $('#track-handlebars').click(function(e){
+    trackOutboundLink(this, e, 'Modal', 'Handlebars (built with)');
   });
 
   $('#track-normalize').click(function(e){
