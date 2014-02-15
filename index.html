@@ -146,35 +146,11 @@
   <div class="spacer"></div>
 </div>
 
-
-<script id="card-template" type="text/x-handlebars-template">
-  <div class="card">
-    <div class="content" id="{{css_id}}">
-      <div class="cardface front">
-        <a href="{{link}}" class="track-main">
-          <h2>{{title}}</h2>
-          <i class="pictogram {{pictogram}}"></i>
-        </a>
-        <i class="flip-button info flip-open"></i>
-      </div>
-      <div class="cardface back">
-        <a href="{{link}}" class="track-main"><h2>{{title}}</h2></a>
-        <p>{{{description}}}</p>
-        <i class="flip-button close"></i>
-      </div>
-    </div>
-  </div>
-</script>
-
-<script id="tagline-template" type="text/x-handlebars-template">
-  {{{tagline}}}
-</script>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/global-ck.js"></script>
+<script src="templates/templates.js"></script>
 <script>
-  var source   = $("#card-template").html();
-  var template = Handlebars.compile(source);
+  var template = Handlebars.templates['card'];
   for (i = 0; i < data.cards.length; i++) {
     var html = template(data.cards[i]);
     $('#grid').append(html);
@@ -185,11 +161,9 @@
     return taglines[random_id];
   }
 
-  source = $("#tagline-template").html();
-  template = Handlebars.compile(source);
+  template = Handlebars.templates['tagline'];
   var random_tagline = randomTagline(data.taglines);
   html = template(random_tagline);
-  console.log(html);
   $('#tagline').append(html);
 </script>
 <!-- Google Analytics -->
