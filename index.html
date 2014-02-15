@@ -147,25 +147,7 @@
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="js/global-ck.js"></script>
-<script src="templates/templates.js"></script>
-<script>
-  var template = Handlebars.templates['card'];
-  for (i = 0; i < data.cards.length; i++) {
-    var html = template(data.cards[i]);
-    $('#grid').append(html);
-  }
-
-  function randomTagline(taglines){
-    var random_id = Math.floor(Math.random()*taglines.length);
-    return taglines[random_id];
-  }
-
-  template = Handlebars.templates['tagline'];
-  var random_tagline = randomTagline(data.taglines);
-  html = template(random_tagline);
-  $('#tagline').append(html);
-</script>
+<script src="js/global.min.js"></script>
 <!-- Google Analytics -->
 <script type="text/javascript">
   var _gaq = _gaq || [];

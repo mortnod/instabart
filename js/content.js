@@ -78,24 +78,18 @@ var data = {
   taglines: [
     {
       tagline: "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>."
-    },
-    {
+    }, {
       tagline: "Favoritt blant bartebyens studenter siden 1917!"
-    },
-    {
+    }, {
       tagline: "Hele NTNU samlet under én bart!"
-    },
-    {
+    }, {
       tagline: "Dekker alle dine behov som NTNU-student... bortsett fra kaffe"
-    },
-    {
+    }, {
       tagline: "La barten bane vei i NTNUs frodige IT-jungel!"
-    },
-    {
+    }, {
       tagline: "NTNUs IT-tjenester? Gotta know 'em all!"
-    }
-    // {
+    }//, {
     //   tagline: "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
-    // },
+    // }
   ]
 };
