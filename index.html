@@ -23,7 +23,7 @@
       <div id="logo"></div>
       <div id="headertext">
         <h1>Instabart</h1>
-        <h3 id="tagline" ng-controller="TaglineCtrl" ng-bind-html-unsafe="randomTagline"></h3>
+        <h3 id="tagline"></h3>
       </div>
       <a id="about-button" rel="leanModal" name="about" href="#about">
         <i class="question"></i>
@@ -165,6 +165,11 @@
     </div>
   </div>
 </script>
+
+<script id="tagline-template" type="text/x-handlebars-template">
+  {{{tagline}}}
+</script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/global-ck.js"></script>
 <script>
@@ -173,8 +178,19 @@
   for (i = 0; i < data.cards.length; i++) {
     var html = template(data.cards[i]);
     $('#grid').append(html);
-    console.log(html);
   }
+
+  function randomTagline(taglines){
+    var random_id = Math.floor(Math.random()*taglines.length);
+    return taglines[random_id];
+  }
+
+  source = $("#tagline-template").html();
+  template = Handlebars.compile(source);
+  var random_tagline = randomTagline(data.taglines);
+  html = template(random_tagline);
+  console.log(html);
+  $('#tagline').append(html);
 </script>
 <!-- Google Analytics -->
 <script type="text/javascript">

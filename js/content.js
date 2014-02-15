@@ -73,25 +73,29 @@ var data = {
       link:'https://innsida.ntnu.no/sso/?target=studdrift_groups',
       description:'Lag dine egne epostlister, og opprett grupper for dine NTNU-prosjekter, der du kan dele filer med andre.'
     }
+  ],
+
+  taglines: [
+    {
+      tagline: "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>."
+    },
+    {
+      tagline: "Favoritt blant bartebyens studenter siden 1917!"
+    },
+    {
+      tagline: "Hele NTNU samlet under én bart!"
+    },
+    {
+      tagline: "Dekker alle dine behov som NTNU-student... bortsett fra kaffe"
+    },
+    {
+      tagline: "La barten bane vei i NTNUs frodige IT-jungel!"
+    },
+    {
+      tagline: "NTNUs IT-tjenester? Gotta know 'em all!"
+    }
+    // {
+    //   tagline: "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
+    // },
   ]
 };
-
-// Tagline controller
-var TaglineCtrl = ['$scope', function($scope) { /* Complicated constructor to survive minification carnage */
-  var taglines = [
-    "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>.",
-    "Favoritt blant bartebyens studenter siden 1917!",
-    "Hele NTNU samlet under én bart!",
-    "Dekker alle dine behov som NTNU-student... bortsett fra kaffe",
-    "La barten bane vei i NTNUs frodige IT-jungel!",
-    "NTNUs IT-tjenester? Gotta know 'em all!"
-    // "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
-  ];
-
-  function randomTagline(taglines){
-    var random_id = Math.floor(Math.random()*taglines.length);
-    return taglines[random_id];
-  }
-
-  $scope.randomTagline = randomTagline(taglines);
-}];
