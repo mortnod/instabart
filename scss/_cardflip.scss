@@ -17,7 +17,7 @@
     .front {
       z-index: 1;
     }
-    
+
     .back {
       @include transform(rotatey(-180deg));
       z-index: 2;
