@@ -49,7 +49,7 @@ var Schedule = {
     localStorage['schedule_name'] = name;
     this.setScheduleLink();
     setTimeout(function() {
-      // document.location.href = $('#schedule a').prop('href');
+      document.location.href = $('#schedule a').prop('href');
     }, 100);
   },
 
@@ -73,6 +73,7 @@ var Schedule = {
     // When 'no' button is clicked, forget schedule name and redirect
     $('#schedule-no-button').click(function(){
       Schedule.saveAndRedirect('');
+
     });
 
     // When 'yes' button is clicked, either save the
