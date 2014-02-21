@@ -1,6 +1,8 @@
 (function() {
 
   Card.init();
+  Schedule.init();
+  Analytics.init();
 
   function randomTagline(taglines){
     var random_id = Math.floor(Math.random()*taglines.length);
