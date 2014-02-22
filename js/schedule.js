@@ -6,7 +6,7 @@ var Schedule = {
         this.setScheduleLink();
       }
       else {
-        this.displaySettingsOnClick();
+        $("#schedule a").click(Schedule.displaySettingsOnClick);
       }
 
       this.addSettingsButton();
@@ -36,7 +36,7 @@ var Schedule = {
   },
 
   addSettingsButton: function() {
-    var html = '<i id="schedule-settings-button" class="cogwheel"></i>'
+    var html = '<i id="schedule-settings-button" class="cogwheel"></i>';
     $('#schedule .front').append(html);
   },
 
@@ -48,17 +48,20 @@ var Schedule = {
     localStorage['schedule_clicked'] = "true";
     localStorage['schedule_name'] = name;
     this.setScheduleLink();
+
+    // Clicking the card takes you to the schedule instead of the settings
+    $("#schedule a").unbind('click', Schedule.displaySettingsOnClick);
+    Modal.hide('#schedule_settings');
+
     setTimeout(function() {
       document.location.href = $('#schedule a').prop('href');
     }, 100);
   },
 
-  displaySettingsOnClick: function() {
-    $("#schedule a").click(function(e){
-      Modal.show('#schedule_settings');
-      $('#schedule_name').removeClass('error');
-      e.preventDefault();
-    });
+  displaySettingsOnClick: function(e) {
+    Modal.show('#schedule_settings');
+    $('#schedule_name').removeClass('error');
+    e.preventDefault();
   },
 
   bindUIActions: function() {
