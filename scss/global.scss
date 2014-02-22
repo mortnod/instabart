@@ -21,6 +21,11 @@
 ::-moz-selection { background: hotpink; color: #fff; text-shadow: none; }
 ::selection      { background: hotpink; color: #fff; text-shadow: none; }
 
+// Don't highlight fields when tapping by phone
+.touch {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 #ie-warning {
   display: none;
 }
