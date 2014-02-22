@@ -18,4 +18,4 @@ var Modal = {
     $(id).fadeOut(100);
     $("#lean_overlay").fadeOut(200);
   }
-}
+};
