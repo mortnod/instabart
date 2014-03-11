@@ -1,4 +1,7 @@
-# Sass and Sompass
+# Node
+node_modules/
+
+# Sass and Compass
 .sass-cache/
 
 # OS X
