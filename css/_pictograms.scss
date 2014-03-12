@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'pictograms';
-  src: url('../../fonts/pictograms.woff') format('woff'),
-       url('../../fonts/pictograms.ttf') format('truetype');
+  src: url('../../../fonts/pictograms.woff') format('woff'),
+       url('../../../fonts/pictograms.ttf') format('truetype');
 }
 
 i {
@@ -129,14 +129,14 @@ i {
     font-size: 2.6em;
     bottom: -8px;
   }
-  @include transform(rotate(-25deg));
+  transform: rotate(-25deg);
 
   &.question {
     @include breakpoint(ant) { right: 30px; }
   }
 
   &.chat {
-    @include transform(rotate(-10deg));
+    transform: rotate(-10deg);
     font-size: 3.1em;
     bottom: -8px;
     @include breakpoint(ant) {
@@ -153,7 +153,7 @@ i {
   }
 
   &.lego {
-    @include transform(rotate(0));
+    transform: rotate(0);
     font-size: 2.9em;
     bottom: -8px;
     right: 40px;

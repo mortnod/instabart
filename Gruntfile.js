@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // Compile handlebars templates
     handlebars: {
       options: {
         namespace: 'Handlebars.templates',
@@ -18,6 +19,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Concatenate .js files
     concat: {
       dist: {
         src: [
@@ -35,6 +37,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minify .js files
     uglify: {
       build: {
         src: 'js/build/production.js',
@@ -42,14 +45,43 @@ module.exports = function(grunt) {
       }
     },
 
-    compass: {
+    // Compile .scss files
+    sass: {
       dist: {
         options: {
-          config: 'config.rb'
+          style: 'expanded'
+        },
+        files: {
+          'css/build/compiled/global.css': 'css/global.scss',
+          'css/build/compiled/ie.css': 'css/ie.scss'
         }
       }
     },
 
+    // Add vendor prefixes to the css
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version']
+      },
+      multiple_files: {
+        expand: true,
+        flatten: true,
+        src: 'css/build/compiled/*.css',
+        dest: 'css/build/prefixed/'
+      }
+    },
+
+    // Minify the compiled .css file
+    cssmin: {
+      combine: {
+        files: {
+          'css/build/minified/global.css': ['css/build/prefixed/global.css'],
+          'css/build/minified/ie.css': ['css/build/prefixed/ie.css'],
+        }
+      }
+    },
+
+    // Watch files for changes. If a file is changed, run the proper tasks
     watch: {
       options: {
         livereload: true,
@@ -64,7 +96,7 @@ module.exports = function(grunt) {
 
       css: {
         files: ['css/*.scss'],
-        tasks: ['compass'],
+        tasks: ['sass', 'autoprefixer', 'cssmin'],
         options: {
           spawn: false,
         }
@@ -79,6 +111,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Starts a server (necessary for some file paths to work properly)
     connect: {
       server: {
         options: {
@@ -94,12 +127,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['handlebars', 'concat', 'uglify', 'compass']);
+  grunt.registerTask('default', ['handlebars', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
   grunt.registerTask('dev', ['connect', 'watch']);
 
 };

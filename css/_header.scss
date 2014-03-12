@@ -20,12 +20,12 @@ header {
   margin-left: $margin;
 
   .svg & {
-    background: url(../../img/logo.svg) no-repeat top left;
+    background: url(../../../img/logo.svg) no-repeat top left;
     background-size: 88px 80px;
     @include breakpoint (ant) { background-size: 44px 40px; }
   }
   .no-svg & {
-    background: url(../../img/logo.png) no-repeat top left;
+    background: url(../../../img/logo.png) no-repeat top left;
     @include breakpoint (ant) { background-size: 44px 40px; }
 
   }
