@@ -1633,7 +1633,7 @@ var data = {
       title:'FileSender',
       pictogram:'filesender',
       css_id:'filesender',
-      link:'https://filesender.uninett.no/simplesaml/module.php/core/as_login.php?AuthId=default-  sp&ReturnTo=https://filesender.uninett.no/index.php?s=upload',
+      link:'https://idp.feide.no/simplesaml/module.php/feide/preselectOrg.php?HomeOrg=ntnu.no&ReturnTo=https%3A%2F%2Ffilesender.uninett.no%2Fsimplesaml%2Fmodule.php%2Fcore%2Fas_login.php%3FAuthId%3Ddefault-sp%26ReturnTo%3Dhttps%253A%252F%252Ffilesender.uninett.no%252Findex.php%253Fs%253Dupload ',
       description:'Trenger du å sende en diger fil til noen? Når mailbokser og minnepinner kneler, kommer  FileSender til unnsetning!'
     }, {
       title:'Karakterer',
