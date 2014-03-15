@@ -54,13 +54,7 @@ var Schedule = {
     Modal.hide('#schedule_settings');
 
     setTimeout(function() {
-      // @if ENV='web'
       document.location.href = $('#schedule a').prop('href');
-      // @endif
-
-      // @if ENV='phone'
-      window.open($('#schedule a').prop('href'), '_system');
-      // @endif
     }, 100);
   },
 

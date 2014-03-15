@@ -34,13 +34,7 @@ var Analytics = {
       // Small timeout to ensure that the event is tracked
       // before following the link
       setTimeout(function() {
-        // @if ENV='web'
         document.location.href = eventTrigger.prop('href');
-        // @endif
-
-        // @if ENV='phone'
-        window.open(eventTrigger.prop('href'), '_system');
-        // @endif
       }, 100);
 
     });

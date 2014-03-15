@@ -8,13 +8,40 @@ module.exports = function(grunt) {
       options: {
         namespace: 'Handlebars.templates',
         processName: function(filePath) {
-          return filePath.replace(/^templates\//, '').replace(/\.handlebars$/, '');
+          return filePath.replace(/^html\//, '').replace(/\.handlebars$/, '');
         }
       },
 
       all: {
         files: {
-          "js/templates.js": ["templates/*.handlebars"]
+          "js/templates.js": ["html/*.handlebars"]
+        }
+      }
+    },
+
+    // Replace code snippets based on environment
+    preprocess : {
+      phone : {
+        options : {
+          context : { ENV : 'phone' }
+        },
+        files : {
+          'index.html' : 'html/index.html',
+          'js/build/processed/analytics.js' : 'js/analytics.js',
+          'js/build/processed/global.js' : 'js/global.js',
+          'js/build/processed/schedule.js' : 'js/schedule.js',
+
+        }
+      },
+      web : {
+        options : {
+          context : { ENV : 'web' }
+        },
+        files : {
+          'index.html' : 'html/index.html',
+          'js/build/processed/analytics.js' : 'js/analytics.js',
+          'js/build/processed/global.js' : 'js/global.js',
+          'js/build/processed/schedule.js' : 'js/schedule.js',
         }
       }
     },
@@ -28,10 +55,10 @@ module.exports = function(grunt) {
           'js/card.js',
           'js/modal.js',
           'js/content.js',
-          'js/schedule.js',
-          'js/analytics.js',
+          'js/build/processed/schedule.js',
+          'js/build/processed/analytics.js',
           'js/header.js',
-          'js/global.js'
+          'js/build/processed/global.js'
         ],
         dest: 'js/build/production.js',
       }
@@ -88,7 +115,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['js/*.js'],
-        tasks: ['concat', 'uglify'],
+        tasks: ['preprocess:web', 'concat', 'uglify'],
         options: {
           spawn: false,
         },
@@ -132,9 +159,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-preprocess');
 
   // Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['handlebars', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('default', ['handlebars', 'preprocess:web', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('phone', ['handlebars', 'preprocess:phone', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
   grunt.registerTask('dev', ['connect', 'watch']);
+
 
 };
