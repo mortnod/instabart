@@ -1,6 +1,9 @@
 var Analytics = {
 
   init: function() {
+    // @if ENV='phone'
+      analytics.startTrackerWithId('UA-52384192-1');
+    // @endif
     this.createEventTrackers();
     this.createScheduleEventTrackers();
   },
@@ -9,7 +12,13 @@ var Analytics = {
   normalEvent: function(category, action, selector) {
     $(selector).click(function(){
       try {
+        // @if ENV='web'
         _gaq.push(['_trackEvent', category, action]);
+        // @endif
+
+        // @if ENV='phone'
+        analytics.trackEvent(['_trackEvent', category, action]);
+        // @endif
       } catch(err){}
     });
   },
@@ -21,7 +30,13 @@ var Analytics = {
     eventTrigger.click(function(e){
       // Send tracking information to Google Analytics
       try {
+        // @if ENV='web'
         _gaq.push(['_trackEvent', category, action]);
+        // @endif
+
+        // @if ENV='phone'
+        analytics.trackEvent(['_trackEvent', category, action]);
+        // @endif
       } catch(err){}
 
       // If CTRL or CMD is pressed (to open the link in a new tab),
@@ -106,12 +121,11 @@ var Analytics = {
 
     $('#schedule-yes-button').click(function(){
       if (Schedule.inputValid()) {
-        try {
-          _gaq.push(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
-        } catch(err){}
+        this.normalEvent(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
       }
     });
 
+    // TODO: NO CLICK EVENT? IS THIS A BUG?!
     this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
 
     if (Schedule.firstTimeSetupCompleted()){

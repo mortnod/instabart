@@ -1896,12 +1896,11 @@ var Analytics = {
 
     $('#schedule-yes-button').click(function(){
       if (Schedule.inputValid()) {
-        try {
-          _gaq.push(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
-        } catch(err){}
+        this.normalEvent(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
       }
     });
 
+    // TODO: NO CLICK EVENT? IS THIS A BUG?!
     this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
 
     if (Schedule.firstTimeSetupCompleted()){
