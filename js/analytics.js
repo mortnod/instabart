@@ -11,15 +11,15 @@ var Analytics = {
   // Sends data to Analytics
   normalEvent: function(category, action, selector) {
     $(selector).click(function(){
+      // @if ENV='web'
       try {
-        // @if ENV='web'
         _gaq.push(['_trackEvent', category, action]);
-        // @endif
-
-        // @if ENV='phone'
-        analytics.trackEvent(['_trackEvent', category, action]);
-        // @endif
       } catch(err){}
+      // @endif
+
+      // @if ENV='phone'
+      analytics.trackEvent(category, action);
+      // @endif
     });
   },
 
@@ -29,15 +29,15 @@ var Analytics = {
 
     eventTrigger.click(function(e){
       // Send tracking information to Google Analytics
+      // @if ENV='web'
       try {
-        // @if ENV='web'
         _gaq.push(['_trackEvent', category, action]);
-        // @endif
-
-        // @if ENV='phone'
-        analytics.trackEvent(['_trackEvent', category, action]);
-        // @endif
       } catch(err){}
+      // @endif
+
+      // @if ENV='phone'
+      analytics.trackEvent(category, action);
+      // @endif
 
       // If CTRL or CMD is pressed (to open the link in a new tab),
       // proceed using the browsers default action

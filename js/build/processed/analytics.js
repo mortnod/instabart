@@ -23,7 +23,6 @@ var Analytics = {
       try {
         _gaq.push(['_trackEvent', category, action]);
       } catch(err){}
-
       // If CTRL or CMD is pressed (to open the link in a new tab),
       // proceed using the browsers default action
       if (e.metaKey || e.ctrlKey) { return; }
