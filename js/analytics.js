@@ -2,25 +2,36 @@ var Analytics = {
 
   init: function() {
     // @if ENV='phone'
-      analytics.startTrackerWithId('UA-52384192-1');
+    navigator.analytics.setTrackingId('UA-52384192-1');
+    this.trackAppActivation();
     // @endif
     this.createEventTrackers();
     this.createScheduleEventTrackers();
   },
 
-  // Sends data to Analytics
-  normalEvent: function(category, action, selector) {
-    $(selector).click(function(){
-      // @if ENV='web'
-      try {
-        _gaq.push(['_trackEvent', category, action]);
-      } catch(err){}
-      // @endif
+  // Helper method to normalEvent() and outBoundEvent()
+  sendEvent: function(category, action) {
+    // @if ENV='web'
+    try {
+      _gaq.push(['_trackEvent', category, action]);
+    } catch(err){}
+    // @endif
 
-      // @if ENV='phone'
-      analytics.trackEvent(category, action);
-      // @endif
-    });
+    // @if ENV='phone'
+    navigator.analytics.sendEvent(category, action);
+    // @endif
+  },
+
+  // Sends data to Analytics. The 'selector' parameter is optional
+  normalEvent: function(category, action, selector) {
+    if (selector === undefined) {
+      Analytics.sendEvent(category, action);
+    }
+    else {
+      $(selector).click(function(){
+        Analytics.sendEvent(category, action);
+      });
+    }
   },
 
   // Sends data to Analytics and redirects (after a slight delay)
@@ -29,15 +40,7 @@ var Analytics = {
 
     eventTrigger.click(function(e){
       // Send tracking information to Google Analytics
-      // @if ENV='web'
-      try {
-        _gaq.push(['_trackEvent', category, action]);
-      } catch(err){}
-      // @endif
-
-      // @if ENV='phone'
-      analytics.trackEvent(category, action);
-      // @endif
+      Analytics.sendEvent(category, action);
 
       // If CTRL or CMD is pressed (to open the link in a new tab),
       // proceed using the browsers default action
@@ -118,14 +121,12 @@ var Analytics = {
       this.outboundEvent('Main Links', 'Schedule', '#schedule .track-main');
     }
 
-
     $('#schedule-yes-button').click(function(){
       if (Schedule.inputValid()) {
-        this.normalEvent(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
+        this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
       }
     });
 
-    // TODO: NO CLICK EVENT? IS THIS A BUG?!
     this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
 
     if (Schedule.firstTimeSetupCompleted()){
@@ -133,6 +134,13 @@ var Analytics = {
     }
     else {
       this.normalEvent('Schedule Settings', 'Show Settings (first time)', '#schedule-settings-button');
+    }
+  },
+
+  trackAppActivation: function() {
+    if (Schedule.supportsLocalStorage() && localStorage['app_activated'] === undefined){
+      this.normalEvent('Activations', device.platform);
+      localStorage['app_activated'] = 'true';
     }
   }
 };

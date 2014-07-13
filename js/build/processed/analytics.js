@@ -5,13 +5,23 @@ var Analytics = {
     this.createScheduleEventTrackers();
   },
 
-  // Sends data to Analytics
+  // Helper method to normalEvent() and outBoundEvent()
+  sendEvent: function(category, action) {
+    try {
+      _gaq.push(['_trackEvent', category, action]);
+    } catch(err){}
+  },
+
+  // Sends data to Analytics. The 'selector' parameter is optional
   normalEvent: function(category, action, selector) {
-    $(selector).click(function(){
-      try {
-        _gaq.push(['_trackEvent', category, action]);
-      } catch(err){}
-    });
+    if (selector === undefined) {
+      Analytics.sendEvent(category, action);
+    }
+    else {
+      $(selector).click(function(){
+        Analytics.sendEvent(category, action);
+      });
+    }
   },
 
   // Sends data to Analytics and redirects (after a slight delay)
@@ -20,9 +30,8 @@ var Analytics = {
 
     eventTrigger.click(function(e){
       // Send tracking information to Google Analytics
-      try {
-        _gaq.push(['_trackEvent', category, action]);
-      } catch(err){}
+      Analytics.sendEvent(category, action);
+
       // If CTRL or CMD is pressed (to open the link in a new tab),
       // proceed using the browsers default action
       if (e.metaKey || e.ctrlKey) { return; }
@@ -96,14 +105,12 @@ var Analytics = {
       this.outboundEvent('Main Links', 'Schedule', '#schedule .track-main');
     }
 
-
     $('#schedule-yes-button').click(function(){
       if (Schedule.inputValid()) {
-        this.normalEvent(['_trackEvent', 'Schedule Settings', 'Yes (remember schedule)']);
+        this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
       }
     });
 
-    // TODO: NO CLICK EVENT? IS THIS A BUG?!
     this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
 
     if (Schedule.firstTimeSetupCompleted()){
@@ -111,6 +118,13 @@ var Analytics = {
     }
     else {
       this.normalEvent('Schedule Settings', 'Show Settings (first time)', '#schedule-settings-button');
+    }
+  },
+
+  trackAppActivation: function() {
+    if (Schedule.supportsLocalStorage() && localStorage['app_activated'] === undefined){
+      this.normalEvent('Activations', device.platform);
+      localStorage['app_activated'] = 'true';
     }
   }
 };
