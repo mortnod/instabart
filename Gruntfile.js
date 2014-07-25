@@ -50,7 +50,9 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/libs/*.js',
+          'js/libs/handlebars.runtime-v1.3.0.js',
+          'js/libs/jquery.leanModal.min.js',
+          'js/libs/modernizr.js',
           'js/templates.js',
           'js/card.js',
           'js/modal.js',
@@ -61,6 +63,16 @@ module.exports = function(grunt) {
           'js/build/processed/global.js'
         ],
         dest: 'js/build/production.js',
+      }
+    },
+
+    copy: {
+      js: {
+        expand: true,
+        filter: 'isFile',
+        cwd: 'js/libs',
+        src: ['jquery-2.1.0.min.js'],
+        dest: 'js/build'
       }
     },
 
@@ -160,10 +172,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-preprocess');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['handlebars', 'preprocess:web', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('phone', ['handlebars', 'preprocess:phone', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('default', ['handlebars', 'preprocess:web', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin', 'copy:js']);
+  grunt.registerTask('phone', ['handlebars', 'preprocess:phone', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin', 'copy:js']);
   grunt.registerTask('dev', ['connect', 'watch']);
 
 
