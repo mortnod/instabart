@@ -619,7 +619,7 @@ i {
 
 #schedule-settings-button {
   position: absolute;
-  bottom: 10px;
+  bottom: 9px;
   left: 10px;
   font-size: 1.5em;
   cursor: pointer;
@@ -964,6 +964,11 @@ footer, .push {
     right: 7px;
   }
 
+  #schedule-settings-button {
+    bottom: 6px;
+    left: 7px;
+  }
+
   .pictogram {
     font-size: 5em;
   }
@@ -998,6 +1003,11 @@ footer, .push {
     right: 4px;
   }
 
+  #schedule-settings-button {
+    bottom: 3px;
+    left: 4px;
+  }
+
   .pictogram {
     font-size: 4em;
   }
@@ -1020,6 +1030,11 @@ footer, .push {
   .flip-button {
     bottom: 7px;
     right: 7px;
+  }
+
+  #schedule-settings-button {
+    bottom: 6px;
+    left: 7px;
   }
 
   .pictogram {
@@ -1054,6 +1069,11 @@ footer, .push {
   .flip-button {
     bottom: 4px;
     right: 4px;
+  }
+
+  #schedule-settings-button {
+    bottom: 3px;
+    left: 4px;
   }
 
   .pictogram {
