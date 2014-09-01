@@ -141,6 +141,14 @@ module.exports = function(grunt) {
         }
       },
 
+      html: {
+        files: ['html/*.html'],
+        tasks: ['preprocess:web'],
+        options: {
+          spawn: false,
+        }
+      },
+
       handlebars: {
         files: ['templates/*.handlebars'],
         tasks: ['handlebars', 'concat', 'uglify'],

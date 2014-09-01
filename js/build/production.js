@@ -1875,6 +1875,7 @@ var Analytics = {
     this.outboundEvent('Modal', 'Follow on Twitter', '#track-twitter');
     this.outboundEvent('Modal', 'Fork on Github', '#track-github');
     this.outboundEvent('Modal', 'Online Notifier', '#notifier');
+    this.outboundEvent('Modal', 'iBok', '#track-ibok');
     this.outboundEvent('Modal', 'FileSender', '#track-filesender');
     this.outboundEvent('Modal', 'Grade Statistics', '#track-grades');
     this.outboundEvent('Modal', 'IT Help', '#track-ithelp');

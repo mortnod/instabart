@@ -573,6 +573,14 @@ i {
   content: "\e602";
 }
 
+.ibok:after {
+  content: "\e604";
+}
+
+.floppy:after {
+  content: "\e007";
+}
+
 .email {
   padding-top: 4px;
 }
@@ -591,6 +599,16 @@ i {
 
 .romres {
   padding-top: 9px;
+}
+
+.well .filesender {
+  font-size: 2.5em;
+}
+.well .grades {
+  font-size: 2.7em;
+}
+.well .floppy {
+  font-size: 3.2em;
 }
 
 .flip-button {
@@ -1204,11 +1222,22 @@ footer, .push {
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
 }
+.well i {
+  width: 50px;
+  height: 50px;
+  margin: 4px 10px 0 0;
+  opacity: 0.6;
+  font-size: 3em;
+  float: left;
+}
 .well:hover {
   background-color: #eee;
 }
 .well:hover .img:after {
   opacity: 1;
+}
+.well:hover i {
+  opacity: .9;
 }
 
 .protip i {

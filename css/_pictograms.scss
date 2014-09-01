@@ -51,12 +51,20 @@ i {
 .film:after          { content:"\e603"; }
 .training:after      { content:"\e601"; font-size: 0.85em; }
 .bartebuss:after     { content:"\e602"; }
+.ibok:after          { content:"\e604"; }
+.floppy:after        { content:"\e007"; }
 
 .email         { padding-top: 4px; }
 .studweb       { padding-top: 9px; }
 .dinner        { padding-left: 10px; }
 .map           { padding-top: 9px; }
 .romres        { padding-top: 9px; }
+
+.well {
+  .filesender { font-size: 2.5em; }
+  .grades     { font-size: 2.7em; }
+  .floppy     { font-size: 3.2em; }
+}
 
 .flip-button {
   position: absolute;
