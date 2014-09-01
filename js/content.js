@@ -41,13 +41,13 @@ var data = {
       pictogram:'bartebuss',
       css_id:'bartebuss',
       link:'http://bartebuss.no',
-      description:''
+      description:'Bartebuss er den beste måten å finne ut når bussene går, og hvor forsinka de er. De har også fine bart! Eh, kart!'
     }, {
       title:'Trening',
       pictogram:'training',
       css_id:'training',
       link:'https://www.sit.no/trening/gruppe',
-      description:''
+      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner kl 21:00 to dager før timene. Akkurat nok tid til å gro en tredagersstubb'
     }, {
       title:'Romres',
       pictogram:'romres',
@@ -59,7 +59,7 @@ var data = {
       pictogram:'software',
       css_id:'software',
       link:'https://software.ntnu.no',
-      description:'Hvordan koble telefonen automatisk til eduroam? Hvordan bruke printerne på campus? NTNUs IT-hjelp løser dine problemer!'
+      description:'Mange programmer er gratis tilgjengelig for NTNU-studenter. Trenger du Matlab, for eksempel? Endnote? Clue?'
     }, {
       title:'Farm',
       pictogram:'farm',
@@ -71,7 +71,7 @@ var data = {
       pictogram:'film',
       css_id:'film',
       link:'https://video.adm.ntnu.no/',
-      description:''
+      description:'NTNU filmer en del forelesninger. Hør med <a href="www.ntnu.no/mms">Multimediesenteret</a> (og foreleser) om filming av dine favorittforelesninger!'
     }
   ],
 
