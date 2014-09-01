@@ -37,17 +37,17 @@ var data = {
       link:'http://use.mazemap.com/',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei! <br>(…på Gløshaugen / St. Olav)'
     }, {
-      title:'FileSender',
-      pictogram:'filesender',
-      css_id:'filesender',
-      link:'https://idp.feide.no/simplesaml/module.php/feide/preselectOrg.php?HomeOrg=ntnu.no&ReturnTo=https%3A%2F%2Ffilesender.uninett.no%2Fsimplesaml%2Fmodule.php%2Fcore%2Fas_login.php%3FAuthId%3Ddefault-sp%26ReturnTo%3Dhttps%253A%252F%252Ffilesender.uninett.no%252Findex.php%253Fs%253Dupload ',
-      description:'Trenger du å sende en diger fil til noen? Når mailbokser og minnepinner kneler, kommer  FileSender til unnsetning!'
+      title:'Bartebuss',
+      pictogram:'bartebuss',
+      css_id:'bartebuss',
+      link:'http://bartebuss.no',
+      description:''
     }, {
-      title:'Karakterer',
-      pictogram:'grades',
-      css_id:'grades',
-      link:'https://innsida.ntnu.no/sso/?target=KarstatProd',
-      description:'Karakterstatistikk for flere år bakover. Hvilke av emnene du tar i år er typiske stryk- emner?'
+      title:'Trening',
+      pictogram:'training',
+      css_id:'training',
+      link:'https://www.sit.no/trening/gruppe',
+      description:''
     }, {
       title:'Romres',
       pictogram:'romres',
@@ -55,10 +55,10 @@ var data = {
       link:'https://romres.ntnu.no/',
       description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="http://www.ntnu.no/studieinformasjon/rom/" id="track-romres-extra">her</a>.'
     }, {
-      title:'IT-hjelp',
-      pictogram:'it-help',
-      css_id:'it-hjelp',
-      link:'https://innsida.ntnu.no/it-hjelp',
+      title:'Programvare',
+      pictogram:'software',
+      css_id:'software',
+      link:'https://software.ntnu.no',
       description:'Hvordan koble telefonen automatisk til eduroam? Hvordan bruke printerne på campus? NTNUs IT-hjelp løser dine problemer!'
     }, {
       title:'Farm',
@@ -67,11 +67,11 @@ var data = {
       link:'https://farm.ntnu.no/',
       description:'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm" id="track-farm-extra">her</a>.'
     }, {
-      title:'Grupper',
-      pictogram:'kundesenteret',
-      css_id:'kundesenteret',
-      link:'https://innsida.ntnu.no/sso/?target=studdrift_groups',
-      description:'Lag dine egne epostlister, og opprett grupper for dine NTNU-prosjekter, der du kan dele filer med andre.'
+      title:'Forelesninger',
+      pictogram:'film',
+      css_id:'film',
+      link:'https://video.adm.ntnu.no/',
+      description:''
     }
   ],
 

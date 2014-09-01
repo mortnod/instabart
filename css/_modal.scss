@@ -184,8 +184,8 @@
 }
 
 // Other sites (modal section)
-.bartebuss       { background: url(../../../img/bartebuss-sprite-1x.png); }
-.bartebuss:after { background: url(../../../img/bartebuss-sprite-1x.png) 0 50px; }
+// .bartebuss       { background: url(../../../img/bartebuss-sprite-1x.png); }
+// .bartebuss:after { background: url(../../../img/bartebuss-sprite-1x.png) 0 50px; }
 
 .notifier       { background: url(../../../img/notifier-sprite-1x.png); }
 .notifier:after { background: url(../../../img/notifier-sprite-1x.png) 0 50px; }
@@ -194,13 +194,13 @@
 @media
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
-  .bartebuss       { background: url(../../../img/bartebuss-sprite-2x.png); }
-  .bartebuss:after { background: url(../../../img/bartebuss-sprite-2x.png) 0 50px; }
+  // .bartebuss       { background: url(../../../img/bartebuss-sprite-2x.png); }
+  // .bartebuss:after { background: url(../../../img/bartebuss-sprite-2x.png) 0 50px; }
 
   .notifier       { background: url(../../../img/notifier-sprite-2x.png); }
   .notifier:after { background: url(../../../img/notifier-sprite-2x.png) 0 50px; }
 
-  .bartebuss, .bartebuss:after,
+  // .bartebuss, .bartebuss:after,
   .notifier, .notifier:after {
     background-size: 50px 100px;
   }
