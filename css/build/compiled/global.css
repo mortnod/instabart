@@ -418,6 +418,11 @@ h2 {
   font-weight: 700;
 }
 
+#film h2,
+#software h2 {
+  letter-spacing: -1px;
+}
+
 footer {
   font-size: 0.8em;
   color: #999;
@@ -1024,6 +1029,8 @@ footer, .push {
 
   .pictogram {
     font-size: 4em;
+    position: relative;
+    top: -3px;
   }
 }
 @media (max-width: 480px) {
@@ -1092,6 +1099,8 @@ footer, .push {
 
   .pictogram {
     font-size: 4em;
+    position: relative;
+    top: -3px;
   }
 }
 .modal {
