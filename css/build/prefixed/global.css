@@ -1337,6 +1337,45 @@ footer, .push {
   color: #777;
 }
 
+.alert {
+  min-height: 30px;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+  margin-bottom: 1em;
+  padding: 10px 40px 10px 65px;
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(49, 112, 143, 0.7);
+  position: relative;
+}
+.alert .alert-icon-container {
+  background-color: #354f5d;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 64px;
+  height: 100%;
+  overflow: hidden;
+}
+.alert .alert-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  margin: auto;
+  width: 45px;
+  height: 45px;
+}
+.alert .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #31708f;
+  text-shadow: none;
+  font-size: 1.5em;
+}
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
