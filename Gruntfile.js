@@ -30,7 +30,6 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js' : 'js/analytics.js',
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
-
         }
       },
       web : {
@@ -60,6 +59,7 @@ module.exports = function(grunt) {
           'js/build/processed/schedule.js',
           'js/build/processed/analytics.js',
           'js/header.js',
+          'js/alerts.js',
           'js/build/processed/global.js'
         ],
         dest: 'js/build/production.js',

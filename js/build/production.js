@@ -1951,12 +1951,28 @@ var Header = {
     $('#about-button').leanModal({ top : 0, overlay: 0.7, closeButton: ".modal_close" });
   }
 };
+Alerts = {
+
+  init: function() {
+    Alerts.bindUIActions();
+  },
+
+  bindUIActions: function() {
+    $('.alert .close').click(function(){
+      $('.alert').fadeOut(function() {
+        $('#grid').removeClass('alert-padding');
+      });
+
+    });
+  }
+};
 (function() {
   function init() {
     Card.init();
     Schedule.init();
     Header.init();
     Analytics.init();
+    Alerts.init();
   }
 
   init();
