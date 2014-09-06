@@ -5,6 +5,7 @@
   background-color: #d9edf7;
   color: #31708f;
   position: relative; // Needed for absolute positioning of its content
+  display: none; // Hidden by default
 
   .alert-icon {
     position: absolute;
