@@ -112,6 +112,8 @@ var Analytics = {
     this.outboundEvent('Modal', 'Visual Basic (built with)', '#track-vb');
 
     this.outboundEvent('Other Links', 'mvn.no', '#track-mvn');
+    this.outboundEvent('Other Links', 'Download app (Android)', '#track-android');
+    this.outboundEvent('Other Links', 'Download app (iOS)', '#track-ios');
     this.outboundEvent('Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm', '#track-farm-extra');
     this.outboundEvent('Other Links', 'http://www.ntnu.no/studieinformasjon/rom/', '#track-romres-extra');
     this.outboundEvent('Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+andre+kontoer', '#track-email-extra');

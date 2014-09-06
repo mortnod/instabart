@@ -30,6 +30,7 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js' : 'js/analytics.js',
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
+          'js/build/processed/content.js' : 'js/content.js',
         }
       },
       web : {
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js' : 'js/analytics.js',
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
+          'js/build/processed/content.js' : 'js/content.js',
         }
       }
     },
@@ -55,7 +57,7 @@ module.exports = function(grunt) {
           'js/templates.js',
           'js/card.js',
           'js/modal.js',
-          'js/content.js',
+          'js/build/processed/content.js',
           'js/build/processed/schedule.js',
           'js/build/processed/analytics.js',
           'js/header.js',

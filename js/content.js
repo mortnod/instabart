@@ -76,6 +76,11 @@ var data = {
   ],
 
   taglines: [
+    // @if ENV='web'
+    {
+      tagline: 'Har du mobil? Er den smart? Last ned appen til <a href="https://itunes.apple.com/no/app/instabart/id903592925?mt=8" id="track-ios">iOS</a> og <a href="https://play.google.com/store/apps/details?id=com.mvn.instabart" id="track-android">Android</a>!'
+    },
+    // @endif
     {
       tagline: "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>."
     }, {
@@ -88,8 +93,6 @@ var data = {
       tagline: "La barten bane vei i NTNUs frodige IT-jungel!"
     }, {
       tagline: "NTNUs IT-tjenester? Gotta know 'em all!"
-    }//, {
-    //   tagline: "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
-    // }
+    }
   ]
 };
