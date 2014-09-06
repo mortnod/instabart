@@ -1,11 +1,11 @@
 html, body {
-  height: 100%; /* This is needed for the sticky footer to work properly */ 
+  height: 100%; /* This is needed for the sticky footer to work properly */
 }
 
 #pagewrap {
   min-height: 100%;
   margin: 0 auto -2em; /* NB! Has to be the same (only negative) as the footers height */
-} 
+}
 
 #headerwrap {
   @include breakpoint(cat) { max-width: 6 * $cubesize + $margin;}
@@ -22,7 +22,7 @@ footer, .push {
 
 // Grid
 #grid {
-  @include breakpoint(cat) { width: 6 * $cubesize + $margin; padding: 60px 0em 0 10px;}
+  @include breakpoint(cat) { width: 6 * $cubesize + $margin; padding: 60px 0 0 10px;}
   @include breakpoint(rat) { width: 4 * $cubesize + $margin; padding: 20px 0 0 10px;}
   @include breakpoint(bat) { width: 3 * $cubesize + $margin; padding: 10px 0 0 10px;}
   @include breakpoint(ant) { width: 100%; padding: 10px 0 0 10px; }

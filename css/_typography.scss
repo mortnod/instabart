@@ -11,11 +11,16 @@ h2 {
   font-size: 1.9em;
 }
 
+a {
+  color: rgb(170, 16, 16);
+  text-decoration: none;
+}
+
 .front {
   h2 {
-  color: rgba(black, 0.8);
-  text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
-  opacity: 0.5;
+    color: rgba(black, 0.8);
+    text-shadow: 1px 4px 6px $lightgrey, 0 0 0 black, 1px 4px 6px $lightgrey;
+    opacity: 0.5;
   }
 
   &:hover h2 {
@@ -41,6 +46,11 @@ h2 {
     text-decoration: none;
     font-weight: 700;
   }
+}
+
+#film h2,
+#software h2 {
+  letter-spacing: -1px;
 }
 
 // Footer

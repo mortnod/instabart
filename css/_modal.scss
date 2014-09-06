@@ -61,11 +61,6 @@
       margin-left: 20px;
     }
 
-    a {
-      text-decoration: none;
-      color: rgb(170, 16, 16);
-    }
-
     p {
       margin-bottom: 10px;
 
@@ -147,12 +142,25 @@
     }
   }
 
+  i {
+    width: 50px;
+    height: 50px;
+    margin: 4px 10px 0 0;
+    opacity: 0.6;
+    font-size: 3em;
+    float: left;
+  }
+
   &:hover {
     background-color: #eee;
 
     // Add a hover effect to the wells (color version of the images)
     .img:after {
       opacity: 1;
+    }
+
+    i {
+      opacity: .9;
     }
   }
 }
@@ -184,8 +192,8 @@
 }
 
 // Other sites (modal section)
-.bartebuss       { background: url(../../../img/bartebuss-sprite-1x.png); }
-.bartebuss:after { background: url(../../../img/bartebuss-sprite-1x.png) 0 50px; }
+// .bartebuss       { background: url(../../../img/bartebuss-sprite-1x.png); }
+// .bartebuss:after { background: url(../../../img/bartebuss-sprite-1x.png) 0 50px; }
 
 .notifier       { background: url(../../../img/notifier-sprite-1x.png); }
 .notifier:after { background: url(../../../img/notifier-sprite-1x.png) 0 50px; }
@@ -194,13 +202,13 @@
 @media
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
-  .bartebuss       { background: url(../../../img/bartebuss-sprite-2x.png); }
-  .bartebuss:after { background: url(../../../img/bartebuss-sprite-2x.png) 0 50px; }
+  // .bartebuss       { background: url(../../../img/bartebuss-sprite-2x.png); }
+  // .bartebuss:after { background: url(../../../img/bartebuss-sprite-2x.png) 0 50px; }
 
   .notifier       { background: url(../../../img/notifier-sprite-2x.png); }
   .notifier:after { background: url(../../../img/notifier-sprite-2x.png) 0 50px; }
 
-  .bartebuss, .bartebuss:after,
+  // .bartebuss, .bartebuss:after,
   .notifier, .notifier:after {
     background-size: 50px 100px;
   }

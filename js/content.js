@@ -37,17 +37,17 @@ var data = {
       link:'http://use.mazemap.com/',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei! <br>(…på Gløshaugen / St. Olav)'
     }, {
-      title:'FileSender',
-      pictogram:'filesender',
-      css_id:'filesender',
-      link:'https://idp.feide.no/simplesaml/module.php/feide/preselectOrg.php?HomeOrg=ntnu.no&ReturnTo=https%3A%2F%2Ffilesender.uninett.no%2Fsimplesaml%2Fmodule.php%2Fcore%2Fas_login.php%3FAuthId%3Ddefault-sp%26ReturnTo%3Dhttps%253A%252F%252Ffilesender.uninett.no%252Findex.php%253Fs%253Dupload ',
-      description:'Trenger du å sende en diger fil til noen? Når mailbokser og minnepinner kneler, kommer  FileSender til unnsetning!'
+      title:'Bartebuss',
+      pictogram:'bartebuss',
+      css_id:'bartebuss',
+      link:'http://bartebuss.no',
+      description:'Bartebuss er den beste måten å finne ut når bussene går, og hvor forsinka de er. De har også fine bart! Eh, kart!'
     }, {
-      title:'Karakterer',
-      pictogram:'grades',
-      css_id:'grades',
-      link:'https://innsida.ntnu.no/sso/?target=KarstatProd',
-      description:'Karakterstatistikk for flere år bakover. Hvilke av emnene du tar i år er typiske stryk- emner?'
+      title:'Trening',
+      pictogram:'training',
+      css_id:'training',
+      link:'https://www.sit.no/trening/gruppe',
+      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner kl 21:00 to dager før timene. Akkurat nok tid til å gro en tredagersstubb'
     }, {
       title:'Romres',
       pictogram:'romres',
@@ -55,11 +55,11 @@ var data = {
       link:'https://romres.ntnu.no/',
       description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="http://www.ntnu.no/studieinformasjon/rom/" id="track-romres-extra">her</a>.'
     }, {
-      title:'IT-hjelp',
-      pictogram:'it-help',
-      css_id:'it-hjelp',
-      link:'https://innsida.ntnu.no/it-hjelp',
-      description:'Hvordan koble telefonen automatisk til eduroam? Hvordan bruke printerne på campus? NTNUs IT-hjelp løser dine problemer!'
+      title:'Programvare',
+      pictogram:'software',
+      css_id:'software',
+      link:'https://software.ntnu.no',
+      description:'Mange programmer er gratis tilgjengelig for NTNU-studenter. Trenger du Matlab, for eksempel? Endnote? Clue?'
     }, {
       title:'Farm',
       pictogram:'farm',
@@ -67,15 +67,20 @@ var data = {
       link:'https://farm.ntnu.no/',
       description:'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm" id="track-farm-extra">her</a>.'
     }, {
-      title:'Grupper',
-      pictogram:'kundesenteret',
-      css_id:'kundesenteret',
-      link:'https://innsida.ntnu.no/sso/?target=studdrift_groups',
-      description:'Lag dine egne epostlister, og opprett grupper for dine NTNU-prosjekter, der du kan dele filer med andre.'
+      title:'Forelesninger',
+      pictogram:'film',
+      css_id:'film',
+      link:'https://video.adm.ntnu.no/',
+      description:'NTNU filmer en del forelesninger. Hør med <a href="www.ntnu.no/mms">Multimediesenteret</a> (og foreleser) om filming av dine favorittforelesninger!'
     }
   ],
 
   taglines: [
+    // @if ENV='web'
+    {
+      tagline: 'Har du mobil? Er den smart? Last ned appen til <a href="https://itunes.apple.com/no/app/instabart/id903592925?mt=8" id="track-ios">iOS</a> og <a href="https://play.google.com/store/apps/details?id=com.mvn.instabart" id="track-android">Android</a>!'
+    },
+    // @endif
     {
       tagline: "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>."
     }, {
@@ -88,8 +93,6 @@ var data = {
       tagline: "La barten bane vei i NTNUs frodige IT-jungel!"
     }, {
       tagline: "NTNUs IT-tjenester? Gotta know 'em all!"
-    }//, {
-    //   tagline: "Forskning viser at NTNU-studenter flest bare vet om halvbarten av disse tjenestene"
-    // }
+    }
   ]
 };

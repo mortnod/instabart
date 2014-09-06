@@ -81,14 +81,15 @@ var Schedule = {
 
     // When 'no' button is clicked, forget schedule name and redirect
     $('#schedule-no-button').click(function(){
+      Analytics.trackScheduleAnswerNo();
       Schedule.saveAndRedirect('');
-
     });
 
     // When 'yes' button is clicked, either save the
-    // schedule name and directed or display an error
+    // schedule name and redirect or display an error
     $('#schedule-yes-button').click(function(){
       if (Schedule.inputValid()){
+        Analytics.trackScheduleAnswerYes();
         var scheduleName = $('#schedule_name').val();
         Schedule.saveAndRedirect(scheduleName);
       }
@@ -102,6 +103,7 @@ var Schedule = {
       if (e.which == 13) {
         e.preventDefault();
         if (Schedule.inputValid()){
+          Analytics.trackScheduleAnswerYes();
           var scheduleName = $('#schedule_name').val();
           Schedule.saveAndRedirect(scheduleName);
         }

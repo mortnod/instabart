@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js' : 'js/analytics.js',
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
-
+          'js/build/processed/content.js' : 'js/content.js',
         }
       },
       web : {
@@ -42,6 +42,7 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js' : 'js/analytics.js',
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
+          'js/build/processed/content.js' : 'js/content.js',
         }
       }
     },
@@ -56,10 +57,11 @@ module.exports = function(grunt) {
           'js/templates.js',
           'js/card.js',
           'js/modal.js',
-          'js/content.js',
+          'js/build/processed/content.js',
           'js/build/processed/schedule.js',
           'js/build/processed/analytics.js',
           'js/header.js',
+          'js/alerts.js',
           'js/build/processed/global.js'
         ],
         dest: 'js/build/production.js',
@@ -136,6 +138,14 @@ module.exports = function(grunt) {
       css: {
         files: ['css/*.scss'],
         tasks: ['sass', 'autoprefixer', 'cssmin'],
+        options: {
+          spawn: false,
+        }
+      },
+
+      html: {
+        files: ['html/*.html'],
+        tasks: ['preprocess:web'],
         options: {
           spawn: false,
         }

@@ -70,12 +70,12 @@ var Analytics = {
     this.outboundEvent('Main Links', 'StudentWeb', '#studweb .track-main');
     this.outboundEvent('Main Links', 'SIT Dinner', '#dinner .track-main');
     this.outboundEvent('Main Links', 'Campus Map', '#map .track-main');
-    this.outboundEvent('Main Links', 'FileSender', '#filesender .track-main');
-    this.outboundEvent('Main Links', 'Grade Statistics', '#grades .track-main');
+    this.outboundEvent('Main Links', 'Bartebuss', '#bartebuss .track-main');
+    this.outboundEvent('Main Links', 'Training', '#training .track-main');
     this.outboundEvent('Main Links', 'Room Reservation', '#romres .track-main');
-    this.outboundEvent('Main Links', 'IT Help', '#it-hjelp .track-main');
+    this.outboundEvent('Main Links', 'Software Download', '#software .track-main');
     this.outboundEvent('Main Links', 'Software Farm', '#farm .track-main');
-    this.outboundEvent('Main Links', 'Kundesenteret', '#kundesenteret .track-main');
+    this.outboundEvent('Main Links', 'Video Lectures', '#film .track-main');
 
     this.normalEvent('Card Flips', 'Itslearning', '#itslearning .flip-open');
     this.normalEvent('Card Flips', 'Email', '#email .flip-open');
@@ -83,19 +83,23 @@ var Analytics = {
     this.normalEvent('Card Flips', 'StudentWeb', '#studweb .flip-open');
     this.normalEvent('Card Flips', 'SIT Dinner', '#dinner .flip-open');
     this.normalEvent('Card Flips', 'Campus Map', '#map .flip-open');
-    this.normalEvent('Card Flips', 'FileSender', '#filesender .flip-open');
-    this.normalEvent('Card Flips', 'Grade Statistics', '#grades .flip-open');
+    this.normalEvent('Card Flips', 'Bartebuss', '#bartebuss .flip-open');
+    this.normalEvent('Card Flips', 'Training', '#training .flip-open');
     this.normalEvent('Card Flips', 'Room Reservation', '#romres .flip-open');
-    this.normalEvent('Card Flips', 'IT Help', '#it-hjelp .flip-open');
+    this.normalEvent('Card Flips', 'Software Download', '#software .flip-open');
     this.normalEvent('Card Flips', 'Software Farm', '#farm .flip-open');
-    this.normalEvent('Card Flips', 'Kundesenteret', '#kundesenteret .flip-open');
+    this.normalEvent('Card Flips', 'Video Lectures', '#film .flip-open');
 
     this.normalEvent('Modal', 'Show Modal', '#about-button');
     this.outboundEvent('Modal', 'Send Email to Instabart', '#track-email');
     this.outboundEvent('Modal', 'Follow on Twitter', '#track-twitter');
     this.outboundEvent('Modal', 'Fork on Github', '#track-github');
     this.outboundEvent('Modal', 'Online Notifier', '#notifier');
-    this.outboundEvent('Modal', 'Bartebuss', '#bartebuss');
+    this.outboundEvent('Modal', 'iBok', '#track-ibok');
+    this.outboundEvent('Modal', 'FileSender', '#track-filesender');
+    this.outboundEvent('Modal', 'Grade Statistics', '#track-grades');
+    this.outboundEvent('Modal', 'IT Help', '#track-ithelp');
+    this.outboundEvent('Modal', 'Kundesenteret', '#track-kundesenteret');
     this.outboundEvent('Modal', 'jQuery (built with)', '#track-jquery');
     this.outboundEvent('Modal', 'Modernizr (built with)', '#track-modernizr');
     this.outboundEvent('Modal', 'Sass (built with)', '#track-sass');
@@ -108,6 +112,8 @@ var Analytics = {
     this.outboundEvent('Modal', 'Visual Basic (built with)', '#track-vb');
 
     this.outboundEvent('Other Links', 'mvn.no', '#track-mvn');
+    this.outboundEvent('Other Links', 'Download app (Android)', '#track-android');
+    this.outboundEvent('Other Links', 'Download app (iOS)', '#track-ios');
     this.outboundEvent('Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm', '#track-farm-extra');
     this.outboundEvent('Other Links', 'http://www.ntnu.no/studieinformasjon/rom/', '#track-romres-extra');
     this.outboundEvent('Other Links', 'https://innsida.ntnu.no/wiki/-/wiki/Norsk/Slik+bruker+du+webmail#section-Slik+bruker+du+webmail-Videresende+epost+til+andre+kontoer', '#track-email-extra');
@@ -121,20 +127,21 @@ var Analytics = {
       this.outboundEvent('Main Links', 'Schedule', '#schedule .track-main');
     }
 
-    $('#schedule-yes-button').click(function(){
-      if (Schedule.inputValid()) {
-        this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
-      }
-    });
-
-    this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
-
     if (Schedule.firstTimeSetupCompleted()){
       this.normalEvent('Schedule Settings', 'Show Settings', '#schedule-settings-button');
     }
     else {
       this.normalEvent('Schedule Settings', 'Show Settings (first time)', '#schedule-settings-button');
     }
+  },
+
+  // trackScheduleAnswerYes/No is called from 'schedule.js'
+  trackScheduleAnswerYes: function() {
+    this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
+  },
+
+  trackScheduleAnswerNo: function() {
+    this.normalEvent('Schedule Settings', "No (don't remember schedule)");
   },
 
   trackAppActivation: function() {

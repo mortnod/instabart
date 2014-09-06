@@ -50,3 +50,7 @@ header {
     @include breakpoint(ant) { display: none; }
   }
 }
+
+#about-button {
+  @include breakpoint(ant) { margin-top: 3px; }
+}
