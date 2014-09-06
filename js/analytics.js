@@ -125,20 +125,21 @@ var Analytics = {
       this.outboundEvent('Main Links', 'Schedule', '#schedule .track-main');
     }
 
-    $('#schedule-yes-button').click(function(){
-      if (Schedule.inputValid()) {
-        this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
-      }
-    });
-
-    this.normalEvent('Schedule Settings', "No (don't remember schedule)", '#schedule-no-button');
-
     if (Schedule.firstTimeSetupCompleted()){
       this.normalEvent('Schedule Settings', 'Show Settings', '#schedule-settings-button');
     }
     else {
       this.normalEvent('Schedule Settings', 'Show Settings (first time)', '#schedule-settings-button');
     }
+  },
+
+  // trackScheduleAnswerYes/No is called from 'schedule.js'
+  trackScheduleAnswerYes: function() {
+    this.normalEvent('Schedule Settings', 'Yes (remember schedule)');
+  },
+
+  trackScheduleAnswerNo: function() {
+    this.normalEvent('Schedule Settings', "No (don't remember schedule)");
   },
 
   trackAppActivation: function() {
