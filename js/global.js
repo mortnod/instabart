@@ -5,6 +5,7 @@
     Header.init();
     Analytics.init();
     Alerts.init();
+    Links.init();
   }
 
   // @if ENV='web'
