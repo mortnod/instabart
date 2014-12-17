@@ -31,6 +31,7 @@ module.exports = function(grunt) {
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
           'js/build/processed/content.js' : 'js/content.js',
+          'js/build/processed/hotkeys.js': 'js/hotkeys.js',
         }
       },
       web : {
@@ -43,6 +44,7 @@ module.exports = function(grunt) {
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
           'js/build/processed/content.js' : 'js/content.js',
+          'js/build/processed/hotkeys.js': 'js/hotkeys.js',
         }
       }
     },
@@ -62,6 +64,7 @@ module.exports = function(grunt) {
           'js/build/processed/analytics.js',
           'js/header.js',
           'js/alerts.js',
+          'js/build/processed/hotkeys.js',
           'js/build/processed/global.js'
         ],
         dest: 'js/build/production.js',
