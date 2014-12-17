@@ -5,6 +5,7 @@
     Header.init();
     Analytics.init();
     Alerts.init();
+    new Hotkeys();
   }
 
   // @if ENV='web'
