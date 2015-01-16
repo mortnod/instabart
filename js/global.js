@@ -6,6 +6,7 @@
     Analytics.init();
     Alerts.init();
     Links.init();
+    new Hotkeys();
   }
 
   // @if ENV='web'
