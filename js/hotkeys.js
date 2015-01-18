@@ -2,15 +2,18 @@ var Hotkeys = function () {
    
     var keypress = function (event) {
         var cardUrl = getCardLink(extractKey(event));
-        if (cardUrl !== false)
+        if (cardUrl !== undefined)
             window.location.href = cardUrl;
     }
        
     var getCardLink = function (index) {
-        if (data.cards[index - 1] !== undefined)
-            return data.cards[index - 1].link;
+        var link = data.cards[index - 1].link;
+
+        if (link.indexOf('ntnu.1024.no') !== -1
+        &&  localStorage.schedule_name   !== undefined) 
+            return link + localStorage.schedule_name;
         else
-            return false;
+            return link;
     }
 
     var extractKey = function (event) {
