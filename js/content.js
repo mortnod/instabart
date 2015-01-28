@@ -19,6 +19,12 @@ var data = {
       link:'http://ntnu.1024.no/',
       description:'Denne kjekke tjenesten lager timeplanen din for deg, hvis du forteller den hvilke   emner du tar. Bruk gjerne NTNU brukernavnet ditt.'
     }, {
+      title:'Office 365',
+      pictogram:'office',
+      css_id:'office',
+      link:'http://innsida.ntnu.no/o365',
+      description:'Beskrivelse legges til senere'
+    }, {
       title:'Studweb',
       pictogram:'studweb',
       css_id:'studweb',
@@ -36,12 +42,6 @@ var data = {
       css_id:'map',
       link:'http://use.mazemap.com/',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei! <br>(…på Gløshaugen / St. Olav)'
-    }, {
-      title:'Bartebuss',
-      pictogram:'bartebuss',
-      css_id:'bartebuss',
-      link:'http://bartebuss.no',
-      description:'Bartebuss er den beste måten å finne ut når bussene går, og hvor forsinka de er. De har også fine bart! Eh, kart!'
     }, {
       title:'Trening',
       pictogram:'training',
