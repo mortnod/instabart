@@ -67,10 +67,10 @@ var Analytics = {
   createEventTrackers: function() {
     this.outboundEvent('Main Links', 'Itslearning', '#itslearning .track-main');
     this.outboundEvent('Main Links', 'Email', '#email .track-main');
+    this.outboundEvent('Main Links', 'Office 365', '#office .track-main');
     this.outboundEvent('Main Links', 'StudentWeb', '#studweb .track-main');
     this.outboundEvent('Main Links', 'SIT Dinner', '#dinner .track-main');
     this.outboundEvent('Main Links', 'Campus Map', '#map .track-main');
-    this.outboundEvent('Main Links', 'Bartebuss', '#bartebuss .track-main');
     this.outboundEvent('Main Links', 'Training', '#training .track-main');
     this.outboundEvent('Main Links', 'Room Reservation', '#romres .track-main');
     this.outboundEvent('Main Links', 'Software Download', '#software .track-main');
@@ -83,7 +83,7 @@ var Analytics = {
     this.normalEvent('Card Flips', 'StudentWeb', '#studweb .flip-open');
     this.normalEvent('Card Flips', 'SIT Dinner', '#dinner .flip-open');
     this.normalEvent('Card Flips', 'Campus Map', '#map .flip-open');
-    this.normalEvent('Card Flips', 'Bartebuss', '#bartebuss .flip-open');
+    this.normalEvent('Card Flips', 'Office 365', '#office .flip-open');
     this.normalEvent('Card Flips', 'Training', '#training .flip-open');
     this.normalEvent('Card Flips', 'Room Reservation', '#romres .flip-open');
     this.normalEvent('Card Flips', 'Software Download', '#software .flip-open');
@@ -95,6 +95,7 @@ var Analytics = {
     this.outboundEvent('Modal', 'Follow on Twitter', '#track-twitter');
     this.outboundEvent('Modal', 'Fork on Github', '#track-github');
     this.outboundEvent('Modal', 'Online Notifier', '#notifier');
+    this.outboundEvent('Modal', 'Bartebuss', '#bartebuss');
     this.outboundEvent('Modal', 'iBok', '#track-ibok');
     this.outboundEvent('Modal', 'FileSender', '#track-filesender');
     this.outboundEvent('Modal', 'Grade Statistics', '#track-grades');
