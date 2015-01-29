@@ -23,7 +23,7 @@ var data = {
       pictogram:'office',
       css_id:'office',
       link:'http://innsida.ntnu.no/o365',
-      description:'Beskrivelse legges til senere'
+      description:'Word, Excel og Powerpoint, både i online- og offline-utgave. Samarbeid om dokumenter, og nyt dine 100TB(!) lagringsplass.'
     }, {
       title:'Studweb',
       pictogram:'studweb',
@@ -93,6 +93,12 @@ var data = {
       tagline: "La barten bane vei i NTNUs frodige IT-jungel!"
     }, {
       tagline: "NTNUs IT-tjenester? Gotta know 'em all!"
+    }, {
+      tagline: "Du och jag, NTNU. Du och jag..."
+    }, {
+      tagline: "Alle lenkene du trenger... og et par til"
+    }, {
+      tagline: "Bli itj fart utn bart!"
     }
   ]
 };
