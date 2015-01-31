@@ -55,6 +55,7 @@ module.exports = function(grunt) {
           'js/libs/handlebars.runtime-v1.3.0.js',
           'js/libs/jquery.leanModal.min.js',
           'js/libs/modernizr.js',
+          'js/libs/fastclick.js',
           'js/templates.js',
           'js/card.js',
           'js/modal.js',

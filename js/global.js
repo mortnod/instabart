@@ -24,6 +24,7 @@
   document.addEventListener('deviceready', function(){
       init();
       fixStatusBarIniOS7();
+      FastClick.attach(document.body);
   }, true);
   // @endif
 
