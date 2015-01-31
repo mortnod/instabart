@@ -23,7 +23,8 @@ a {
     opacity: 0.5;
   }
 
-  &:hover h2 {
+  .touch & h2,
+  .no-touch &:hover h2 {
     opacity: 0.8;
   }
 }
@@ -62,7 +63,8 @@ footer {
   a {
     color: #999;
 
-    &:hover {
+    .touch &,
+    .no-touch &:hover {
       color: #666;
     }
   }

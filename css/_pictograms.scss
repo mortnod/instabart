@@ -19,7 +19,8 @@ i {
   font-size: 6em;
   opacity: 0.5;
 
-  .front:hover & {
+  .touch .front &,
+  .no-touch .front:hover & {
     opacity: 0.8;
   }
 }
@@ -75,7 +76,7 @@ i {
   cursor: pointer;
   opacity: 0.4;
 
-  &:hover {
+  .no-touch &:hover {
     opacity: 0.7;
   }
 }
@@ -107,7 +108,7 @@ i {
   cursor: pointer;
   opacity: 0.4;
 
-  &:hover {
+  .no-touch &:hover {
     opacity: 0.7;
   }
 }
@@ -121,7 +122,7 @@ i {
   cursor: pointer;
   opacity: 0.4;
 
-  &:hover {
+  .no-touch &:hover {
     opacity: 0.7;
   }
 }

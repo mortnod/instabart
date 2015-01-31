@@ -51,7 +51,7 @@
     width: 100%;
   }
 
-  &:hover {
+  .no-touch &:hover {
     background-color: #bbb;
   }
 
@@ -64,28 +64,28 @@
   &.button-primary {
     background-color: #3f8abf;
     box-shadow: 0 4px 0 0 #2c6085;
-    &:hover { background-color: #4795cc; }
+    .no-touch &:hover { background-color: #4795cc; }
     &:active { box-shadow: 0 2px 0 0 #2c6085; }
   }
 
   &.button-success {
     background-color: #4fca74;
     box-shadow: 0 4px 0 0 #3b9e59;
-    &:hover { background-color: #51d479; }
+    .no-touch &:hover { background-color: #51d479; }
     &:active { box-shadow: 0 2px 0 0 #3b9e59; }
   }
 
   &.button-warning {
     background-color: #f6cc68;
     box-shadow: 0 4px 0 0 #ddb24d;
-    &:hover { background-color: #fad375; }
+    .no-touch &:hover { background-color: #fad375; }
     &:active { box-shadow: 0 2px 0 0 #ddb24d; }
   }
 
   &.button-danger {
     background-color: #e0433e;
     box-shadow: 0 4px 0 0 #b0201c;
-    &:hover { background-color: #e94641; }
+    .no-touch &:hover { background-color: #e94641; }
     &:active { box-shadow: 0 2px 0 0 #b0201c; }
   }
 }
