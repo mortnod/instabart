@@ -71,7 +71,7 @@ var data = {
       pictogram:'film',
       css_id:'film',
       link:'https://video.adm.ntnu.no/',
-      description:'NTNU filmer en del forelesninger. Hør med <a href="www.ntnu.no/mms">Multimediesenteret</a> (og foreleser) om filming av dine favorittforelesninger!'
+      description:'NTNU filmer en del forelesninger. Hør med <a href="http://www.ntnu.no/mms">Multimediesenteret</a> (og foreleser) om filming av dine favorittforelesninger!'
     }
   ],
 
