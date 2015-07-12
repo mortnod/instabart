@@ -40,8 +40,8 @@ var data = {
       title:'Campuskart',
       pictogram:'map',
       css_id:'map',
-      link:'http://use.mazemap.com/',
-      description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei! <br>(…på Gløshaugen / St. Olav)'
+      link:'http://use.mazemap.com/?campuses=ntnu',
+      description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei!'
     }, {
       title:'Trening',
       pictogram:'training',
