@@ -21,6 +21,7 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 - [Handlebars](http://handlebarsjs.com/) (template system)
 - [Modernizr](http://modernizr.com/) (feature detection)
 - [Normalize](http://necolas.github.io/normalize.css/) (CSS reset alternative)
+- [Grunt](http://gruntjs.com/) (task runner)
 - [Sass](http://sass-lang.com/) (CSS preprocessor)
 - [Entypo](http://entypo.com/) (pictogram font)
 - [Glyphicons](http://glyphicons.com/) (pictogram font)
@@ -29,7 +30,7 @@ Instabart is mainly built using HTML5, CSS3 and JavaScript. In addition, the fol
 
 ## Contributors
 
-- Morten Noddeland - Lead designer/codemonkey/janitor
+- [Morten Noddeland](https://github.com/mortenvn/) - Lead designer/codemonkey/janitor
 - David Nilsen - Writer and mustache pun generator
 - [Michael McMillan](http://github.com/michaelmcmillan) - Added the hotkey (press 1 for itslearning) and direct links (http://instabart.no/#2 for email) functionality
 
