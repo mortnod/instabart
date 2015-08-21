@@ -1,4 +1,34 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+// Import PT Sans
+/* @if ENV='web' */
+  @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+/* @endif */
+
+/* @if ENV='phone' */
+  @font-face {
+    font-family: 'PTSans';
+    src: url('pt-sans.eot');
+    src:
+         url('pt-sans.eot?#iefix') format('embedded-opentype'),
+         url('pt-sans.woff') format('woff'),
+         url('pt-sans.ttf') format('truetype'),
+         url('pt-sans.svg#PTSans-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'PTSans';
+    src: url('pt-sans-bold.eot');
+    src:
+         url('pt-sans-bold.eot?#iefix') format('embedded-opentype'),
+         url('pt-sans-bold.woff') format('woff'),
+         url('pt-sans-bold.ttf') format('truetype'),
+         url('pt-sans-bold.svg#PTSans-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+  }
+/* @endif */
+
 
 body {
   font-family: 'PT Sans', sans-serif;
