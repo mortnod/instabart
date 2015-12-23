@@ -28,7 +28,7 @@ var data = {
       title:'Studweb',
       pictogram:'studweb',
       css_id:'studweb',
-      link:'https://www.studweb.no/as/WebObjects/studentweb2?inst=NTNU',
+      link:'https://fsweb.no/studentweb/index.jsf?inst=FSNTNU',
       description:'Meld deg på (og av) emner, godkjenn studieplan, betal semesteravgift, og finn ut hvor hardt du failet på eksamen.'
     }, {
       title:'Middag',
