@@ -37,17 +37,17 @@ var data = {
       link:'https://www.sit.no/middag',
       description:'Hva disker din lokale SIT-kantine opp med i dag?'
     }, {
-      title:'Campuskart',
+      title:'Blackboard',
+      pictogram:'blackboard',
+      css_id:'blackboard',
+      link:'https://innsida.ntnu.no/blackboard',
+      description:'Kanskje den viktigste siden i hverdagen - forelesningsfoiler, øvings-oppgaver og beskjeder fra foreleserne legges her.'
+    }, {
+      title:'MazeMap',
       pictogram:'map',
       css_id:'map',
       link:'http://use.mazemap.com/?campuses=ntnu',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei!'
-    }, {
-      title:'Trening',
-      pictogram:'training',
-      css_id:'training',
-      link:'https://www.sit.no/trening/gruppe',
-      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner kl 21:00 to dager før timene. Akkurat nok tid til å gro en tredagersstubb'
     }, {
       title:'Romres',
       pictogram:'romres',
@@ -67,19 +67,19 @@ var data = {
       link:'https://farm.ntnu.no/',
       description:'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm" id="track-farm-extra">her</a>.'
     }, {
-      title:'Forelesninger',
-      pictogram:'film',
-      css_id:'film',
-      link:'https://video.adm.ntnu.no/',
-      description:'NTNU filmer en del forelesninger. Hør med <a href="http://www.ntnu.no/mms">Multimediesenteret</a> (og foreleser) om filming av dine favorittforelesninger!'
+      title:'Trening',
+      pictogram:'training',
+      css_id:'training',
+      link:'https://www.sit.no/trening/gruppe',
+      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner kl 21:00 to dager før timene. Akkurat nok tid til å gro en tredagersstubb'
     }
   ],
 
   taglines: [
     // @if ENV='web'
-    {
-      tagline: 'Har du mobil? Er den smart? Last ned appen til <a href="https://itunes.apple.com/no/app/instabart/id903592925?mt=8" id="track-ios">iOS</a> og <a href="https://play.google.com/store/apps/details?id=com.mvn.instabart" id="track-android">Android</a>!'
-    },
+    //{
+    //  tagline: 'Har du mobil? Er den smart? Last ned appen til <a href="https://itunes.apple.com/no/app/instabart/id903592925?mt=8" id="track-ios">iOS</a> og <a href="https://play.google.com/store/apps/details?id=com.mvn.instabart" id="track-android">Android</a>!'
+    //},
     // @endif
     {
       tagline: "Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>."

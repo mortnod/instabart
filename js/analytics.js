@@ -75,7 +75,7 @@ var Analytics = {
     this.outboundEvent('Main Links', 'Room Reservation', '#romres .track-main');
     this.outboundEvent('Main Links', 'Software Download', '#software .track-main');
     this.outboundEvent('Main Links', 'Software Farm', '#farm .track-main');
-    this.outboundEvent('Main Links', 'Video Lectures', '#film .track-main');
+    this.outboundEvent('Main Links', 'Blackboard', '#blackboard .track-main');
 
     this.normalEvent('Card Flips', 'Itslearning', '#itslearning .flip-open');
     this.normalEvent('Card Flips', 'Email', '#email .flip-open');
@@ -88,7 +88,7 @@ var Analytics = {
     this.normalEvent('Card Flips', 'Room Reservation', '#romres .flip-open');
     this.normalEvent('Card Flips', 'Software Download', '#software .flip-open');
     this.normalEvent('Card Flips', 'Software Farm', '#farm .flip-open');
-    this.normalEvent('Card Flips', 'Video Lectures', '#film .flip-open');
+    this.normalEvent('Card Flips', 'Blackboard', '#blackboard .flip-open');
 
     this.normalEvent('Modal', 'Show Modal', '#about-button');
     this.outboundEvent('Modal', 'Send Email to Instabart', '#track-email');
@@ -101,6 +101,7 @@ var Analytics = {
     this.outboundEvent('Modal', 'Grade Statistics', '#track-grades');
     this.outboundEvent('Modal', 'IT Help', '#track-ithelp');
     this.outboundEvent('Modal', 'Kundesenteret', '#track-kundesenteret');
+    this.outboundEvent('Modal', 'Video Lectures', '#track-videoforelesninger');
     this.outboundEvent('Modal', 'jQuery (built with)', '#track-jquery');
     this.outboundEvent('Modal', 'Modernizr (built with)', '#track-modernizr');
     this.outboundEvent('Modal', 'Sass (built with)', '#track-sass');
