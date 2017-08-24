@@ -31,6 +31,18 @@ module.exports = function(grunt) {
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
           'js/build/processed/content.js' : 'js/content.js',
+          'css/build/processed/_alert.scss' : 'css/_alert.scss',
+          'css/build/processed/_bits.scss' : 'css/_bits.scss',
+          'css/build/processed/_card.scss' : 'css/_card.scss',
+          'css/build/processed/_cardflip.scss' : 'css/_cardflip.scss',
+          'css/build/processed/_header.scss' : 'css/_header.scss',
+          'css/build/processed/_modal.scss' : 'css/_modal.scss',
+          'css/build/processed/_normalize.scss' : 'css/_normalize.scss',
+          'css/build/processed/_pictograms.scss' : 'css/_pictograms.scss',
+          'css/build/processed/_structure.scss' : 'css/_structure.scss',
+          'css/build/processed/_typography.scss' : 'css/_typography.scss',
+          'css/build/processed/global.scss' : 'css/global.scss',
+          'css/build/processed/ie.scss' : 'css/ie.scss',
         }
       },
       web : {
@@ -43,6 +55,18 @@ module.exports = function(grunt) {
           'js/build/processed/global.js' : 'js/global.js',
           'js/build/processed/schedule.js' : 'js/schedule.js',
           'js/build/processed/content.js' : 'js/content.js',
+          'css/build/processed/_alert.scss' : 'css/_alert.scss',
+          'css/build/processed/_bits.scss' : 'css/_bits.scss',
+          'css/build/processed/_card.scss' : 'css/_card.scss',
+          'css/build/processed/_cardflip.scss' : 'css/_cardflip.scss',
+          'css/build/processed/_header.scss' : 'css/_header.scss',
+          'css/build/processed/_modal.scss' : 'css/_modal.scss',
+          'css/build/processed/_normalize.scss' : 'css/_normalize.scss',
+          'css/build/processed/_pictograms.scss' : 'css/_pictograms.scss',
+          'css/build/processed/_structure.scss' : 'css/_structure.scss',
+          'css/build/processed/_typography.scss' : 'css/_typography.scss',
+          'css/build/processed/global.scss' : 'css/global.scss',
+          'css/build/processed/ie.scss' : 'css/ie.scss',
 
         }
       }
@@ -97,8 +121,8 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'css/build/compiled/global.css': 'css/global.scss',
-          'css/build/compiled/ie.css': 'css/ie.scss'
+          'css/build/compiled/global.css': 'css/build/processed/global.scss',
+          'css/build/compiled/ie.css': 'css/build/processed/ie.scss'
         }
       }
     },
