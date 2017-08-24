@@ -43,11 +43,11 @@ var data = {
       link:'http://use.mazemap.com/?campuses=ntnu',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei!'
     }, {
-      title:'Romres',
+      title:'Book rom',
       pictogram:'romres',
       css_id:'romres',
-      link:'https://romres.ntnu.no/',
-      description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="http://www.ntnu.no/studieinformasjon/rom/" id="track-romres-extra">her</a>.'
+      link:'https://tp.uio.no/ntnu/rombestilling/',
+      description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="https://tp.uio.no/ntnu/timeplan/?type=room" id="track-romres-extra">her</a>.'
     }, {
       title:'Programvare',
       pictogram:'software',
