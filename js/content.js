@@ -1,11 +1,11 @@
 var data = {
   cards: [
     {
-      title:'Itslearning',
-      pictogram:'itslearning',
-      css_id:'itslearning',
-      link:'https://sats.itea.ntnu.no/sso-wrapper/web/wrapper?target=itslearning',
-      description: 'Kanskje den viktigste siden i hverdagen - forelesningsfoiler, øvings-oppgaver og beskjeder fra foreleserne legges her.'
+      title:'Blackboard',
+      pictogram:'blackboard',
+      css_id:'blackboard',
+      link:'https://innsida.ntnu.no/blackboard',
+      description:'Kanskje den viktigste siden i hverdagen - forelesningsfoiler, øvings-oppgaver og beskjeder fra foreleserne legges her.'
     }, {
       title:'Epost',
       pictogram:'email',
@@ -37,23 +37,17 @@ var data = {
       link:'https://www.sit.no/middag',
       description:'Hva disker din lokale SIT-kantine opp med i dag?'
     }, {
-      title:'Blackboard',
-      pictogram:'blackboard',
-      css_id:'blackboard',
-      link:'https://innsida.ntnu.no/blackboard',
-      description:'Kanskje den viktigste siden i hverdagen - forelesningsfoiler, øvings-oppgaver og beskjeder fra foreleserne legges her.'
-    }, {
       title:'MazeMap',
       pictogram:'map',
       css_id:'map',
       link:'http://use.mazemap.com/?campuses=ntnu',
       description:'Hjelp, hvor er datasalen Sprokkit? Hva er dette «Kjelhuset» alle snakker om? MazeMap  viser vei!'
     }, {
-      title:'Romres',
+      title:'Book rom',
       pictogram:'romres',
       css_id:'romres',
-      link:'https://romres.ntnu.no/',
-      description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="http://www.ntnu.no/studieinformasjon/rom/" id="track-romres-extra">her</a>.'
+      link:'https://tp.uio.no/ntnu/rombestilling/',
+      description:'Reservér grupperom og auditorier et halvt år i forveien. Timeplaner for enkeltrom   finner du <a href="https://tp.uio.no/ntnu/timeplan/?type=room" id="track-romres-extra">her</a>.'
     }, {
       title:'Programvare',
       pictogram:'software',
@@ -66,6 +60,12 @@ var data = {
       css_id:'farm',
       link:'https://farm.ntnu.no/',
       description:'Savner du Word? Farm gir deg tilgang til programmene, filene og nettsidene du ville hatt på en datasal. Kort innføring finner du <a href="https://innsida.ntnu.no/wiki/-/wiki/Norsk/Programfarm" id="track-farm-extra">her</a>.'
+    }, {
+      title:'Karakterstat.',
+      pictogram:'grades',
+      css_id:'grades',
+      link:'http://grades.no',
+      description:'Karakterstatistikk for flere år bakover. Hvilke av emnene du tar i år er typiske strykemner?'
     }, {
       title:'Trening',
       pictogram:'training',
