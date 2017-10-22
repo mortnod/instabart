@@ -6,7 +6,7 @@ var Links = {
 
     router: function () {
         var cardUrl = this.getCardLink(this.parseHashUrl());
-        if (window.location.hash && cardUrl) 
+        if (window.location.hash && cardUrl !== undefined) 
             this.redirect(cardUrl);
     },
 
@@ -19,9 +19,12 @@ var Links = {
     },
 
     getCardLink: function (index) {
-        if (data.cards[index - 1] !== undefined)
-            return data.cards[index - 1].link;              
+        var link = data.cards[index - 1].link;
+
+        if (link.indexOf('ntnu.1024.no') !== -1
+        &&  localStorage.schedule_name   !== undefined) 
+            return link + localStorage.schedule_name;
         else
-            return false;
+            return link;
     }
 };
