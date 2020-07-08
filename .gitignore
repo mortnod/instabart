@@ -1,13 +1,5 @@
-# Production files
-/index.html
-css/build/
-js/build/
-
 # Node
 node_modules/
-
-# Sass and Compass
-.sass-cache/
 
 # OS X
 .DS_Store
@@ -30,8 +22,3 @@ node_modules/
 *.swo
 .*.sw[a-z]
 *.un~
-
-# TextMate
-*.tmproj
-*.tmproject
-tmtags

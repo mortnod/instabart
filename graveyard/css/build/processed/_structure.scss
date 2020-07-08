@@ -1,0 +1,51 @@
+html, body {
+  height: 100%; /* This is needed for the sticky footer to work properly */
+}
+
+#pagewrap {
+  min-height: 100%;
+  margin: 0 auto -2em; /* NB! Has to be the same (only negative) as the footers height */
+}
+
+#headerwrap {
+  @include breakpoint(cat) { max-width: 6 * $cubesize + $margin;}
+  @include breakpoint(rat) { max-width: 4 * $cubesize + $margin;}
+  @include breakpoint(bat) { max-width: 3 * $cubesize + $margin;}
+  @include breakpoint(ant) { width: 100%; }
+  margin: 0 auto;
+  position: relative;
+}
+
+footer, .push {
+  height: 2em; /* NB! Has to be the same (only positive) as the pagewraps margin */
+}
+
+// Grid
+#grid {
+  @include breakpoint(cat) { width: 6 * $cubesize + $margin; padding: 60px 0 0 10px;}
+  @include breakpoint(rat) { width: 4 * $cubesize + $margin; padding: 20px 0 0 10px;}
+  @include breakpoint(bat) { width: 3 * $cubesize + $margin; padding: 10px 0 0 10px;}
+  @include breakpoint(ant) { width: 100%; padding: 10px 0 0 10px; }
+  margin: 0 auto;
+}
+
+[class*='col-'] {
+  float: left;
+}
+
+.col-1-2 {
+  width: 50%;
+  @include breakpoint(ant) { width: 100% }
+}
+
+.col-1-3 {
+  width: 33.33%;
+  @include breakpoint(ant) { width: 100% }
+}
+
+@include breakpoint (ant)    { @include large-card; }
+@include breakpoint (ant_m)  { @include medium-card; }
+@include breakpoint (ant_s)  { @include small-card; }
+@include breakpoint (tiny_l) { @include large-card; }
+@include breakpoint (tiny_m) { @include medium-card; }
+@include breakpoint (tiny_s) { @include small-card; }

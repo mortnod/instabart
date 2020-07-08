@@ -1,28 +1,19 @@
 {
-  "name": "Instabart",
-  "version": "1.2.1",
-  "description": "Quick links for NTNU students on the fly",
+  "name": "instabart",
+  "version": "2.0.0",
+  "description": "Everything an NTNU student needs... except for coffee",
+  "author": {
+    "name": "Morten Vaale Noddeland",
+    "email": "morten@noddeland.no"
+  },
+  "license": "UNLICENSED",
+  "homepage": "http://instabart.no",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "http://github.com/mortenvn/instabart"
+    "url": "http://github.com/mortnod/instabart"
   },
-  "author": "Morten Vaale Noddeland",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mortenvn/instabart/issues"
-  },
-  "homepage": "http://instabart.no",
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-connect": "~0.7.0",
-    "grunt-contrib-handlebars": "~0.7.0",
-    "grunt-contrib-sass": "~0.7.3",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-autoprefixer": "~0.7.2",
-    "grunt-preprocess": "~4.0.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "url": "https://github.com/mortnod/instabart/issues"
   }
 }

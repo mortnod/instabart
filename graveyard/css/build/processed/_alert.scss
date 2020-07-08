@@ -1,0 +1,64 @@
+.alert {
+  margin: 0 10px 20px 0;
+  padding: 10px 30px 10px 65px;
+  box-shadow: 0 1px 3px rgba(49,112,143,0.7);
+  background-color: #d9edf7;
+  color: #31708f;
+  position: relative; // Needed for absolute positioning of its content
+  display: none; // Hidden by default
+
+  .alert-icon {
+    position: absolute;
+    top: 0; // "top: 0; bottom: 0; margin: auto" trick to center vertically
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+    width: 45px;
+    height: 45px;
+  }
+
+  .close {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    text-shadow: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #31708f;
+
+    &:hover {
+      color: #354f5d;
+    }
+  }
+
+  .alert-inline-icon {
+    display: inline;
+    color: #31708f;
+    text-shadow: none;
+    position: relative;
+    top: 2px;
+  }
+
+  a {
+    color: #31708f;
+    text-decoration: underline;
+  }
+}
+
+#grid.alert-padding {
+  padding-top: 20px;
+}
+
+@include breakpoint (tiny_m) {
+  #grid.alert-padding {
+    padding-top: 10px;
+  }
+
+  .alert {
+    margin-bottom: 12px;
+    padding-left: 12px;
+  }
+  .alert .alert-icon {
+    display: none;
+  }
+}
