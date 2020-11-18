@@ -1,7 +1,7 @@
 # Production files
-/index.html
-css/build/
-js/build/
+# /index.html
+# css/build/
+# js/build/
 
 # Node
 node_modules/
