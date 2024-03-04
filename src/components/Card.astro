@@ -7,7 +7,9 @@ interface Props {
 const { href, title } = Astro.props;
 ---
 
-<li class="relative block w-full bg-white pb-[100%] shadow">
+<li
+  class="shadow-card relative block w-full bg-[#FCFDFD] pb-[100%] hover:bg-[#F8F8F8]"
+>
   <div class="absolute left-0 top-0 h-full w-full">
     <a
       href={href}
@@ -15,11 +17,11 @@ const { href, title } = Astro.props;
       target="_blank"
       class="relative flex h-full w-full flex-col items-center px-3 py-3 text-center no-underline sm:px-5 sm:py-5 md:py-8"
     >
-      <h2
+      <span
         class="mb-[4vw] mt-[3vw] text-[5.2vw] font-bold tracking-wide text-gray-700 sm:mb-[3vw] sm:mt-[1vw] sm:text-[3.6vw] md:mb-4 md:mt-0 md:text-[22px]"
       >
         {title}
-      </h2>
+      </span>
     </a>
   </div>
 </li>
