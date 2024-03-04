@@ -1,8 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {},
-	},
-	plugins: [],
-}
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {
+      screens: {
+        sm: '480px', // 3 cards per column (fluid width)
+        md: '640px', // 3 cards per column (fixes width)
+        lg: '850px', // 4 cards per column (fixed width)
+        xl: '1270px', // 6 cards per column (fixed width)
+      },
+      boxShadow: {
+        DEFAULT:
+          '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.15)',
+      },
+    },
+  },
+  plugins: [],
+};
