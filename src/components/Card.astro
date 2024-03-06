@@ -17,13 +17,13 @@ const { href, title } = Astro.props;
       class="relative flex h-full w-full flex-col items-center px-3 py-3 text-center no-underline sm:px-5 sm:py-5 md:py-8"
     >
       <span
-        class="mb-[4vw] mt-[3vw] text-[5.2vw] font-bold tracking-wide text-gray-800 group-hover:text-gray-900 sm:mb-[3vw] sm:mt-[1vw] sm:text-[3.6vw] md:mb-4 md:mt-0 md:text-[22px]"
+        class="mb-[3vw] mt-[3vw] text-[5.2vw] font-bold tracking-wide text-gray-800 group-hover:text-gray-900 sm:mb-[2vw] sm:mt-[1vw] sm:text-[3.6vw] md:mb-3 md:mt-0 md:text-[22px]"
       >
         {title}
       </span>
-      <span class="text-gray-800 group-hover:text-gray-900">
+      <div class="flex justify-center text-gray-800 group-hover:text-gray-900">
         <slot />
-      </span>
+      </div>
     </a>
   </div>
 </li>
