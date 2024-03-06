@@ -8,7 +8,7 @@ const { href, title } = Astro.props;
 ---
 
 <li
-  class="shadow-card relative block w-full bg-[#FCFDFD] pb-[100%] hover:bg-[#F8F8F8]"
+  class="relative block w-full bg-[#FCFDFD] pb-[100%] shadow-card hover:bg-[#F8F8F8]"
 >
   <div class="absolute left-0 top-0 h-full w-full">
     <a
@@ -22,6 +22,7 @@ const { href, title } = Astro.props;
       >
         {title}
       </span>
+      <slot />
     </a>
   </div>
 </li>
