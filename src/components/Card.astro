@@ -8,7 +8,7 @@ const { href, title } = Astro.props;
 ---
 
 <li
-  class="hover:shadow-cardHover group relative block w-full bg-gray-50 pb-[100%] shadow-card hover:bg-gray-100"
+  class="dark:hover:bg-slate-775 group relative block w-full bg-gray-50 pb-[100%] shadow-card hover:bg-gray-100 hover:shadow-cardHover dark:border dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600"
 >
   <div class="absolute left-0 top-0 h-full w-full">
     <a
@@ -17,11 +17,11 @@ const { href, title } = Astro.props;
       class="relative flex h-full w-full flex-col items-center px-3 py-3 text-center no-underline sm:px-5 sm:py-5 md:py-8"
     >
       <span
-        class="mb-[3vw] mt-[3vw] text-[5.2vw] font-bold tracking-wide text-gray-800 group-hover:text-gray-900 sm:mb-[2vw] sm:mt-[1vw] sm:text-[3.6vw] md:mb-3 md:mt-0 md:text-[22px]"
+        class="mb-[3vw] mt-[3vw] text-[5.2vw] font-bold tracking-wide text-gray-800 group-hover:text-gray-900 sm:mb-[2vw] sm:mt-[1vw] sm:text-[3.6vw] md:mb-3 md:mt-0 md:text-[22px] dark:text-white dark:group-hover:text-white"
       >
         {title}
       </span>
-      <div class="flex justify-center text-gray-800">
+      <div class="flex justify-center text-gray-800 dark:text-blue-200">
         <slot />
       </div>
     </a>
