@@ -8,9 +8,11 @@ const { href, title } = Astro.props;
 ---
 
 <li
-  class="dark:hover:bg-slate-775 group relative block w-full bg-gray-50 pb-[100%] shadow-card hover:bg-gray-100 hover:shadow-cardHover dark:border dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600"
+  class="card bg:slate group relative block w-full overflow-hidden bg-[#bbba] pb-[100%] shadow-card duration-150 ease-in-out dark:bg-[#5A697E80]"
 >
-  <div class="absolute left-0 top-0 h-full w-full">
+  <div
+    class="absolute bottom-px left-px right-px top-px bg-gray-50 duration-150 ease-in-out hover:bg-white/80 dark:bg-slate-800 dark:hover:bg-[#17243980]"
+  >
     <a
       href={href}
       rel="noreferrer noopener"
@@ -21,9 +23,57 @@ const { href, title } = Astro.props;
       >
         {title}
       </span>
-      <div class="flex justify-center text-gray-800 dark:text-blue-200">
+      <div
+        class="flex justify-center text-gray-800 dark:text-blue-200 dark:group-hover:text-blue-200"
+      >
         <slot />
       </div>
     </a>
   </div>
+
+  <!-- Spotlight -->
+  <div
+    class="spotlight absolute left-0 top-0 -z-10 h-60 w-60 rounded-full bg-gray-900/45 opacity-0 blur-2xl dark:bg-blue-200/50"
+  >
+  </div>
+
+  <!-- Fake spotlight -->
+  <div
+    class="fake-spotlight absolute left-0 top-0 -z-10 h-48 w-48 rounded-full"
+  >
+  </div>
 </li>
+
+<script>
+  // Spotlight hover effect
+  // Credit: https://dev.to/yxsh/cards-mouse-hover-effect-with-css-js-33j0
+  const allCards = document.querySelectorAll('.card');
+
+  window.addEventListener('mousemove', (ev) => {
+    allCards.forEach((e) => {
+      const spotlight = e.querySelector('.spotlight');
+      const fakeSpotlight = e.querySelector('.fake-spotlight');
+
+      if (!spotlight || !fakeSpotlight) {
+        return;
+      }
+
+      const rec = fakeSpotlight.getBoundingClientRect();
+
+      spotlight.animate(
+        [
+          {
+            transform: `translate(${
+              ev.clientX - rec.left - rec.width / 2
+            }px,${ev.clientY - rec.top - rec.height / 2}px)`,
+            opacity: '1',
+          },
+        ],
+        {
+          duration: 300,
+          fill: 'forwards',
+        },
+      );
+    });
+  });
+</script>

@@ -10,9 +10,8 @@ export default {
         xl: '1270px', // 6 cards per column (fixed width)
       },
       boxShadow: {
-        card: '0 0 0 1px rgba(0, 0, 0, 0.10), 0 2px 5px 0 rgba(0, 0, 0, 0.10)',
-        cardHover:
-          '0 0 0 1px rgba(0, 0, 0, 0.13), 0 3px 6px 0 rgba(0, 0, 0, 0.10)',
+        card: '0 2px 4px -1px rgba(0, 0, 0, 0.10)',
+        cardHover: '0 3px 6px -1px rgba(0, 0, 0, 0.10)',
       },
       colors: {
         'slate-775': '#232F42',
