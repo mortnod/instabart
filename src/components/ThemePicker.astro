@@ -1,0 +1,67 @@
+---
+import IconComputer from './icons/IconComputer.astro';
+import IconMoon from './icons/IconMoon.astro';
+import IconSun from './icons/IconSun.astro';
+---
+
+<button
+  id="themeSelectDark"
+  class="border-none bg-none text-black dark:text-white"
+>
+  <IconMoon />
+</button>
+
+<button
+  id="themeSelectLight"
+  class="border-none bg-none text-black dark:text-white"
+>
+  <IconSun />
+</button>
+
+<button
+  id="themeSelectSystem"
+  class="border-none bg-none text-black dark:text-white"
+>
+  <IconComputer />
+</button>
+
+<script>
+  const onThemeChange = () => {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const lightThemeButton = document.querySelector('#themeSelectLight');
+  const darkThemeButton = document.querySelector('#themeSelectDark');
+  const systemThemeButton = document.querySelector('#themeSelectSystem');
+  const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+  lightThemeButton &&
+    lightThemeButton.addEventListener('click', () => {
+      localStorage.theme = 'light';
+      onThemeChange();
+    });
+
+  darkThemeButton &&
+    darkThemeButton.addEventListener('click', () => {
+      localStorage.theme = 'dark';
+      onThemeChange();
+    });
+
+  systemThemeButton &&
+    systemThemeButton.addEventListener('click', () => {
+      localStorage.removeItem('theme');
+      onThemeChange();
+    });
+
+  mediaQueryList.addEventListener('change', (e) => {
+    onThemeChange();
+  });
+</script>
