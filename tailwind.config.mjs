@@ -12,7 +12,8 @@ export default {
       },
       boxShadow: {
         card: '0 2px 4px -1px rgba(0, 0, 0, 0.10)',
-        cardHover: '0 3px 6px -1px rgba(0, 0, 0, 0.10)',
+        'card-hover': '0 3px 6px -1px rgba(0, 0, 0, 0.10)',
+        'card-ring': 'inset 0 0 0 1px #60a5fa, 0 0 0 2px #60a5fa', // blue 400
       },
       colors: {
         'slate-775': '#232F42',
