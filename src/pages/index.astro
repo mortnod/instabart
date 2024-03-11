@@ -5,6 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Page from '../components/Page.astro';
 import Wrap from '../components/Wrap.astro';
+import Dialog from '../components/Dialog.astro';
+import DialogOpen from '../components/DialogOpen.astro';
 
 import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
@@ -85,4 +87,9 @@ import IconUtensils from '../components/icons/IconUtensils.astro';
     </main>
   </Wrap>
   <Footer />
+  <Dialog id="test">
+    <h1 class="text-3xl font-bold">Flott dialog</h1>
+    <p>Hei på deg</p>
+  </Dialog>
+  <DialogOpen dialogId="test">Åpne</DialogOpen>
 </Page>

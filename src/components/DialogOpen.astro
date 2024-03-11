@@ -1,0 +1,33 @@
+---
+const { dialogId, className } = Astro.props;
+---
+
+<!-- Store dialogId as a data attribute -->
+<dialog-open data-dialog-id={dialogId}>
+  <button class={'text-white bg-red-400 block p-4' + className}>
+    <slot />
+  </button>
+</dialog-open>
+
+<script>
+  class DialogOpen extends HTMLElement {
+    constructor() {
+      super();
+
+      // Read the dialogId from the data attribute.
+      const dialogId = this.dataset.dialogId;
+      const button = this.querySelector('button');
+
+      if (!button || !dialogId) {
+        return;
+      }
+
+      const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+      button.addEventListener('click', () => {
+        dialog.showModal();
+      });
+    }
+  }
+
+  customElements.define('dialog-open', DialogOpen);
+</script>

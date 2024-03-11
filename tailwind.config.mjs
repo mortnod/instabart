@@ -18,6 +18,9 @@ export default {
       colors: {
         'slate-775': '#232F42',
       },
+      maxWidth: {
+        128: '32rem',
+      },
     },
   },
   plugins: [],
