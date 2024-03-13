@@ -1,12 +1,14 @@
 ---
-const { dialogId, className } = Astro.props;
+import Button from './Button.astro';
+
+const { dialogId } = Astro.props;
 ---
 
 <!-- Store dialogId as a data attribute -->
 <dialog-open data-dialog-id={dialogId}>
-  <button class={'text-white bg-red-400 block p-4' + className}>
+  <Button>
     <slot />
-  </button>
+  </Button>
 </dialog-open>
 
 <script>
