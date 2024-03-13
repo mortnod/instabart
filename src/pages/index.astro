@@ -5,8 +5,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Page from '../components/Page.astro';
 import Wrap from '../components/Wrap.astro';
-import Dialog from '../components/Dialog.astro';
-import DialogOpen from '../components/DialogOpen.astro';
 
 import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
@@ -23,73 +21,70 @@ import IconUtensils from '../components/icons/IconUtensils.astro';
 ---
 
 <Page title="Instabart">
-  <Wrap>
-    <Header />
-    <main>
-      <CardWrap>
-        <Card href="https://innsida.ntnu.no/blackboard" title="Blackboard">
-          <IconBlackboard />
-        </Card>
+  <div class="grid min-h-full grid-rows-[1fr_auto]">
+    <Wrap>
+      <Header />
+      <main>
+        <CardWrap>
+          <Card href="https://innsida.ntnu.no/blackboard" title="Blackboard">
+            <IconBlackboard />
+          </Card>
 
-        <Card
-          href="https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail"
-          title="E-post"
-        >
-          <IconPaperPlane />
-        </Card>
+          <Card
+            href="https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail"
+            title="E-post"
+          >
+            <IconPaperPlane />
+          </Card>
 
-        <Card href="http://ntnu.1024.no/mortnod" title="Timeplan">
-          <IconCalendar />
-        </Card>
+          <Card href="http://ntnu.1024.no/mortnod" title="Timeplan">
+            <IconCalendar />
+          </Card>
 
-        <Card href="http://innsida.ntnu.no/o365" title="Office 365">
-          <IconMicrosoft365 />
-        </Card>
+          <Card href="http://innsida.ntnu.no/o365" title="Office 365">
+            <IconMicrosoft365 />
+          </Card>
 
-        <Card
-          href="https://fsweb.no/studentweb/index.jsf?inst=FSNTNU"
-          title="Studentweb"
-        >
-          <IconGraduationCap />
-        </Card>
+          <Card
+            href="https://fsweb.no/studentweb/index.jsf?inst=FSNTNU"
+            title="Studentweb"
+          >
+            <IconGraduationCap />
+          </Card>
 
-        <Card href="https://www.ntnu.no/ub" title="Litteratursøk">
-          <IconBooks />
-        </Card>
+          <Card href="https://www.ntnu.no/ub" title="Litteratursøk">
+            <IconBooks />
+          </Card>
 
-        <Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart">
-          <IconMap />
-        </Card>
+          <Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart">
+            <IconMap />
+          </Card>
 
-        <Card href="https://tp.uio.no/ntnu/rombestilling/" title="Book rom">
-          <IconDoor />
-        </Card>
+          <Card href="https://tp.uio.no/ntnu/rombestilling/" title="Book rom">
+            <IconDoor />
+          </Card>
 
-        <Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift"
-          ><IconPrinter />
-        </Card>
+          <Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift"
+            ><IconPrinter />
+          </Card>
 
-        <Card
-          href="https://www.ordnett.no/gyldendal/login/gyldendal"
-          title="Ordbøker"
-        >
-          <IconLanguage />
-        </Card>
+          <Card
+            href="https://www.ordnett.no/gyldendal/login/gyldendal"
+            title="Ordbøker"
+          >
+            <IconLanguage />
+          </Card>
 
-        <Card href="https://www.sit.no/mat" title="Mat">
-          <IconUtensils />
-        </Card>
+          <Card href="https://www.sit.no/mat" title="Mat">
+            <IconUtensils />
+          </Card>
 
-        <Card href="https://www.sit.no/trening/gruppe" title="Trening">
-          <IconDumbbell />
-        </Card>
-      </CardWrap>
-    </main>
-  </Wrap>
-  <Footer />
-  <Dialog id="test">
-    <h1 class="text-3xl font-bold">Flott dialog</h1>
-    <p>Hei på deg</p>
-  </Dialog>
-  <DialogOpen dialogId="test">Åpne</DialogOpen>
+          <Card href="https://www.sit.no/trening/gruppe" title="Trening">
+            <IconDumbbell />
+          </Card>
+        </CardWrap>
+      </main>
+    </Wrap>
+    <Footer />
+  </div>
 </Page>

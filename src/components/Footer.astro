@@ -1,10 +1,19 @@
 ---
+import Dialog from './Dialog.astro';
+import DialogOpen from './DialogOpen.astro';
 import ThemePicker from './ThemePicker.astro';
 import Wrap from './Wrap.astro';
 ---
 
-<footer>
+<footer class="mt-10 border-solid py-6 lg:border-t dark:border-slate-700">
   <Wrap>
-    <ThemePicker />
+    <div class="flex">
+      <ThemePicker />
+      <Dialog id="test">
+        <h1 class="text-3xl font-bold">Flott dialog</h1>
+        <p>Hei på deg</p>
+      </Dialog>
+      <DialogOpen dialogId="test">Åpne</DialogOpen>
+    </div>
   </Wrap>
 </footer>
