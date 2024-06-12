@@ -1,37 +1,33 @@
 ---
+import ButtonFooter from './button/ButtonFooter.astro';
 import IconComputer from './icons/IconComputer.astro';
 import IconMoon from './icons/IconMoon.astro';
 import IconSun from './icons/IconSun.astro';
 ---
 
-<button
-  id="themeSelectDark"
-  class="border-none bg-none text-black dark:text-white"
->
+<ButtonFooter id="themeSelectDark">
   <IconMoon />
-</button>
+  Mørkt
+</ButtonFooter>
 
-<button
-  id="themeSelectLight"
-  class="border-none bg-none text-black dark:text-white"
->
+<ButtonFooter id="themeSelectLight">
   <IconSun />
-</button>
+  Lyst
+</ButtonFooter>
 
-<button
-  id="themeSelectSystem"
-  class="border-none bg-none text-black dark:text-white"
->
+<ButtonFooter id="themeSelectSystem">
   <IconComputer />
-</button>
+  System
+</ButtonFooter>
 
 <script>
   const onThemeChange = () => {
-    if (
+    const isDark =
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+        window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
