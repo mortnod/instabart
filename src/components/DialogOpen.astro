@@ -1,14 +1,14 @@
 ---
-import Button from './Button.astro';
+import ButtonFooter from './buttons/ButtonFooter.astro';
 
 const { dialogId } = Astro.props;
 ---
 
 <!-- Store dialogId as a data attribute -->
 <dialog-open data-dialog-id={dialogId}>
-  <Button>
+  <ButtonFooter>
     <slot />
-  </Button>
+  </ButtonFooter>
 </dialog-open>
 
 <script>
@@ -19,14 +19,16 @@ const { dialogId } = Astro.props;
       // Read the dialogId from the data attribute.
       const dialogId = this.dataset.dialogId;
       const button = this.querySelector('button');
+      const body = document.querySelector('body');
 
-      if (!button || !dialogId) {
+      if (!button || !dialogId || !body) {
         return;
       }
 
       const dialog = document.getElementById(dialogId) as HTMLDialogElement;
       button.addEventListener('click', () => {
         dialog.showModal();
+        body.classList.add('overflow-hidden');
       });
     }
   }
