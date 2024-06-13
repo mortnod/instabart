@@ -1,16 +1,16 @@
 ---
 import DialogOpen from '../components/dialog/DialogOpen.astro';
-import IconSun from '../components/icons/IconSun.astro';
+import IconCog from '../components/icons/IconCog.astro';
 import ThemePicker from '../components/ThemePicker.astro';
 import Wrap from '../components/Wrap.astro';
 ---
 
 <footer class="mt-10 border-solid py-6 lg:border-t dark:border-slate-700">
   <Wrap>
-    <div class="flex">
+    <div class="flex justify-between">
       <ThemePicker />
       <DialogOpen dialogId="calendar-settings">
-        <IconSun />
+        <IconCog />
         Innstillinger
       </DialogOpen>
     </div>
