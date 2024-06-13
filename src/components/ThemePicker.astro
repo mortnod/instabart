@@ -1,24 +1,24 @@
 ---
 import ButtonFooter from './button/ButtonFooter.astro';
-import IconComputer from './icons/IconComputer.astro';
+// import IconComputer from './icons/IconComputer.astro';
 import IconMoon from './icons/IconMoon.astro';
 import IconSun from './icons/IconSun.astro';
 ---
 
-<ButtonFooter id="themeSelectDark">
+<ButtonFooter id="themeSelectDark" className="inline-flex dark:hidden">
   <IconMoon />
   Mørkt
 </ButtonFooter>
 
-<ButtonFooter id="themeSelectLight">
+<ButtonFooter id="themeSelectLight" className="hidden dark:inline-flex">
   <IconSun />
   Lyst
 </ButtonFooter>
 
-<ButtonFooter id="themeSelectSystem">
+<!-- <ButtonFooter id="themeSelectSystem">
   <IconComputer />
   System
-</ButtonFooter>
+</ButtonFooter> -->
 
 <script>
   const onThemeChange = () => {
@@ -34,30 +34,30 @@ import IconSun from './icons/IconSun.astro';
     }
   };
 
-  const lightThemeButton = document.querySelector('#themeSelectLight');
-  const darkThemeButton = document.querySelector('#themeSelectDark');
-  const systemThemeButton = document.querySelector('#themeSelectSystem');
+  const lightThemeButton = document.getElementById('themeSelectLight');
+  const darkThemeButton = document.getElementById('themeSelectDark');
+  // const systemThemeButton = document.getElementById('themeSelectSystem');
   const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
 
-  lightThemeButton &&
+  if (lightThemeButton && darkThemeButton && mediaQueryList) {
     lightThemeButton.addEventListener('click', () => {
       localStorage.theme = 'light';
       onThemeChange();
     });
 
-  darkThemeButton &&
     darkThemeButton.addEventListener('click', () => {
       localStorage.theme = 'dark';
       onThemeChange();
     });
 
-  systemThemeButton &&
-    systemThemeButton.addEventListener('click', () => {
-      localStorage.removeItem('theme');
+    // systemThemeButton &&
+    //   systemThemeButton.addEventListener('click', () => {
+    //     localStorage.removeItem('theme');
+    //     onThemeChange();
+    //   });
+
+    mediaQueryList.addEventListener('change', () => {
       onThemeChange();
     });
-
-  mediaQueryList.addEventListener('change', (e) => {
-    onThemeChange();
-  });
+  }
 </script>
