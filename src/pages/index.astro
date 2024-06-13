@@ -1,23 +1,12 @@
 ---
-import Card from '../components/Card.astro';
-import CardWrap from '../components/CardWrap.astro';
+import CardWrap from '../components/card/CardWrap.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Page from '../components/Page.astro';
 import Wrap from '../components/Wrap.astro';
 
-import IconBlackboard from '../components/icons/IconBlackboard.astro';
-import IconBooks from '../components/icons/IconBooks.astro';
-import IconCalendar from '../components/icons/IconCalendar.astro';
-import IconDoor from '../components/icons/IconDoor.astro';
-import IconDumbbell from '../components/icons/IconDumbbell.astro';
-import IconGraduationCap from '../components/icons/IconGraduationCap.astro';
-import IconLanguage from '../components/icons/IconLanguage.astro';
-import IconMap from '../components/icons/IconMap.astro';
-import IconMicrosoft365 from '../components/icons/IconMicrosoft365.astro';
-import IconPaperPlane from '../components/icons/IconPaperPlane.astro';
-import IconPrinter from '../components/icons/IconPrinter.astro';
-import IconUtensils from '../components/icons/IconUtensils.astro';
+import Cards from '../content/Cards.astro';
+import CalendarSettingsDialog from '../content/CalendarSettingsDialog.astro';
+import Footer from '../content/Footer.astro';
 ---
 
 <Page title="Instabart">
@@ -26,65 +15,11 @@ import IconUtensils from '../components/icons/IconUtensils.astro';
       <Header />
       <main>
         <CardWrap>
-          <Card href="https://innsida.ntnu.no/blackboard" title="Blackboard">
-            <IconBlackboard />
-          </Card>
-
-          <Card
-            href="https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail"
-            title="E-post"
-          >
-            <IconPaperPlane />
-          </Card>
-
-          <Card href="http://ntnu.1024.no/mortnod" title="Timeplan">
-            <IconCalendar />
-          </Card>
-
-          <Card href="http://innsida.ntnu.no/o365" title="Office 365">
-            <IconMicrosoft365 />
-          </Card>
-
-          <Card
-            href="https://fsweb.no/studentweb/index.jsf?inst=FSNTNU"
-            title="Studentweb"
-          >
-            <IconGraduationCap />
-          </Card>
-
-          <Card href="https://www.ntnu.no/ub" title="Litteratursøk">
-            <IconBooks />
-          </Card>
-
-          <Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart">
-            <IconMap />
-          </Card>
-
-          <Card href="https://tp.uio.no/ntnu/rombestilling/" title="Book rom">
-            <IconDoor />
-          </Card>
-
-          <Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift"
-            ><IconPrinter />
-          </Card>
-
-          <Card
-            href="https://www.ordnett.no/gyldendal/login/gyldendal"
-            title="Ordbøker"
-          >
-            <IconLanguage />
-          </Card>
-
-          <Card href="https://www.sit.no/mat" title="Mat">
-            <IconUtensils />
-          </Card>
-
-          <Card href="https://www.sit.no/trening/gruppe" title="Trening">
-            <IconDumbbell />
-          </Card>
+          <Cards />
         </CardWrap>
       </main>
     </Wrap>
     <Footer />
+    <CalendarSettingsDialog />
   </div>
 </Page>

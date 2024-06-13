@@ -1,0 +1,19 @@
+---
+import ButtonPrimary from '../components/button/ButtonPrimary.astro';
+import ButtonSecondary from '../components/button/ButtonSecondary.astro';
+import Dialog from '../components/dialog/Dialog.astro';
+import Input from '../components/Input.astro';
+---
+
+<Dialog id="calendar-settings">
+  <h1 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
+    Husk kalendernavn?
+  </h1>
+  <p class="mb-6 text-gray-500 dark:text-slate-300">
+    Ved å la Instabart huske kalendernavnet din, vil du bli tatt rett til
+    timeplanen din istedenfor forsiden til 1024.ntnu.no.
+  </p>
+  <Input placeholder="Kalendarnavn" class="mb-4" />
+  <ButtonPrimary class="mb-2">Hei på deg</ButtonPrimary>
+  <ButtonSecondary>Nei, ta meg til forsiden</ButtonSecondary>
+</Dialog>

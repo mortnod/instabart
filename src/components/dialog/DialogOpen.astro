@@ -1,5 +1,5 @@
 ---
-import ButtonFooter from './button/ButtonFooter.astro';
+import ButtonFooter from '../button/ButtonFooter.astro';
 
 const { dialogId } = Astro.props;
 ---
@@ -26,6 +26,9 @@ const { dialogId } = Astro.props;
       }
 
       const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+
+      console.log(dialogId);
+      console.log(dialog);
       button.addEventListener('click', () => {
         dialog.showModal();
         body.classList.add('overflow-hidden');
