@@ -13,17 +13,19 @@ import Input from '../components/Input.astro';
     Ved å la Instabart huske kalendernavnet din, vil du bli tatt rett til
     timeplanen din istedenfor forsiden til ntnu.1024.no.
   </p>
-  <Input placeholder="Kalendarnavn" class="mb-4" id="calendar-input" />
-  <ButtonPrimary id="calendar-button-accept" class="mb-2"
-    >Ja, gjerne!</ButtonPrimary
-  >
-  <ButtonSecondary id="calendar-button-decline"
+  <form id="calendar-form">
+    <Input placeholder="Kalendarnavn" class="mb-4" id="calendar-input" />
+    <ButtonPrimary id="calendar-button-accept" class="mb-2" type="submit"
+      >Ja, gjerne!</ButtonPrimary
+    >
+  </form>
+  <ButtonSecondary id="calendar-button-decline" type="button"
     >Nei, ta meg til forsiden</ButtonSecondary
   >
 </Dialog>
 
 <script>
-  const acceptButton = document.getElementById('calendar-button-accept');
+  const form = document.getElementById('calendar-form');
   const declineButton = document.getElementById('calendar-button-decline');
   const input = document.getElementById('calendar-input') as HTMLInputElement;
   const dialog = document.getElementById(
@@ -55,8 +57,9 @@ import Input from '../components/Input.astro';
     });
   }
 
-  if (acceptButton) {
-    acceptButton.addEventListener('click', () => {
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
       onClick(input.value);
     });
   }
