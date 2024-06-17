@@ -11,9 +11,48 @@ import Input from '../components/Input.astro';
   </h1>
   <p class="mb-6 text-gray-500 dark:text-slate-300">
     Ved å la Instabart huske kalendernavnet din, vil du bli tatt rett til
-    timeplanen din istedenfor forsiden til 1024.ntnu.no.
+    timeplanen din istedenfor forsiden til ntnu.1024.no.
   </p>
-  <Input placeholder="Kalendarnavn" class="mb-4" />
-  <ButtonPrimary class="mb-2">Hei på deg</ButtonPrimary>
-  <ButtonSecondary>Nei, ta meg til forsiden</ButtonSecondary>
+  <Input placeholder="Kalendarnavn" class="mb-4" id="calendar-input" />
+  <ButtonPrimary id="calendar-button-accept" class="mb-2"
+    >Ja, gjerne!</ButtonPrimary
+  >
+  <ButtonSecondary id="calendar-button-decline"
+    >Nei, ta meg til forsiden</ButtonSecondary
+  >
 </Dialog>
+
+<script>
+  const acceptButton = document.getElementById('calendar-button-accept');
+  const declineButton = document.getElementById('calendar-button-decline');
+  const input = document.getElementById('calendar-input') as HTMLInputElement;
+  const dialog = document.getElementById(
+    'calendar-settings',
+  ) as HTMLDialogElement;
+  const calendarCard = document.getElementById(
+    'calendar-card',
+  ) as HTMLAnchorElement;
+
+  const onClick = (calendarName: string) => {
+    localStorage.calendarName = calendarName;
+
+    const calendarBaseUrl = calendarCard.dataset.baseUrl as string;
+    const newUrl = calendarBaseUrl + calendarName;
+
+    calendarCard.href = newUrl;
+    dialog.close();
+    window.location.href = newUrl;
+  };
+
+  if (declineButton) {
+    declineButton.addEventListener('click', () => {
+      onClick('');
+    });
+  }
+
+  if (acceptButton) {
+    acceptButton.addEventListener('click', () => {
+      onClick(input.value);
+    });
+  }
+</script>

@@ -2,19 +2,20 @@
 interface Props {
   title: string;
   href: string;
+  id?: string;
 }
 
-const { href, title } = Astro.props;
+const { title, ...rest } = Astro.props;
 ---
 
 <li
-  class="card bg:slate [&:has(:focus-visible)]:shadow-card-ring hover:shadow-card-hover group relative block w-full overflow-hidden bg-[#bbba] pb-[100%] shadow-card duration-150 ease-in-out dark:bg-[#5A697E80]"
+  class="card bg:slate group relative block w-full overflow-hidden bg-[#bbba] pb-[100%] shadow-card duration-150 ease-in-out hover:shadow-card-hover dark:bg-[#5A697E80] [&:has(:focus-visible)]:shadow-card-ring"
 >
   <div
     class="absolute bottom-px left-px right-px top-px bg-gray-50 duration-150 ease-in-out hover:bg-white/80 dark:bg-slate-800 dark:hover:bg-[#17243980]"
   >
     <a
-      href={href}
+      {...rest}
       rel="noreferrer noopener"
       class="relative flex h-full w-full flex-col items-center px-3 py-3 text-center no-underline outline-none sm:px-5 sm:py-5 md:py-8"
     >

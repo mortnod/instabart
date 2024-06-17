@@ -3,7 +3,6 @@ import Card from '../components/card/Card.astro';
 
 import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
-import IconCalendar from '../components/icons/IconCalendar.astro';
 import IconDoor from '../components/icons/IconDoor.astro';
 import IconDumbbell from '../components/icons/IconDumbbell.astro';
 import IconGraduationCap from '../components/icons/IconGraduationCap.astro';
@@ -13,6 +12,8 @@ import IconMicrosoft365 from '../components/icons/IconMicrosoft365.astro';
 import IconPaperPlane from '../components/icons/IconPaperPlane.astro';
 import IconPrinter from '../components/icons/IconPrinter.astro';
 import IconUtensils from '../components/icons/IconUtensils.astro';
+
+import CalendarCard from './CalendarCard.astro';
 ---
 
 <Card href="https://innsida.ntnu.no/blackboard" title="Blackboard">
@@ -26,9 +27,7 @@ import IconUtensils from '../components/icons/IconUtensils.astro';
   <IconPaperPlane />
 </Card>
 
-<Card href="http://ntnu.1024.no/mortnod" title="Timeplan">
-  <IconCalendar />
-</Card>
+<CalendarCard />
 
 <Card href="http://innsida.ntnu.no/o365" title="Office 365">
   <IconMicrosoft365 />

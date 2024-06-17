@@ -6,4 +6,5 @@ const { placeholder, ...rest } = Astro.props;
   type="text"
   class={`w-full rounded bg-white px-4 py-2 text-lg leading-8 outline-none ring-1 ring-inset ring-gray-300 transition-shadow focus:ring-2 focus:ring-gray-800 shadow-sm dark:bg-slate-800 dark:ring-slate-700/50 placeholder:text-slate-400 dark:focus:ring-1 dark:focus:ring-blue-400 ${rest.class}`}
   placeholder={placeholder}
+  {...rest}
 />
