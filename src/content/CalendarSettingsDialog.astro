@@ -33,6 +33,11 @@ import Input from '../components/Input.astro';
     'calendar-card',
   ) as HTMLAnchorElement;
 
+  const storedCalendarName = localStorage.calendarName;
+  if (storedCalendarName) {
+    input.value = storedCalendarName;
+  }
+
   const onClick = (calendarName: string) => {
     localStorage.calendarName = calendarName;
 
