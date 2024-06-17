@@ -57,10 +57,29 @@ import Input from '../components/Input.astro';
     });
   }
 
+  if (input) {
+    input.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        input.setCustomValidity('');
+      }
+    });
+
+    input.addEventListener('keyup', () => {
+      if (input.value) {
+        input.setCustomValidity('');
+      }
+    });
+  }
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      onClick(input.value);
+      if (input.value) {
+        onClick(input.value);
+      } else {
+        input.setCustomValidity('Fyll ut kalendernavn');
+      }
     });
   }
 </script>
