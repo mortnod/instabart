@@ -12,7 +12,13 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Instabart" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
+    <!-- Favicons: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon-180-apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline>
