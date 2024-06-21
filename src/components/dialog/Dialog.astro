@@ -1,11 +1,12 @@
 ---
 import IconX from '../icons/IconX.astro';
-const { id } = Astro.props;
+const { id, className, ...rest } = Astro.props;
 ---
 
 <dialog
   id={id}
-  class="relative w-[85vw] max-w-96 rounded border-0 bg-white p-6 text-gray-900 shadow-xl outline-none backdrop:bg-black/60 dark:bg-gray-900 dark:text-white"
+  class={`relative w-[85vw] max-w-96 rounded border-0 bg-white p-6 text-gray-900 shadow-xl outline-none backdrop:bg-black/60 dark:bg-gray-900 dark:text-white ${className}`}
+  {...rest}
 >
   <div class="w-full">
     <slot />
