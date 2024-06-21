@@ -34,7 +34,7 @@ var data = {
       title:'Middag',
       pictogram:'dinner',
       css_id:'dinner',
-      link:'https://www.sit.no/middag',
+      link:'https://www.sit.no/mat-og-drikke',
       description:'Hva disker din lokale SIT-kantine opp med i dag?'
     }, {
       title:'MazeMap',
@@ -70,8 +70,8 @@ var data = {
       title:'Trening',
       pictogram:'training',
       css_id:'training',
-      link:'https://www.sit.no/trening/gruppe',
-      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner kl 21:00 to dager før timene. Akkurat nok tid til å gro en tredagersstubb'
+      link:'https://www.sit.no/trening/booking',
+      description:'Meld deg på SITs mange gruppetimer her. Påmelding åpner 48 timer før timene. Akkurat nok tid til å gro en tredagersstubb'
     }
   ],
 
