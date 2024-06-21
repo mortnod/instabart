@@ -1,6 +1,7 @@
 ---
 import DialogOpen from '../components/dialog/DialogOpen.astro';
 import IconCog from '../components/icons/IconCog.astro';
+import IconInfo from '../components/icons/IconInfo.astro';
 import ThemePicker from '../components/ThemePicker.astro';
 import Wrap from '../components/Wrap.astro';
 ---
@@ -9,10 +10,16 @@ import Wrap from '../components/Wrap.astro';
   <Wrap>
     <div class="flex justify-between">
       <ThemePicker />
-      <DialogOpen dialogId="calendar-settings">
-        <IconCog />
-        Innstillinger
-      </DialogOpen>
+      <div>
+        <DialogOpen dialogId="about-dialog">
+          <IconInfo />
+          Om Instabart
+        </DialogOpen>
+        <DialogOpen dialogId="calendar-settings">
+          <IconCog />
+          Innstillinger
+        </DialogOpen>
+      </div>
     </div>
   </Wrap>
 </footer>
