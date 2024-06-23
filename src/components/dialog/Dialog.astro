@@ -1,24 +1,26 @@
 ---
 import IconX from '../icons/IconX.astro';
-const { id, className, ...rest } = Astro.props;
+const { id, innerClass, outerClass, ...rest } = Astro.props;
 ---
 
 <dialog
   id={id}
-  class={`relative w-[85vw] max-w-96 rounded border-0 bg-white p-6 text-gray-900 shadow-xl outline-none backdrop:bg-black/60 dark:bg-gray-900 dark:text-white ${className}`}
+  class=`fixed max-w-128 bg-transparent p-2 sm:p-3 backdrop:bg-black/60 ${outerClass}`
   {...rest}
 >
-  <div class="w-full">
-    <slot />
-  </div>
-
-  <!-- Close button -->
-  <button
-    class="dialog-close absolute right-3 top-4 rounded-full p-2 text-gray-500 outline-4 outline-sky-400 hover:bg-gray-100 focus-visible:outline dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-300"
-    aria-label="Lukk"
+  <div
+    class={`relative w-full rounded border-0 bg-white sm:p-12 sm:pt-5 p-5 pt-4 text-gray-900 shadow-xl outline-none  dark:bg-gray-900 dark:text-white ${innerClass}`}
   >
-    <IconX strokeWidth="1.8" size="32px" />
-  </button>
+    <slot />
+
+    <!-- Close button -->
+    <button
+      class="dialog-close absolute right-3 top-3 rounded-full p-2 text-gray-500 outline-4 outline-sky-400 hover:bg-gray-100 focus-visible:outline sm:top-4 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-300"
+      aria-label="Lukk"
+    >
+      <IconX strokeWidth="1.8" size="32px" />
+    </button>
+  </div>
 </dialog>
 
 <style>
