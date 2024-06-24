@@ -1,0 +1,38 @@
+---
+import ButtonFooter from '../button/ButtonFooter.astro';
+
+const { dialogId } = Astro.props;
+---
+
+<!-- Store dialogId as a data attribute -->
+<dialog-open data-dialog-id={dialogId}>
+  <ButtonFooter>
+    <slot />
+  </ButtonFooter>
+</dialog-open>
+
+<script>
+  class DialogOpen extends HTMLElement {
+    constructor() {
+      super();
+
+      // Read the dialogId from the data attribute.
+      const dialogId = this.dataset.dialogId;
+      const button = this.querySelector('button');
+      const body = document.querySelector('body');
+
+      if (!button || !dialogId || !body) {
+        return;
+      }
+
+      const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+
+      button.addEventListener('click', () => {
+        dialog.showModal();
+        body.classList.add('overflow-hidden');
+      });
+    }
+  }
+
+  customElements.define('dialog-open', DialogOpen);
+</script>

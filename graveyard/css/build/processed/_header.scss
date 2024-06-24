@@ -1,0 +1,56 @@
+header {
+  background: #fafafa;
+  height: 100px;
+  padding: $margin 0;
+  border-bottom: 1px solid #ddd;
+  @include breakpoint (ant) {
+    height: 60px;
+  }
+}
+
+#logo {
+  width: 88px;
+  height: 80px;
+  @include breakpoint (ant) {
+    width: 44px;
+    height: 40px;
+  }
+  opacity: 0.7;
+  float: left;
+  margin-left: $margin;
+
+  .svg & {
+    background: url(../../../img/logo.svg) no-repeat top left;
+    background-size: 88px 80px;
+    @include breakpoint (ant) { background-size: 44px 40px; }
+  }
+  .no-svg & {
+    background: url(../../../img/logo.png) no-repeat top left;
+    @include breakpoint (ant) { background-size: 44px 40px; }
+
+  }
+}
+
+#headertext {
+  float: left;
+
+  h1, h3 {
+    opacity: 0.7;
+    margin: 0 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    @include breakpoint(ant) { font-size: 2em; }
+  }
+
+  h3 {
+    font-weight: normal;
+    @include breakpoint(bat) { font-size: 1em; }
+    @include breakpoint(ant) { display: none; }
+  }
+}
+
+#about-button {
+  @include breakpoint(ant) { margin-top: 3px; }
+}

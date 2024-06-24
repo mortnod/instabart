@@ -1,0 +1,92 @@
+---
+import IconX from '../icons/IconX.astro';
+const { id, innerClass, outerClass, ...rest } = Astro.props;
+---
+
+<dialog
+  id={id}
+  class=`fixed max-w-128 bg-transparent p-2 sm:p-3 backdrop:bg-black/60 ${outerClass}`
+  {...rest}
+>
+  <div
+    class={`relative w-full rounded border-0 bg-white sm:p-12 sm:pt-5 p-5 pt-4 text-gray-900 shadow-xl outline-none  dark:bg-gray-900 dark:text-white ${innerClass}`}
+  >
+    <slot />
+
+    <!-- Close button -->
+    <button
+      class="dialog-close absolute right-3 top-3 rounded-full p-2 text-gray-500 outline-4 outline-sky-400 hover:bg-gray-100 focus-visible:outline sm:top-4 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-300"
+      aria-label="Lukk"
+    >
+      <IconX strokeWidth="1.8" size="32px" />
+    </button>
+  </div>
+</dialog>
+
+<style>
+  @keyframes showContent {
+    from {
+      opacity: 0;
+      translate-y: -48%;
+      scale: 0.96;
+    }
+    to {
+      opacity: 1;
+      translate-y: -50%;
+      scale: 1;
+    }
+  }
+
+  @keyframes showBackdrop {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    dialog {
+      animation: showContent 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    dialog::backdrop {
+      animation: showBackdrop 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  }
+</style>
+
+<script>
+  const dialogs = document.querySelectorAll('dialog');
+  const body = document.querySelector('body');
+
+  dialogs.forEach((dialog) => {
+    // Close dialog when clicking the backdrop
+    dialog.addEventListener('click', (e) => {
+      const dialogDimensions = dialog.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        dialog.close();
+      }
+    });
+
+    // Close dialog when clicking the close button
+    const closeButtons = dialog.querySelectorAll('.dialog-close');
+    closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener('click', (e) => {
+        dialog.close();
+      });
+    });
+
+    dialog.addEventListener('open', (e) => {
+      body?.classList.add('overflow-hidden');
+    });
+    dialog.addEventListener('close', (e) => {
+      body?.classList.remove('overflow-hidden');
+    });
+  });
+</script>

@@ -1,0 +1,41 @@
+---
+import Logo from '../components/icons/Logo.astro';
+---
+
+<div
+  class="my-3 flex items-center gap-4 text-gray-900 sm:my-4 md:my-6 xl:mb-[5.5vh] xl:mt-[3.5vh] dark:text-white"
+>
+  <Logo
+    className="relative h-12 w-12 sm:h-14 sm:w-14 md:top-[2px] md:h-[90px] md:w-[90px] dark:text-blue-200"
+  />
+  <div class="flex flex-col">
+    <h1 class="text-3xl font-bold sm:text-4xl md:text-5xl">Instabart</h1>
+    <p
+      id="tagline"
+      class="hidden text-lg text-gray-500 md:block dark:dark:text-blue-100"
+    >
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  const getRandomTagline = () => {
+    const taglines = [
+      'Kjekke NTNU-tjenester. Umiddel<strong>bart</strong>',
+      'Favoritt blant bartebyens studenter siden 1917!',
+      'Hele NTNU samlet under én bart!',
+      'Dekker alle dine behov som NTNU-student... bortsett fra kaffe',
+      'La barten bane vei i NTNUs frodige IT-jungel!',
+      "NTNUs IT-tjenester? Gotta know 'em all!",
+      'Du och jag, NTNU. Du och jag...',
+      'Alle lenkene du trenger... og et par til',
+      'Bli itj fart utn bart!',
+    ];
+
+    var randomId = Math.floor(Math.random() * taglines.length);
+    return taglines[randomId];
+  };
+
+  const taglineElem = document.getElementById('tagline');
+  taglineElem.innerHTML = getRandomTagline();
+</script>

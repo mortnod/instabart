@@ -1,0 +1,27 @@
+---
+import DialogOpen from '../components/dialog/DialogOpen.astro';
+import IconCog from '../components/icons/IconCog.astro';
+import IconInfo from '../components/icons/IconInfo.astro';
+import ThemePicker from '../components/ThemePicker.astro';
+import Wrap from '../components/Wrap.astro';
+---
+
+<footer class="border-solid py-4 lg:mt-10 lg:border-t dark:border-slate-700">
+  <Wrap>
+    <div
+      class="items-left mx-auto flex w-[160px] flex-col sm:w-auto sm:flex-row sm:justify-center lg:justify-between"
+    >
+      <ThemePicker />
+      <div class="items-left flex flex-col sm:flex-row">
+        <DialogOpen dialogId="calendar-settings">
+          <IconCog />
+          Innstillinger
+        </DialogOpen>
+        <DialogOpen dialogId="about-dialog">
+          <IconInfo />
+          Om Instabart
+        </DialogOpen>
+      </div>
+    </div>
+  </Wrap>
+</footer>

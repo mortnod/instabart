@@ -1,0 +1,97 @@
+---
+import ButtonPrimary from '../components/button/ButtonPrimary.astro';
+import ButtonSecondary from '../components/button/ButtonSecondary.astro';
+import Dialog from '../components/dialog/Dialog.astro';
+import IconCog from '../components/icons/IconCog.astro';
+import Input from '../components/Input.astro';
+---
+
+<Dialog id="calendar-settings">
+  <h2 class="mt-1 text-2xl font-bold sm:mt-0 sm:text-3xl dark:text-slate-200">
+    Husk kalendernavn?
+  </h2>
+
+  <hr class="-mx-5 mb-6 mt-4 sm:-mx-12 sm:mb-8 sm:mt-5 dark:border-slate-800" />
+  <p class="mb-6 text-gray-500 dark:text-slate-300">
+    Ved å huske kalendernavnet ditt tas du rett til din egen timeplan istedenfor
+    forsiden.
+  </p>
+  <form id="calendar-form">
+    <Input placeholder="Kalendarnavn" class="mb-4" id="calendar-input" />
+    <ButtonPrimary id="calendar-button-accept" class="mb-2" type="submit"
+      >Ja, gjerne!</ButtonPrimary
+    >
+  </form>
+  <ButtonSecondary id="calendar-button-decline" type="button"
+    >Nei, ta meg til forsiden</ButtonSecondary
+  >
+
+  <p class="mt-6 text-xs text-gray-500 dark:text-slate-400">
+    Pssst! Om du skulle ombestemme deg kan du alltids endre valget ditt ved å
+    trykke på <span class="font-bold dark:text-slate-300"
+      ><IconCog
+        class="inline size-[14px] stroke-gray-900 stroke-2 dark:stroke-slate-300"
+      /> innstillinger</span
+    > nederst til høyre.
+  </p>
+</Dialog>
+
+<script>
+  const form = document.getElementById('calendar-form');
+  const declineButton = document.getElementById('calendar-button-decline');
+  const input = document.getElementById('calendar-input') as HTMLInputElement;
+  const dialog = document.getElementById(
+    'calendar-settings',
+  ) as HTMLDialogElement;
+  const calendarCard = document.getElementById(
+    'calendar-card',
+  ) as HTMLAnchorElement;
+
+  const storedCalendarName = localStorage.calendarName;
+  if (storedCalendarName) {
+    input.value = storedCalendarName;
+  }
+
+  const onClick = (calendarName: string) => {
+    localStorage.calendarName = calendarName;
+
+    const calendarBaseUrl = calendarCard.dataset.baseUrl as string;
+    const newUrl = calendarBaseUrl + calendarName;
+
+    calendarCard.href = newUrl;
+    dialog.close();
+    window.location.href = newUrl;
+  };
+
+  if (declineButton) {
+    declineButton.addEventListener('click', () => {
+      onClick('');
+    });
+  }
+
+  if (input) {
+    input.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        input.setCustomValidity('');
+      }
+    });
+
+    input.addEventListener('keyup', () => {
+      if (input.value) {
+        input.setCustomValidity('');
+      }
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        onClick(input.value);
+      } else {
+        input.setCustomValidity('Fyll ut kalendernavn');
+      }
+    });
+  }
+</script>

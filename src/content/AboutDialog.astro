@@ -1,0 +1,71 @@
+---
+import Dialog from '../components/dialog/Dialog.astro';
+import IconEnvelope from '../components/icons/IconEnvelope.astro';
+import IconQuestionMark from '../components/icons/IconQuestionMark.astro';
+import IconUser from '../components/icons/IconUser.astro';
+import Link from '../components/Link.astro';
+---
+
+<Dialog id="about-dialog" outerClass="max-w-[550px]" innerClass="sm:pl-8">
+  <h2 class="mt-1 text-2xl font-bold sm:mt-0 sm:text-3xl dark:text-slate-200">
+    Om Instabart
+  </h2>
+
+  <hr
+    class="-mx-5 mb-6 mt-4 sm:-ml-8 sm:-mr-12 sm:mb-8 sm:mt-5 dark:border-slate-800"
+  />
+  <div class="flex gap-4">
+    <IconQuestionMark
+      class="hidden h-7 w-7 shrink-0 stroke-2 text-gray-400 sm:block dark:text-blue-200"
+    />
+    <div>
+      <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
+        Hva er Instabart?
+      </h3>
+      <p class="mb-3 text-gray-700 dark:text-slate-400">
+        Instabart er en side deg som er student i bartebyen.
+      </p>
+      <p class="mb-6 text-gray-700 sm:mb-8 dark:text-slate-400">
+        Siden inneholder direktelenker til ulike NTNU-tjenester. Noen vil du
+        trenge daglig, andre vil komme til nytte en gang iblant - vi anbartfaler
+        at du sjekker ut alle.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+    <IconUser
+      class="hidden h-7 w-7 shrink-0 stroke-2 text-gray-400 sm:block dark:text-blue-200"
+    />
+    <div>
+      <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
+        Hvem skjuler seg bak barten?
+      </h3>
+      <p class="mb-6 text-gray-700 sm:mb-8 dark:text-slate-400">
+        Instabart er laget av <Link href="https://mvn.no"
+          >Morten Vaale Noddeland</Link
+        >. Kort oppsummert er Morten en tidligere NTNU-student,
+        ordspill-fanatiker og fullstendig ute av stand til å gro en ordentlig
+        bart… ironisk nok.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+    <IconEnvelope
+      class="hidden h-7 w-7 shrink-0 stroke-2 text-gray-400 sm:block dark:text-blue-200"
+    />
+    <div>
+      <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
+        Rykker det i barten?
+      </h3>
+      <p class="text-gray-700 dark:text-slate-400">
+        Har du noe på hjertet? Send en e-post til <Link
+          href="mailto:morten@noddeland.no">morten@noddeland.no</Link
+        > eller <Link href="https://github.com/mortnod/instabart"
+          >sjekk ut koden på Github</Link
+        >.
+      </p>
+    </div>
+  </div>
+</Dialog>

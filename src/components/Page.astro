@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="nb-NO" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Instabart" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Favicons: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon-180-apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      // Set dark/light mode on page load
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="flex h-full flex-col bg-white dark:bg-gray-900">
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: 'PT Sans';
+    src: url('/fonts/pt-sans_regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: 'PT Sans';
+    src: url('/fonts/pt-sans_bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+  }
+  html {
+    font-family: 'PT Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', 'sans-serif';
+  }
+</style>

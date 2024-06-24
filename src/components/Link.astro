@@ -1,0 +1,8 @@
+---
+const { slot, className, ...rest } = Astro.props;
+---
+
+<a
+  class={`font-bold hover:underline outline-none rounded-sm focus-visible:ring-4 ring-offset-1 dark:ring-offset-black ring-[#60a5fa] ${className}`}
+  {...rest}><slot /></a
+>

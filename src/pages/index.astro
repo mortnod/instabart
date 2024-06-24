@@ -1,0 +1,27 @@
+---
+import CardWrap from '../components/card/CardWrap.astro';
+import Header from '../content/Header.astro';
+import Page from '../components/Page.astro';
+import Wrap from '../components/Wrap.astro';
+
+import Cards from '../content/Cards.astro';
+import CalendarSettingsDialog from '../content/CalendarSettingsDialog.astro';
+import Footer from '../content/Footer.astro';
+import AboutDialog from '../content/AboutDialog.astro';
+---
+
+<Page title="Instabart">
+  <div class="grid grid-rows-[1fr_auto] lg:min-h-full">
+    <Wrap>
+      <Header />
+      <main>
+        <CardWrap>
+          <Cards />
+        </CardWrap>
+      </main>
+    </Wrap>
+    <Footer />
+    <CalendarSettingsDialog />
+    <AboutDialog />
+  </div>
+</Page>
