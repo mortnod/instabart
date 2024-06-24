@@ -6,18 +6,20 @@ import ThemePicker from '../components/ThemePicker.astro';
 import Wrap from '../components/Wrap.astro';
 ---
 
-<footer class="mt-10 border-solid py-4 lg:border-t dark:border-slate-700">
+<footer class="border-solid py-4 lg:mt-10 lg:border-t dark:border-slate-700">
   <Wrap>
-    <div class="flex justify-between">
+    <div
+      class="items-left mx-auto flex w-[160px] flex-col sm:w-auto sm:flex-row sm:justify-center lg:justify-between"
+    >
       <ThemePicker />
-      <div>
-        <DialogOpen dialogId="about-dialog">
-          <IconInfo />
-          Om Instabart
-        </DialogOpen>
+      <div class="items-left flex flex-col sm:flex-row">
         <DialogOpen dialogId="calendar-settings">
           <IconCog />
           Innstillinger
+        </DialogOpen>
+        <DialogOpen dialogId="about-dialog">
+          <IconInfo />
+          Om Instabart
         </DialogOpen>
       </div>
     </div>
