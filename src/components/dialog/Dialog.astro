@@ -77,15 +77,15 @@ const { id, innerClass, outerClass, ...rest } = Astro.props;
     // Close dialog when clicking the close button
     const closeButtons = dialog.querySelectorAll('.dialog-close');
     closeButtons.forEach((closeButton) => {
-      closeButton.addEventListener('click', (e) => {
+      closeButton.addEventListener('click', () => {
         dialog.close();
       });
     });
 
-    dialog.addEventListener('open', (e) => {
+    dialog.addEventListener('open', () => {
       body?.classList.add('overflow-hidden');
     });
-    dialog.addEventListener('close', (e) => {
+    dialog.addEventListener('close', () => {
       body?.classList.remove('overflow-hidden');
     });
   });
