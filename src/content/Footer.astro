@@ -13,11 +13,11 @@ import Wrap from '../components/Wrap.astro';
     >
       <ThemePicker />
       <div class="items-left flex flex-col sm:flex-row">
-        <DialogOpen dialogId="schedule-settings">
+        <DialogOpen dialogId="schedule-settings" id="schedule-dialog-trigger">
           <IconCog />
           Innstillinger
         </DialogOpen>
-        <DialogOpen dialogId="about-dialog">
+        <DialogOpen dialogId="about-dialog" id="about-dialog-trigger">
           <IconInfo />
           Om Instabart
         </DialogOpen>

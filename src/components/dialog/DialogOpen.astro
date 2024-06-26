@@ -1,12 +1,13 @@
 ---
+import type { Code } from 'astro:components';
 import ButtonFooter from '../button/ButtonFooter.astro';
 
-const { dialogId } = Astro.props;
+const { dialogId, ...rest } = Astro.props;
 ---
 
 <!-- Store dialogId as a data attribute -->
 <dialog-open data-dialog-id={dialogId}>
-  <ButtonFooter>
+  <ButtonFooter {...rest}>
     <slot />
   </ButtonFooter>
 </dialog-open>

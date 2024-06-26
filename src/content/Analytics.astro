@@ -1,0 +1,119 @@
+---
+
+---
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    function captureEvent(eventName, extras) {
+      if (extras) {
+        posthog.capture(eventName, extras);
+      } else {
+        posthog.capture(eventName);
+      }
+    }
+
+    function trackEvent(elementId, eventName, extras) {
+      const elem = document.getElementById(elementId);
+      elem.addEventListener('click', (e) => {
+        captureEvent(eventName, extras);
+      });
+    }
+
+    function trackOutboundEvent(elementId, eventName, extras) {
+      const link = document.getElementById(elementId);
+
+      link.addEventListener('click', (e) => {
+        // Capture event
+        captureEvent(eventName, extras);
+
+        // If CTRL or CMD is pressed (to open the link in a new tab),
+        // proceed using the browsers default action
+        if (e.metaKey || e.ctrlKey) {
+          return;
+        }
+
+        // Otherwise, stop the motherfucker
+        e.preventDefault();
+
+        // Small timeout to ensure that the event is captured
+        // before following the link
+        setTimeout(() => {
+          document.location.href = link.href;
+        }, 100);
+      });
+    }
+
+    // MAIN LINKS
+    trackOutboundEvent('blackboard', 'blackboard_click');
+    trackOutboundEvent('email', 'email_click');
+    trackOutboundEvent('microsoft365', 'microsoft365_click');
+    trackOutboundEvent('studentweb', 'studentweb_click');
+    trackOutboundEvent('literature_search', 'literature_search_click');
+    trackOutboundEvent('map', 'map_click');
+    trackOutboundEvent('room_reservation', 'room_reservation_click');
+    trackOutboundEvent('printing', 'printing_click');
+    trackOutboundEvent('dictionary', 'dictionary_click');
+    trackOutboundEvent('food', 'food_click');
+    trackOutboundEvent('exercise', 'exercise_click');
+
+    // MISC.
+    trackEvent('themeSelectLight', 'theme_preference_set', {
+      preference: 'light',
+    });
+    trackEvent('themeSelectDark', 'theme_preference_set', {
+      preference: 'dark',
+    });
+    trackEvent('about-dialog-trigger', 'about_instabart_view');
+    trackEvent('schedule-dialog-trigger', 'schedule_settings_view', {
+      trigger: 'footer',
+    });
+    trackOutboundEvent('github-link', 'github_link_click');
+    trackOutboundEvent('email-link', 'email_link_click');
+    trackOutboundEvent('mvn-link', 'mvn_link_click');
+
+    // SCHEDULE CARD
+    const scheduleCard = document.getElementById('schedule-card');
+
+    scheduleCard.addEventListener('click', (e) => {
+      const hasSchedulePreference = 'scheduleName' in localStorage;
+      if (!hasSchedulePreference) {
+        captureEvent('schedule_settings_view', {
+          trigger: 'card',
+        });
+      } else {
+        captureEvent('schedule_click');
+
+        // If CTRL or CMD is pressed (to open the link in a new tab),
+        // proceed using the browsers default action
+        if (e.metaKey || e.ctrlKey) {
+          return;
+        }
+
+        // Otherwise, stop the motherfucker
+        e.preventDefault();
+
+        // Small timeout to ensure that the event is captured
+        // before following the link
+        setTimeout(() => {
+          document.location.href = scheduleCard.href;
+        }, 100);
+      }
+    });
+
+    // SCHEDULE SETTINGS
+    const form = document.getElementById('schedule-form');
+    const input = document.getElementById('schedule-input');
+
+    trackEvent('schedule-button-decline', 'schedule_preference_set', {
+      preference: 'no',
+    });
+
+    form.addEventListener('submit', () => {
+      if (input.value) {
+        captureEvent('schedule_preference_set', {
+          preference: 'yes',
+        });
+      }
+    });
+  });
+</script>

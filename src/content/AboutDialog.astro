@@ -42,7 +42,7 @@ import Link from '../components/Link.astro';
         Hvem skjuler seg bak barten?
       </h3>
       <p class="mb-6 text-gray-700 sm:mb-8 dark:text-slate-400">
-        Instabart er laget av <Link href="https://mvn.no"
+        Instabart er laget av <Link id="mvn-link" href="https://mvn.no"
           >Morten Vaale Noddeland</Link
         >. Kort oppsummert er Morten en tidligere NTNU-student,
         ordspillfanatiker og fullstendig ute av stand til å gro en ordentlig
@@ -61,8 +61,11 @@ import Link from '../components/Link.astro';
       </h3>
       <p class="text-gray-700 dark:text-slate-400">
         Har du noe på hjertet? Send en e-post til <Link
+          id="email-link"
           href="mailto:morten@noddeland.no">morten@noddeland.no</Link
-        > eller <Link href="https://github.com/mortnod/instabart"
+        > eller <Link
+          id="github-link"
+          href="https://github.com/mortnod/instabart"
           >sjekk ut koden på Github</Link
         >.
       </p>

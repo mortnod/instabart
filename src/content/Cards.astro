@@ -16,54 +16,76 @@ import IconUtensils from '../components/icons/IconUtensils.astro';
 import ScheduleCard from './ScheduleCard.astro';
 ---
 
-<Card href="https://innsida.ntnu.no/blackboard" title="Blackboard">
+<Card
+  href="https://innsida.ntnu.no/blackboard"
+  title="Blackboard"
+  id="blackboard"
+>
   <IconBlackboard />
 </Card>
 
 <Card
   href="https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail"
   title="E-post"
+  id="email"
 >
   <IconPaperPlane />
 </Card>
 
 <ScheduleCard />
 
-<Card href="http://innsida.ntnu.no/o365" title="Office 365">
+<Card href="http://innsida.ntnu.no/o365" title="office 365" id="microsoft365">
   <IconMicrosoft365 />
 </Card>
 
 <Card
   href="https://fsweb.no/studentweb/index.jsf?inst=FSNTNU"
   title="Studentweb"
+  id="studentweb"
 >
   <IconGraduationCap />
 </Card>
 
-<Card href="https://www.ntnu.no/ub" title="Litteratursøk">
+<Card
+  href="https://www.ntnu.no/ub"
+  title="Litteratursøk"
+  id="literature_search"
+>
   <IconBooks />
 </Card>
 
-<Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart">
+<Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart" id="map">
   <IconMap />
 </Card>
 
-<Card href="https://tp.uio.no/ntnu/rombestilling/" title="Book rom">
+<Card
+  href="https://tp.uio.no/ntnu/rombestilling/"
+  title="Book rom"
+  id="room_reservation"
+>
   <IconDoor />
 </Card>
 
-<Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift"
+<Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift" id="printing"
   ><IconPrinter />
 </Card>
 
-<Card href="https://www.ordnett.no/gyldendal/login/gyldendal" title="Ordbøker">
+<Card
+  href="https://www.ordnett.no/gyldendal/login/gyldendal"
+  title="Ordbøker"
+  id="dictionary"
+>
   <IconLanguage />
 </Card>
 
-<Card href="https://www.sit.no/mat-og-drikke/vare-spisesteder" title="Mat">
+<Card
+  href="https://www.sit.no/mat-og-drikke/vare-spisesteder"
+  title="Mat"
+  id="food"
+>
   <IconUtensils />
 </Card>
 
-<Card href="https://www.sit.no/trening/booking" title="Trening">
+<Card href="https://www.sit.no/trening/booking" title="Trening" id="exercise">
   <IconDumbbell />
 </Card>

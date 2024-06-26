@@ -60,7 +60,12 @@ import Input from '../components/Input.astro';
 
     scheduleCard.href = newUrl;
     dialog.close();
-    window.location.href = newUrl;
+
+    // Small timeout to ensure that analytics event is captured
+    // before following the link
+    setTimeout(() => {
+      window.location.href = newUrl;
+    }, 100);
   };
 
   if (declineButton) {
