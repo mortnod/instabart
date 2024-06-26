@@ -6,7 +6,7 @@ import IconCog from '../components/icons/IconCog.astro';
 import Input from '../components/Input.astro';
 ---
 
-<Dialog id="calendar-settings">
+<Dialog id="schedule-settings">
   <h2 class="mt-1 text-2xl font-bold sm:mt-0 sm:text-3xl dark:text-slate-200">
     Husk kalendernavn?
   </h2>
@@ -16,13 +16,13 @@ import Input from '../components/Input.astro';
     Ved å huske kalendernavnet ditt tas du rett til din egen timeplan istedenfor
     forsiden.
   </p>
-  <form id="calendar-form">
-    <Input placeholder="Kalendarnavn" class="mb-4" id="calendar-input" />
-    <ButtonPrimary id="calendar-button-accept" class="mb-2" type="submit"
+  <form id="schedule-form">
+    <Input placeholder="Kalendarnavn" class="mb-4" id="schedule-input" />
+    <ButtonPrimary id="schedule-button-accept" class="mb-2" type="submit"
       >Ja, gjerne!</ButtonPrimary
     >
   </form>
-  <ButtonSecondary id="calendar-button-decline" type="button"
+  <ButtonSecondary id="schedule-button-decline" type="button"
     >Nei, ta meg til forsiden</ButtonSecondary
   >
 
@@ -37,28 +37,28 @@ import Input from '../components/Input.astro';
 </Dialog>
 
 <script>
-  const form = document.getElementById('calendar-form');
-  const declineButton = document.getElementById('calendar-button-decline');
-  const input = document.getElementById('calendar-input') as HTMLInputElement;
+  const form = document.getElementById('schedule-form');
+  const declineButton = document.getElementById('schedule-button-decline');
+  const input = document.getElementById('schedule-input') as HTMLInputElement;
   const dialog = document.getElementById(
-    'calendar-settings',
+    'schedule-settings',
   ) as HTMLDialogElement;
-  const calendarCard = document.getElementById(
-    'calendar-card',
+  const scheduleCard = document.getElementById(
+    'schedule-card',
   ) as HTMLAnchorElement;
 
-  const storedCalendarName = localStorage.calendarName;
-  if (storedCalendarName) {
-    input.value = storedCalendarName;
+  const storedScheduleName = localStorage.scheduleName;
+  if (storedScheduleName) {
+    input.value = storedScheduleName;
   }
 
-  const onClick = (calendarName: string) => {
-    localStorage.calendarName = calendarName;
+  const onClick = (scheduleName: string) => {
+    localStorage.scheduleName = scheduleName;
 
-    const calendarBaseUrl = calendarCard.dataset.baseUrl as string;
-    const newUrl = calendarBaseUrl + calendarName;
+    const scheduleBaseUrl = scheduleCard.dataset.baseUrl as string;
+    const newUrl = scheduleBaseUrl + scheduleName;
 
-    calendarCard.href = newUrl;
+    scheduleCard.href = newUrl;
     dialog.close();
     window.location.href = newUrl;
   };

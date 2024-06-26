@@ -1,0 +1,50 @@
+---
+import Card from '../components/card/Card.astro';
+import IconCalendar from '../components/icons/IconCalendar.astro';
+---
+
+<Card
+  href="https://ntnu.1024.no/"
+  data-base-url="https://ntnu.1024.no/"
+  title="Timeplan"
+  id="schedule-card"
+>
+  <IconCalendar />
+</Card>
+
+<script>
+  const scheduleCard = document.getElementById(
+    'schedule-card',
+  ) as HTMLAnchorElement;
+  const scheduleSettingsDialog = document.getElementById(
+    'schedule-settings',
+  ) as HTMLDialogElement;
+
+  if (scheduleCard && scheduleSettingsDialog) {
+    scheduleCard.addEventListener('click', (e) => {
+      const hasSchedulePreference = 'scheduleName' in localStorage;
+
+      if (!hasSchedulePreference) {
+        e.preventDefault();
+        scheduleSettingsDialog.showModal();
+        scheduleSettingsDialog.classList.add('overflow-hidden');
+      }
+    });
+  }
+
+  const updateScheduleUrl = () => {
+    const scheduleCard = document.getElementById(
+      'schedule-card',
+    ) as HTMLAnchorElement;
+    const scheduleBaseUrl = scheduleCard.dataset.baseUrl as string;
+    const scheduleName: string | undefined = localStorage.scheduleName;
+
+    if (scheduleName && scheduleCard.href) {
+      scheduleCard.href = scheduleBaseUrl + scheduleName;
+    } else {
+      scheduleCard.href = scheduleBaseUrl;
+    }
+  };
+
+  updateScheduleUrl();
+</script>
