@@ -1,4 +1,9 @@
 {
+  "short_name": "Instabart",
+  "name": "Instabart",
+  "description": "Startsiden for studenter i bartebyen",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
     { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
