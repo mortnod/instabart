@@ -14,7 +14,7 @@
 
     function trackEvent(elementId, eventName, extras) {
       const elem = document.getElementById(elementId);
-      elem.addEventListener('click', (e) => {
+      elem.addEventListener('click', () => {
         captureEvent(eventName, extras);
       });
     }
@@ -37,8 +37,13 @@
 
         // Small timeout to ensure that the event is captured
         // before following the link
+        const shouldOpenInNewTab = link.getAttribute('target') === '_blank';
         setTimeout(() => {
-          document.location.href = link.href;
+          if (shouldOpenInNewTab) {
+            window.open(link.href, '_blank').focus();
+          } else {
+            document.location.href = link.href;
+          }
         }, 100);
       });
     }
@@ -94,8 +99,14 @@
 
         // Small timeout to ensure that the event is captured
         // before following the link
+        const shouldOpenInNewTab =
+          scheduleCard.getAttribute('target') === '_blank';
         setTimeout(() => {
-          document.location.href = scheduleCard.href;
+          if (shouldOpenInNewTab) {
+            window.open(scheduleCard.href, '_blank').focus();
+          } else {
+            document.location.href = scheduleCard.href;
+          }
         }, 100);
       }
     });

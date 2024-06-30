@@ -63,8 +63,13 @@ import Input from '../components/Input.astro';
 
     // Small timeout to ensure that analytics event is captured
     // before following the link
+    const shouldOpenInNewTab = scheduleCard.getAttribute('target') === '_blank';
     setTimeout(() => {
-      window.location.href = newUrl;
+      if (shouldOpenInNewTab) {
+        window.open(newUrl, '_blank')?.focus();
+      } else {
+        document.location.href = newUrl;
+      }
     }, 100);
   };
 

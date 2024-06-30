@@ -80,5 +80,17 @@ const { title, ...rest } = Astro.props;
     });
   };
 
+  const configureLinkBehaviour = () => {
+    const isPwa = window.matchMedia('(display-mode: standalone)').matches;
+
+    if (isPwa) {
+      const allLinks = document.querySelectorAll('.card a');
+      allLinks.forEach((link) => {
+        link.setAttribute('target', '_blank');
+      });
+    }
+  };
+
   setupHoverEffect();
+  configureLinkBehaviour();
 </script>
