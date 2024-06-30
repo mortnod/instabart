@@ -46,35 +46,39 @@ const { title, ...rest } = Astro.props;
 </li>
 
 <script>
-  // Spotlight hover effect
-  // Credit: https://dev.to/yxsh/cards-mouse-hover-effect-with-css-js-33j0
-  const allCards = document.querySelectorAll('.card');
+  const setupHoverEffect = () => {
+    // Spotlight hover effect
+    // Credit: https://dev.to/yxsh/cards-mouse-hover-effect-with-css-js-33j0
+    const allCards = document.querySelectorAll('.card');
 
-  window.addEventListener('mousemove', (ev) => {
-    allCards.forEach((e) => {
-      const spotlight = e.querySelector('.spotlight');
-      const fakeSpotlight = e.querySelector('.fake-spotlight');
+    window.addEventListener('mousemove', (ev) => {
+      allCards.forEach((e) => {
+        const spotlight = e.querySelector('.spotlight');
+        const fakeSpotlight = e.querySelector('.fake-spotlight');
 
-      if (!spotlight || !fakeSpotlight) {
-        return;
-      }
+        if (!spotlight || !fakeSpotlight) {
+          return;
+        }
 
-      const rec = fakeSpotlight.getBoundingClientRect();
+        const rec = fakeSpotlight.getBoundingClientRect();
 
-      spotlight.animate(
-        [
+        spotlight.animate(
+          [
+            {
+              transform: `translate(${
+                ev.clientX - rec.left - rec.width / 2
+              }px,${ev.clientY - rec.top - rec.height / 2}px)`,
+              opacity: '1',
+            },
+          ],
           {
-            transform: `translate(${
-              ev.clientX - rec.left - rec.width / 2
-            }px,${ev.clientY - rec.top - rec.height / 2}px)`,
-            opacity: '1',
+            duration: 300,
+            fill: 'forwards',
           },
-        ],
-        {
-          duration: 300,
-          fill: 'forwards',
-        },
-      );
+        );
+      });
     });
-  });
+  };
+
+  setupHoverEffect();
 </script>
