@@ -10,6 +10,7 @@ import IconLanguage from '../components/icons/IconLanguage.astro';
 import IconMap from '../components/icons/IconMap.astro';
 import IconMicrosoft365 from '../components/icons/IconMicrosoft365.astro';
 import IconPaperPlane from '../components/icons/IconPaperPlane.astro';
+import IconPdf from '../components/icons/IconPdf.astro';
 import IconPrinter from '../components/icons/IconPrinter.astro';
 import IconUtensils from '../components/icons/IconUtensils.astro';
 
@@ -47,6 +48,22 @@ import ScheduleCard from './ScheduleCard.astro';
 </Card>
 
 <Card
+  href="https://tp.educloud.no/ntnu/app/rombestilling/"
+  title="Book rom"
+  id="room_reservation"
+>
+  <IconDoor />
+</Card>
+
+<Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart" id="map">
+  <IconMap />
+</Card>
+
+<Card href="https://myprint.ntnu.no/" title="Utskrift" id="printing"
+  ><IconPrinter />
+</Card>
+
+<Card
   href="https://www.ntnu.no/ub"
   title="Litteratursøk"
   id="literature_search"
@@ -54,20 +71,8 @@ import ScheduleCard from './ScheduleCard.astro';
   <IconBooks />
 </Card>
 
-<Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart" id="map">
-  <IconMap />
-</Card>
-
-<Card
-  href="https://tp.uio.no/ntnu/rombestilling/"
-  title="Book rom"
-  id="room_reservation"
->
-  <IconDoor />
-</Card>
-
-<Card href="https://i.ntnu.no/utskrift-kopi" title="Utskrift" id="printing"
-  ><IconPrinter />
+<Card href="https://pdf.orakel.ntnu.no/" title="PDF-redigering" id="pdf">
+  <IconPdf />
 </Card>
 
 <Card
@@ -76,14 +81,6 @@ import ScheduleCard from './ScheduleCard.astro';
   id="dictionary"
 >
   <IconLanguage />
-</Card>
-
-<Card
-  href="https://www.sit.no/mat-og-drikke/vare-spisesteder"
-  title="Mat"
-  id="food"
->
-  <IconUtensils />
 </Card>
 
 <Card href="https://www.sit.no/trening/booking" title="Trening" id="exercise">
