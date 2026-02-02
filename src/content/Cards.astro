@@ -3,6 +3,7 @@ import Card from '../components/card/Card.astro';
 
 import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
+import IconCanvas from '../components/icons/iconCanvas.astro';
 import IconDoor from '../components/icons/IconDoor.astro';
 import IconDumbbell from '../components/icons/IconDumbbell.astro';
 import IconGraduationCap from '../components/icons/IconGraduationCap.astro';
@@ -12,7 +13,6 @@ import IconMicrosoft365 from '../components/icons/IconMicrosoft365.astro';
 import IconPaperPlane from '../components/icons/IconPaperPlane.astro';
 import IconPdf from '../components/icons/IconPdf.astro';
 import IconPrinter from '../components/icons/IconPrinter.astro';
-import IconUtensils from '../components/icons/IconUtensils.astro';
 
 import ScheduleCard from './ScheduleCard.astro';
 ---
@@ -23,6 +23,10 @@ import ScheduleCard from './ScheduleCard.astro';
   id="blackboard"
 >
   <IconBlackboard />
+</Card>
+
+<Card href="https://canvas.ntnu.no/" title="Canvas" id="canvas">
+  <IconCanvas />
 </Card>
 
 <Card
@@ -71,9 +75,9 @@ import ScheduleCard from './ScheduleCard.astro';
   <IconBooks />
 </Card>
 
-<Card href="https://pdf.orakel.ntnu.no/" title="Rediger PDF" id="pdf">
+<!-- <Card href="https://pdf.orakel.ntnu.no/" title="Rediger PDF" id="pdf">
   <IconPdf />
-</Card>
+</Card> -->
 
 <Card
   href="https://www.ordnett.no/gyldendal/login/gyldendal"
