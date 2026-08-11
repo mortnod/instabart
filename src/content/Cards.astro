@@ -1,7 +1,6 @@
 ---
 import Card from '../components/card/Card.astro';
 
-import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
 import IconCanvas from '../components/icons/iconCanvas.astro';
 import IconDoor from '../components/icons/IconDoor.astro';
@@ -16,14 +15,6 @@ import IconPrinter from '../components/icons/IconPrinter.astro';
 
 import ScheduleCard from './ScheduleCard.astro';
 ---
-
-<Card
-  href="https://innsida.ntnu.no/blackboard"
-  title="Blackboard"
-  id="blackboard"
->
-  <IconBlackboard />
-</Card>
 
 <Card href="https://canvas.ntnu.no/" title="Canvas" id="canvas">
   <IconCanvas />
@@ -75,9 +66,9 @@ import ScheduleCard from './ScheduleCard.astro';
   <IconBooks />
 </Card>
 
-<!-- <Card href="https://pdf.orakel.ntnu.no/" title="Rediger PDF" id="pdf">
+<Card href="https://pdf.orakel.ntnu.no/" title="Rediger PDF" id="pdf">
   <IconPdf />
-</Card> -->
+</Card>
 
 <Card
   href="https://www.ordnett.no/gyldendal/login/gyldendal"
