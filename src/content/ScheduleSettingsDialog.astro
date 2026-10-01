@@ -37,6 +37,8 @@ import Input from '../components/Input.astro';
 </Dialog>
 
 <script>
+  import { transliterateNorwegian } from '../utils/schedule';
+
   const form = document.getElementById('schedule-form');
   const declineButton = document.getElementById('schedule-button-decline');
   const input = document.getElementById('schedule-input') as HTMLInputElement;
@@ -51,23 +53,10 @@ import Input from '../components/Input.astro';
   if (storedScheduleName) {
     input.value = storedScheduleName;
   }
-
-
-  // Translitterer norske bokstaver til URL-vennlig format
-  function transliterateNorwegian(str : string | String) {
-    return str
-      .replace(/æ/g, 'ae')
-      .replace(/Æ/g, 'Ae')
-      .replace(/ø/g, 'o')
-      .replace(/Ø/g, 'O')
-      .replace(/å/g, 'aa')
-      .replace(/Å/g, 'Aa');
-  }
-
-  const onClick = (scheduleName: string | String) => {
+  const onClick = (scheduleName: string) => {
     localStorage.scheduleName = scheduleName;
 
-    const scheduleBaseUrl = scheduleCard.dataset.baseUrl;
+    const scheduleBaseUrl = scheduleCard.dataset.baseUrl as string;
     const safeName = transliterateNorwegian(scheduleName);
     const newUrl = scheduleBaseUrl + safeName;
 

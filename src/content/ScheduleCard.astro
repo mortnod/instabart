@@ -14,6 +14,8 @@ import IconCalendar from '../components/icons/IconCalendar.astro';
 </Card>
 
 <script>
+  import { transliterateNorwegian } from '../utils/schedule';
+
   const scheduleCard = document.getElementById(
     'schedule-card',
   ) as HTMLAnchorElement;
@@ -41,7 +43,7 @@ import IconCalendar from '../components/icons/IconCalendar.astro';
     const scheduleName: string | undefined = localStorage.scheduleName;
 
     if (scheduleName && scheduleCard.href) {
-      scheduleCard.href = scheduleBaseUrl + scheduleName;
+      scheduleCard.href = scheduleBaseUrl + transliterateNorwegian(scheduleName);
     } else {
       scheduleCard.href = scheduleBaseUrl;
     }
