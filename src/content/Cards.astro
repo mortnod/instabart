@@ -1,8 +1,8 @@
 ---
 import Card from '../components/card/Card.astro';
 
-import IconBlackboard from '../components/icons/IconBlackboard.astro';
 import IconBooks from '../components/icons/IconBooks.astro';
+import IconCanvas from '../components/icons/iconCanvas.astro';
 import IconDoor from '../components/icons/IconDoor.astro';
 import IconDumbbell from '../components/icons/IconDumbbell.astro';
 import IconGraduationCap from '../components/icons/IconGraduationCap.astro';
@@ -20,12 +20,8 @@ const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 ---
 
-<Card
-  href="https://innsida.ntnu.no/blackboard"
-  title={t('cards.blackboard')}
-  id="blackboard"
->
-  <IconBlackboard />
+<Card href="https://canvas.ntnu.no/" title={t('cards.canvas')} id="canvas">
+  <IconCanvas />
 </Card>
 
 <Card
