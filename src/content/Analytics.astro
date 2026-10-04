@@ -64,6 +64,8 @@
     trackEvent('themeSelectDark', 'theme_preference_set', {
       preference: 'dark',
     });
+    trackEvent('header-themeSelectLight', 'theme_preference_set', { preference: 'light' });
+    trackEvent('header-themeSelectDark', 'theme_preference_set', { preference: 'dark' });
     trackEvent('about-dialog-trigger', 'about_instabart_view');
     trackEvent('schedule-dialog-trigger', 'schedule_settings_view', {
       trigger: 'footer',

@@ -3,28 +3,42 @@ import { languages, getLangFromUrl, getLocalizedUrl } from '../i18n/utils';
 import IconGlobe from './icons/IconGlobe.astro';
 import ButtonFooter from './button/ButtonFooter.astro';
 
+interface Props {
+  placement?: 'header' | 'footer';
+}
+
+const { placement = 'footer' } = Astro.props;
+const iconOnly = placement === 'header';
+const triggerId = `${placement}-language-selector`;
+const dropdownId = `${placement}-language-dropdown`;
 const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="relative">
+<div class="relative" data-language-selector>
   <ButtonFooter
-    id="language-selector"
+    id={triggerId}
+    data-language-trigger
+    className={iconOnly ? "!px-2" : ""}
     type="button"
     aria-expanded="false"
     aria-haspopup="true"
-    aria-controls="language-dropdown"
+    aria-controls={dropdownId}
   >
     <IconGlobe />
-    <span>{languages[currentLang]}</span>
+    <span class:list={{ "sr-only": iconOnly }}>{languages[currentLang]}</span>
   </ButtonFooter>
 
   <div
-    id="language-dropdown"
-    class="absolute bottom-full left-0 z-50 mb-1 hidden w-36 origin-bottom-left rounded-md border border-gray-200 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-gray-800"
+    id={dropdownId}
+    data-language-dropdown
+    class:list={[
+      'absolute z-50 hidden w-36 rounded-md border border-gray-200 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-gray-800',
+      iconOnly ? 'right-0 top-full mt-1 origin-top-right' : 'bottom-full left-0 mb-1 origin-bottom-left',
+    ]}
     role="menu"
     aria-orientation="vertical"
-    aria-labelledby="language-selector"
+    aria-labelledby={triggerId}
   >
     <div class="py-0" role="none">
       {Object.entries(languages).map(([lang, name]) => (
@@ -54,71 +68,76 @@ const currentPath = Astro.url.pathname;
 
 <script>
   function setupLanguageSelector() {
-    const button = document.getElementById('language-selector');
-    const dropdown = document.getElementById('language-dropdown');
+    document.querySelectorAll<HTMLElement>('[data-language-selector]').forEach((selector) => {
+      if (selector.dataset.initialized) return;
+      const button = selector.querySelector<HTMLButtonElement>('[data-language-trigger]');
+      const dropdown = selector.querySelector<HTMLElement>('[data-language-dropdown]');
 
-    if (!button || !dropdown) return;
+      if (!button || !dropdown) return;
+      selector.dataset.initialized = 'true';
 
-    function toggleDropdown() {
-      if (!dropdown || !button) return;
-      const isHidden = dropdown.classList.contains('hidden');
-      
-      if (isHidden) {
-        dropdown.classList.remove('hidden');
-        button.setAttribute('aria-expanded', 'true');
-      } else {
+      function toggleDropdown() {
+        if (!dropdown || !button) return;
+        const isHidden = dropdown.classList.contains('hidden');
+
+        if (isHidden) {
+          dropdown.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          dropdown.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      function closeDropdown() {
+        if (!dropdown || !button) return;
         dropdown.classList.add('hidden');
         button.setAttribute('aria-expanded', 'false');
       }
-    }
 
-    function closeDropdown() {
-      if (!dropdown || !button) return;
-      dropdown.classList.add('hidden');
-      button.setAttribute('aria-expanded', 'false');
-    }
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+      });
 
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleDropdown();
-    });
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
+          closeDropdown();
+        }
+      });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!button.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
-        closeDropdown();
-      }
-    });
+      // Close dropdown on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !dropdown.classList.contains('hidden')) {
+          closeDropdown();
+          button.focus();
+        }
+      });
 
-    // Close dropdown on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeDropdown();
-      }
-    });
+      // Handle keyboard navigation
+      dropdown.addEventListener('keydown', (e) => {
+        const links = dropdown.querySelectorAll('a');
+        const currentIndex = Array.from(links).indexOf(document.activeElement as HTMLAnchorElement);
 
-    // Handle keyboard navigation
-    dropdown.addEventListener('keydown', (e) => {
-      const links = dropdown.querySelectorAll('a');
-      const currentIndex = Array.from(links).indexOf(document.activeElement as HTMLAnchorElement);
-
-      switch (e.key) {
-        case 'ArrowDown':
-          e.preventDefault();
-          const nextIndex = currentIndex < links.length - 1 ? currentIndex + 1 : 0;
-          (links[nextIndex] as HTMLAnchorElement).focus();
-          break;
-        case 'ArrowUp':
-          e.preventDefault();
-          const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
-          (links[prevIndex] as HTMLAnchorElement).focus();
-          break;
-        case 'Enter':
-        case ' ':
-          e.preventDefault();
-          (document.activeElement as HTMLAnchorElement).click();
-          break;
-      }
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            const nextIndex = currentIndex < links.length - 1 ? currentIndex + 1 : 0;
+            (links[nextIndex] as HTMLAnchorElement).focus();
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
+            (links[prevIndex] as HTMLAnchorElement).focus();
+            break;
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            (document.activeElement as HTMLAnchorElement).click();
+            break;
+        }
+      });
     });
   }
 

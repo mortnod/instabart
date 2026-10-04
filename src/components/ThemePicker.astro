@@ -5,18 +5,24 @@ import IconMoon from './icons/IconMoon.astro';
 import IconSun from './icons/IconSun.astro';
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
 
+interface Props {
+  iconOnly?: boolean;
+}
+
+const { iconOnly = false } = Astro.props;
+const idPrefix = iconOnly ? 'header-' : '';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<ButtonFooter id="themeSelectDark" className="inline-flex dark:hidden">
+<ButtonFooter id={`${idPrefix}themeSelectDark`} data-theme="dark" type="button" className={`inline-flex dark:hidden ${iconOnly ? "!px-2" : ""}`}>
   <IconMoon />
-  {t('theme.dark')}
+  <span class:list={{ 'sr-only': iconOnly }}>{t('theme.dark')}</span>
 </ButtonFooter>
 
-<ButtonFooter id="themeSelectLight" className="hidden dark:inline-flex">
+<ButtonFooter id={`${idPrefix}themeSelectLight`} data-theme="light" type="button" className={`hidden dark:inline-flex ${iconOnly ? "!px-2" : ""}`}>
   <IconSun />
-  {t('theme.light')}
+  <span class:list={{ 'sr-only': iconOnly }}>{t('theme.light')}</span>
 </ButtonFooter>
 
 <!-- <ButtonFooter id="themeSelectSystem">
@@ -38,30 +44,12 @@ const t = useTranslations(lang);
     }
   };
 
-  const lightThemeButton = document.getElementById('themeSelectLight');
-  const darkThemeButton = document.getElementById('themeSelectDark');
-  // const systemThemeButton = document.getElementById('themeSelectSystem');
-  const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-
-  if (lightThemeButton && darkThemeButton && mediaQueryList) {
-    lightThemeButton.addEventListener('click', () => {
-      localStorage.theme = 'light';
+  document.querySelectorAll<HTMLButtonElement>('button[data-theme]').forEach((button) => {
+    button.addEventListener('click', () => {
+      localStorage.theme = button.dataset.theme!;
       onThemeChange();
     });
+  });
 
-    darkThemeButton.addEventListener('click', () => {
-      localStorage.theme = 'dark';
-      onThemeChange();
-    });
-
-    // systemThemeButton &&
-    //   systemThemeButton.addEventListener('click', () => {
-    //     localStorage.removeItem('theme');
-    //     onThemeChange();
-    //   });
-
-    mediaQueryList.addEventListener('change', () => {
-      onThemeChange();
-    });
-  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', onThemeChange);
 </script>

@@ -1,4 +1,6 @@
 ---
+import ThemePicker from '../components/ThemePicker.astro';
+import LanguageSelector from '../components/LanguageSelector.astro';
 import Logo from '../components/icons/Logo.astro';
 import { getLangFromUrl, useTranslations, getTaglines } from '../i18n/utils';
 
@@ -8,10 +10,10 @@ const taglines = getTaglines(currentLang);
 ---
 
 <div
-  class="my-3 flex items-center gap-4 text-gray-900 sm:my-4 md:my-6 xl:mb-[5.5vh] xl:mt-[3.5vh] dark:text-white"
+  class="my-3 flex items-center gap-2 sm:gap-4 text-gray-900 sm:my-4 md:my-6 xl:mb-[5.5vh] xl:mt-[3.5vh] dark:text-white"
 >
   <Logo
-    className="relative h-12 w-12 sm:h-14 sm:w-14 md:top-[2px] md:h-[90px] md:w-[90px] dark:text-blue-200"
+    className="relative h-12 w-12 shrink-0 sm:h-14 sm:w-14 md:top-[2px] md:h-[90px] md:w-[90px] dark:text-blue-200"
   />
   <div class="flex flex-1 flex-col">
     <h1 class="text-3xl font-bold sm:text-4xl md:text-5xl">{t('site.title')}</h1>
@@ -20,6 +22,10 @@ const taglines = getTaglines(currentLang);
       class="hidden text-lg text-gray-500 md:block dark:dark:text-blue-100"
     >
     </p>
+  </div>
+  <div class="ml-auto flex shrink-0 items-center md:hidden">
+    <ThemePicker iconOnly />
+    <LanguageSelector placement="header" />
   </div>
 </div>
 
