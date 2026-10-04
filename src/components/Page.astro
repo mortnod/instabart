@@ -1,19 +1,24 @@
 ---
 
+import { languages } from '../i18n/config';
 import Posthog from './Posthog.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+
 ---
 
 <!doctype html>
-<html lang="nb-NO" class="h-full">
+<html lang={languages[currentLang].htmlLang} class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Instabart" />
+    <meta name="description" content={t('site.tagline')} />
     <meta name="viewport" content="width=device-width" />
 
     <!-- Favicons: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->

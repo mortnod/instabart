@@ -4,11 +4,15 @@ import IconEnvelope from '../components/icons/IconEnvelope.astro';
 import IconQuestionMark from '../components/icons/IconQuestionMark.astro';
 import IconUser from '../components/icons/IconUser.astro';
 import Link from '../components/Link.astro';
+import { useTranslations, getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Dialog id="about-dialog" outerClass="max-w-[550px]" innerClass="sm:pl-8">
   <h2 class="mt-1 text-2xl font-bold sm:mt-0 sm:text-3xl dark:text-slate-200">
-    Om Instabart
+    {t('about.title')}
   </h2>
 
   <hr
@@ -20,15 +24,13 @@ import Link from '../components/Link.astro';
     />
     <div>
       <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
-        Hva er Instabart?
+        {t('about.what.title')}
       </h3>
       <p class="mb-3 text-gray-700 dark:text-slate-400">
-        Instabart er en side for deg som er student i bartebyen.
+        {t('about.what.description1')}
       </p>
       <p class="mb-6 text-gray-700 sm:mb-8 dark:text-slate-400">
-        Siden inneholder direktelenker til ulike NTNU-tjenester. Noen vil du
-        trenge daglig, andre vil komme til nytte en gang iblant - vi anbartfaler
-        at du sjekker ut alle.
+        {t('about.what.description2')}
       </p>
     </div>
   </div>
@@ -39,14 +41,10 @@ import Link from '../components/Link.astro';
     />
     <div>
       <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
-        Hvem skjuler seg bak barten?
+        {t('about.who.title')}
       </h3>
       <p class="mb-6 text-gray-700 sm:mb-8 dark:text-slate-400">
-        Instabart er laget av <Link id="mvn-link" href="https://mvn.no"
-          >Morten Vaale Noddeland</Link
-        >. Kort oppsummert er Morten en tidligere NTNU-student,
-        ordspillfanatiker og fullstendig ute av stand til å gro en ordentlig
-        bart… ironisk nok.
+        {t('about.who.description')} <Link id="mvn-link" href="https://mvn.no">Morten Vaale Noddeland</Link>{t('about.who.bio')}
       </p>
     </div>
   </div>
@@ -57,17 +55,10 @@ import Link from '../components/Link.astro';
     />
     <div>
       <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-slate-200">
-        Rykker det i barten?
+        {t('about.contact.title')}
       </h3>
       <p class="text-gray-700 dark:text-slate-400">
-        Har du noe på hjertet? Send en e-post til <Link
-          id="email-link"
-          href="mailto:morten@noddeland.no">morten@noddeland.no</Link
-        > eller <Link
-          id="github-link"
-          href="https://github.com/mortnod/instabart"
-          >sjekk ut koden på Github</Link
-        >.
+        {t('about.contact.description')} <Link id="email-link" href="mailto:morten@noddeland.no">morten@noddeland.no</Link>{t('about.contact.or')}<Link id="github-link" href="https://github.com/mortnod/instabart">{t('about.contact.github_text')}</Link>.
       </p>
     </div>
   </div>

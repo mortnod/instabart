@@ -38,3 +38,6 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+
+# Other stuff
+todo.md

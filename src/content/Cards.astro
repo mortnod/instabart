@@ -14,15 +14,19 @@ import IconPdf from '../components/icons/IconPdf.astro';
 import IconPrinter from '../components/icons/IconPrinter.astro';
 
 import ScheduleCard from './ScheduleCard.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
-<Card href="https://canvas.ntnu.no/" title="Canvas" id="canvas">
+<Card href="https://canvas.ntnu.no/" title={t('cards.canvas')} id="canvas">
   <IconCanvas />
 </Card>
 
 <Card
   href="https://outlook.office365.com/owa/?realm=ntnu.no#path=/mail"
-  title="E-post"
+  title={t('cards.email')}
   id="email"
 >
   <IconPaperPlane />
@@ -30,13 +34,13 @@ import ScheduleCard from './ScheduleCard.astro';
 
 <ScheduleCard />
 
-<Card href="http://innsida.ntnu.no/o365" title="Office 365" id="microsoft365">
+<Card href="http://innsida.ntnu.no/o365" title={t('cards.microsoft365')} id="microsoft365">
   <IconMicrosoft365 />
 </Card>
 
 <Card
   href="https://fsweb.no/studentweb/index.jsf?inst=FSNTNU"
-  title="Studentweb"
+  title={t('cards.studentweb')}
   id="studentweb"
 >
   <IconGraduationCap />
@@ -44,40 +48,40 @@ import ScheduleCard from './ScheduleCard.astro';
 
 <Card
   href="https://tp.educloud.no/ntnu/app/rombestilling/"
-  title="Book rom"
+  title={t('cards.room_reservation')}
   id="room_reservation"
 >
   <IconDoor />
 </Card>
 
-<Card href="http://use.mazemap.com/?campuses=ntnu" title="Campuskart" id="map">
+<Card href="http://use.mazemap.com/?campuses=ntnu" title={t('cards.map')} id="map">
   <IconMap />
 </Card>
 
-<Card href="https://myprint.ntnu.no/" title="Utskrift" id="printing"
+<Card href="https://myprint.ntnu.no/" title={t('cards.printing')} id="printing"
   ><IconPrinter />
 </Card>
 
 <Card
   href="https://www.ntnu.no/ub"
-  title="Litteratursøk"
+  title={t('cards.literature_search')}
   id="literature_search"
 >
   <IconBooks />
 </Card>
 
-<Card href="https://pdf.orakel.ntnu.no/" title="Rediger PDF" id="pdf">
+<Card href="https://pdf.orakel.ntnu.no/" title={t('cards.pdf')} id="pdf">
   <IconPdf />
 </Card>
 
 <Card
   href="https://www.ordnett.no/gyldendal/login/gyldendal"
-  title="Ordbøker"
+  title={t('cards.dictionary')}
   id="dictionary"
 >
   <IconLanguage />
 </Card>
 
-<Card href="https://www.sit.no/trening/booking" title="Trening" id="exercise">
+<Card href="https://www.sit.no/trening/booking" title={t('cards.exercise')} id="exercise">
   <IconDumbbell />
 </Card>

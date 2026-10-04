@@ -1,6 +1,10 @@
 ---
 import IconX from '../icons/IconX.astro';
+import { useTranslations, getLangFromUrl } from '../../i18n/utils';
+
 const { id, innerClass, outerClass, ...rest } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <dialog
@@ -16,7 +20,7 @@ const { id, innerClass, outerClass, ...rest } = Astro.props;
     <!-- Close button -->
     <button
       class="dialog-close absolute right-3 top-3 rounded-full p-2 text-gray-500 outline-4 outline-sky-400 hover:bg-gray-100 focus-visible:outline sm:top-4 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-300"
-      aria-label="Lukk"
+      aria-label={t('dialog.close')}
     >
       <IconX strokeWidth="1.8" size="32px" />
     </button>

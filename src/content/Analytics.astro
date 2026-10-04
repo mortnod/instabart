@@ -14,7 +14,7 @@
 
     function trackEvent(elementId, eventName, extras) {
       const elem = document.getElementById(elementId);
-      elem.addEventListener('click', (e) => {
+      elem.addEventListener('click', (_) => {
         captureEvent(eventName, extras);
       });
     }
@@ -64,6 +64,8 @@
     trackEvent('themeSelectDark', 'theme_preference_set', {
       preference: 'dark',
     });
+    trackEvent('header-themeSelectLight', 'theme_preference_set', { preference: 'light' });
+    trackEvent('header-themeSelectDark', 'theme_preference_set', { preference: 'dark' });
     trackEvent('about-dialog-trigger', 'about_instabart_view');
     trackEvent('schedule-dialog-trigger', 'schedule_settings_view', {
       trigger: 'footer',

@@ -1,0 +1,32 @@
+---
+import CardWrap from './card/CardWrap.astro';
+import Header from '../content/Header.astro';
+import Page from './Page.astro';
+import Wrap from './Wrap.astro';
+
+import Cards from '../content/Cards.astro';
+import ScheduleSettingsDialog from '../content/ScheduleSettingsDialog.astro';
+import Footer from '../content/Footer.astro';
+import AboutDialog from '../content/AboutDialog.astro';
+import Analytics from '../content/Analytics.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<Page title={t('site.title')}>
+  <div class="grid grid-rows-[1fr_auto] lg:min-h-full">
+    <Wrap>
+      <Header />
+      <main>
+        <CardWrap>
+          <Cards />
+        </CardWrap>
+      </main>
+    </Wrap>
+    <Footer />
+    <ScheduleSettingsDialog />
+    <AboutDialog />
+    <Analytics />
+  </div>
+</Page>
