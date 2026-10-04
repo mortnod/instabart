@@ -1,6 +1,5 @@
 ---
 import Logo from '../components/icons/Logo.astro';
-import LanguageSelector from '../components/LanguageSelector.astro';
 import { getLangFromUrl, useTranslations, getTaglines } from '../i18n/utils';
 
 const currentLang = getLangFromUrl(Astro.url);
@@ -21,9 +20,6 @@ const taglines = getTaglines(currentLang);
       class="hidden text-lg text-gray-500 md:block dark:dark:text-blue-100"
     >
     </p>
-  </div>
-  <div class="ml-auto">
-    <LanguageSelector />
   </div>
 </div>
 

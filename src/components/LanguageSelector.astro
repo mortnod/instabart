@@ -1,34 +1,27 @@
 ---
 import { languages, getLangFromUrl, getLocalizedUrl } from '../i18n/utils';
-import IconLanguage from './icons/IconLanguage.astro';
+import IconGlobe from './icons/IconGlobe.astro';
+import ButtonFooter from './button/ButtonFooter.astro';
 
 const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="relative" style="max-width: 195px;">
-  <button
+<div class="relative">
+  <ButtonFooter
     id="language-selector"
-    class="flex items-center gap-1 rounded-md border border-gray-300 bg-white px-2 py-1 text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+    type="button"
     aria-expanded="false"
     aria-haspopup="true"
+    aria-controls="language-dropdown"
   >
-    <IconLanguage className="h-3 w-3" />
+    <IconGlobe />
     <span>{languages[currentLang]}</span>
-    <svg
-      class="h-3 w-3 transition-transform duration-200"
-      id="language-chevron"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
+  </ButtonFooter>
 
   <div
     id="language-dropdown"
-    class="absolute right-0 top-full z-50 mt-1 hidden w-36 origin-top-right rounded-md border border-gray-200 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-gray-800"
+    class="absolute bottom-full left-0 z-50 mb-1 hidden w-36 origin-bottom-left rounded-md border border-gray-200 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-gray-800"
     role="menu"
     aria-orientation="vertical"
     aria-labelledby="language-selector"
@@ -63,30 +56,26 @@ const currentPath = Astro.url.pathname;
   function setupLanguageSelector() {
     const button = document.getElementById('language-selector');
     const dropdown = document.getElementById('language-dropdown');
-    const chevron = document.getElementById('language-chevron');
 
-    if (!button || !dropdown || !chevron) return;
+    if (!button || !dropdown) return;
 
     function toggleDropdown() {
-      if (!dropdown || !button || !chevron) return;
+      if (!dropdown || !button) return;
       const isHidden = dropdown.classList.contains('hidden');
       
       if (isHidden) {
         dropdown.classList.remove('hidden');
         button.setAttribute('aria-expanded', 'true');
-        chevron.style.transform = 'rotate(180deg)';
       } else {
         dropdown.classList.add('hidden');
         button.setAttribute('aria-expanded', 'false');
-        chevron.style.transform = 'rotate(0deg)';
       }
     }
 
     function closeDropdown() {
-      if (!dropdown || !button || !chevron) return;
+      if (!dropdown || !button) return;
       dropdown.classList.add('hidden');
       button.setAttribute('aria-expanded', 'false');
-      chevron.style.transform = 'rotate(0deg)';
     }
 
     button.addEventListener('click', (e) => {
