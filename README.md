@@ -6,12 +6,12 @@ As an NTNU student there are lots of useful websites at your disposal. Unfortuna
 
 ## 🌍 Internationalization (i18n)
 
-Instabart supports multiple languages with English as the default and Norwegian (Bokmål) as an additional language. Translations are stored in per-language JSON files under `src/i18n/` and the language selector is available in the top-right corner of the page.
+Instabart supports multiple languages with Norwegian (Bokmål) as the default and English and Dutch as additional languages. Translations are stored in per-language JSON files under `src/i18n/` and the language selector is available in the top-right corner of the page.
 
 ### Supported Languages
 
-**English (en)** - Default language
-**Norwegian Bokmål (nb)** - Norwegian language support
+**English (en)** - English language support
+**Norwegian Bokmål (nb)** - Default language
 **Dutch (nl)** - Dutch language support
 
 ### Adding New Languages
@@ -32,7 +32,7 @@ Create a new JSON file in `src/i18n/` named with your language code (e.g., `nl.j
   "nav.about": "Over",
   "nav.twitter": "Twitter",
   "site.title": "Instabart",
-  "site.tagline": "Alles wat een NTNU-student nodig heeft... behalve koffie",
+  "site.tagline": "Alles wat een NTNU-student nodig heeft... behalve koffie"
   // ... copy all keys from en.json and translate the values
 }
 ```
@@ -68,12 +68,12 @@ Add your language to the `locales` array in `astro.config.mjs`:
 ```javascript
 export default defineConfig({
   i18n: {
-    defaultLocale: "en",
-  locales: ["en", "nb", "nl"], // Add your language here
+    defaultLocale: 'nb',
+    locales: ['en', 'nb', 'nl'], // Add your language here
     routing: {
-      prefixDefaultLocale: false
-    }
-  }
+      prefixDefaultLocale: false,
+    },
+  },
 });
 ```
 
@@ -85,7 +85,7 @@ Create a new directory and page for your language in `src/pages/`:
 src/pages/nl/index.astro
 ```
 
-Copy the content from `src/pages/nb/index.astro` and update the language in the `useTranslations` call:
+Copy the content from `src/pages/en/index.astro` and update the language in the `useTranslations` call:
 
 ```astro
 const t = useTranslations('nl'); // Change this line
@@ -96,12 +96,13 @@ That's it! Your new language will automatically be available in the language sel
 #### 5. Translation Keys Reference
 
 All translation keys are defined in `src/i18n/en.json`. Make sure to include all the same keys in your new language file. The current keys include:
-    'site.title': 'Instabart',
-    'site.tagline': 'Site tagline in your language',
-    // ... add all translation keys
-  },
+'site.title': 'Instabart',
+'site.tagline': 'Site tagline in your language',
+// ... add all translation keys
+},
 } as const;
-```
+
+````
 
 #### 3. Update Language Mapping (if needed)
 
@@ -113,7 +114,7 @@ const langMap = {
   'nb': 'nb-NO',
   'your-language-code': 'your-html-lang-code', // Add this line
 };
-```
+````
 
 #### 4. Create Language-Specific Pages
 
@@ -123,7 +124,7 @@ Create a new directory and page for your language in `src/pages/`:
 src/pages/your-language-code/index.astro
 ```
 
-Copy the content from `src/pages/nb/index.astro` and update the language in the `useTranslations` call. The `useTranslations` helper continues to work the same way but now reads from the JSON files:
+Copy the content from `src/pages/en/index.astro` and update the language in the `useTranslations` call. The `useTranslations` helper continues to work the same way but now reads from the JSON files:
 
 ```astro
 ---
@@ -138,7 +139,7 @@ const t = useTranslations('your-language-code'); // Change this line
 
 Here are all the translation keys you need to provide:
 
-```typescript
+````typescript
 Create a JSON object with the same keys as shown below and place it in `src/i18n/<lang>.json`.
 
 Example `src/i18n/your-language-code.json`:
@@ -175,8 +176,9 @@ Example `src/i18n/your-language-code.json`:
   "language.selector": "Language",
   "language.switch": "Switch language"
 }
-```
-```
+````
+
+````
 
 #### 6. Test Your Implementation
 
@@ -189,8 +191,8 @@ Example `src/i18n/your-language-code.json`:
 
 The application uses Astro's built-in i18n routing:
 
-- **Default language (English)**: Available at `/` (no language prefix)
-- **Other languages**: Available at `/language-code/` (e.g., `/nb/` for Norwegian)
+- **Default language (Norwegian Bokmål)**: Available at `/` (no language prefix)
+- **Other languages**: Available at `/language-code/` (e.g., `/en/` for English and `/nl/` for Dutch)
 
 The language selector automatically handles URL generation and navigation between languages while preserving the current page context.
 
@@ -200,7 +202,7 @@ The language selector automatically handles URL generation and navigation betwee
 - Test all navigation scenarios when adding a new language
 - Consider cultural context when translating (not just literal translation)
 - The taglines array can contain HTML for formatting (e.g., `<strong>` tags)
-- Always provide fallbacks to English if a translation is missing
+- Always provide fallbacks to Norwegian Bokmål if a translation is missing
 
 ## 🚀 Development
 
@@ -216,7 +218,7 @@ npm run build
 
 # Preview production build
 npm run preview
-```
+````
 
 ## 📁 Project Structure
 
@@ -233,9 +235,11 @@ npm run preview
 │   ├── i18n/
 │   │   └── utils.ts      # Translation utilities and language definitions
 │   ├── pages/
-│   │   ├── index.astro   # English home page
-│   │   └── nb/
-│   │       └── index.astro  # Norwegian home page
+│   │   ├── index.astro   # Norwegian home page
+│   │   ├── en/
+│   │   │   └── index.astro  # English home page
+│   │   └── nl/
+│   │       └── index.astro  # Dutch home page
 │   └── ...
 └── ...
 ```

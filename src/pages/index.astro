@@ -9,9 +9,9 @@ import ScheduleSettingsDialog from '../content/ScheduleSettingsDialog.astro';
 import Footer from '../content/Footer.astro';
 import AboutDialog from '../content/AboutDialog.astro';
 import Analytics from '../content/Analytics.astro';
-import { useTranslations } from '../i18n/utils';
+import { defaultLang, useTranslations } from '../i18n/utils';
 
-const t = useTranslations('en');
+const t = useTranslations(defaultLang);
 ---
 
 <Page title={t('site.title')}>
