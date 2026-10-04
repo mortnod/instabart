@@ -21,6 +21,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "test:i18n": "node --test tests/i18n.test.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

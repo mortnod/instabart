@@ -1,5 +1,6 @@
 ---
-import { languages, getLangFromUrl, getLocalizedUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, getLocalizedUrl, useTranslations } from '../i18n/utils';
+import { languages, languageCodes } from '../i18n/config';
 import IconGlobe from './icons/IconGlobe.astro';
 import ButtonFooter from './button/ButtonFooter.astro';
 
@@ -22,10 +23,10 @@ const anchorName = `--${id}`;
   type="button"
   popovertarget={popoverId}
   style={`anchor-name: ${anchorName}`}
-  aria-label={`${t('language.select')}: ${languages[currentLang]}`}
+  aria-label={`${t('language.select')}: ${languages[currentLang].name}`}
 >
   <IconGlobe />
-  <span class:list={{ 'sr-only': iconOnly }}>{languages[currentLang]}</span>
+  <span class:list={{ 'sr-only': iconOnly }}>{languages[currentLang].name}</span>
 </ButtonFooter>
 
 <ul
@@ -36,10 +37,10 @@ const anchorName = `--${id}`;
   aria-label={t('language.select')}
   class="language-popover w-48 max-w-[calc(100vw-1rem)] list-none rounded-2xl border border-gray-200 bg-white p-1.5 text-base text-gray-900 shadow-lg dark:border-slate-700 dark:bg-slate-800 dark:text-blue-200"
 >
-  {Object.entries(languages).map(([lang, name]) => (
+  {languageCodes.map((lang) => (
     <li>
       <a
-        href={getLocalizedUrl(Astro.url.pathname, lang as keyof typeof languages, currentLang)}
+        href={getLocalizedUrl(Astro.url.pathname, lang, currentLang)}
         lang={lang}
         hreflang={lang}
         aria-current={lang === currentLang ? 'page' : undefined}
@@ -48,7 +49,7 @@ const anchorName = `--${id}`;
           { 'bg-gray-100 font-bold dark:bg-slate-700/50': lang === currentLang },
         ]}
       >
-        {name}
+        {languages[lang].name}
         {lang === currentLang && (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round" />

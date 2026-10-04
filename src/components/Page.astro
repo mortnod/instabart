@@ -1,5 +1,6 @@
 ---
 
+import { languages } from '../i18n/config';
 import Posthog from './Posthog.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
@@ -11,16 +12,10 @@ const { title } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 
-// Map our language codes to proper HTML lang attributes
-const langMap = {
-  'en': 'en',
-  'nb': 'nb-NO',
-  'nn': 'nn-NO'
-};
 ---
 
 <!doctype html>
-<html lang={langMap[currentLang]} class="h-full">
+<html lang={languages[currentLang].htmlLang} class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t('site.tagline')} />
