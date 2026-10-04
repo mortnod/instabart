@@ -47,5 +47,6 @@
   "dialog.close": "Lukk",
   "theme.light": "Lyst",
   "theme.dark": "Mørkt",
-  "theme.system": "System"
+  "theme.system": "System",
+  "language.select": "Velg språk"
 }

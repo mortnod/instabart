@@ -1,149 +1,82 @@
 ---
-import { languages, getLangFromUrl, getLocalizedUrl } from '../i18n/utils';
+import { languages, getLangFromUrl, getLocalizedUrl, useTranslations } from '../i18n/utils';
 import IconGlobe from './icons/IconGlobe.astro';
 import ButtonFooter from './button/ButtonFooter.astro';
 
 interface Props {
-  placement?: 'header' | 'footer';
+  id: string;
+  iconOnly?: boolean;
+  side?: 'top' | 'bottom';
 }
 
-const { placement = 'footer' } = Astro.props;
-const iconOnly = placement === 'header';
-const triggerId = `${placement}-language-selector`;
-const dropdownId = `${placement}-language-dropdown`;
+const { id, iconOnly = false, side = 'top' } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
-const currentPath = Astro.url.pathname;
+const t = useTranslations(currentLang);
+const popoverId = `${id}-popover`;
+const anchorName = `--${id}`;
 ---
 
-<div class="relative" data-language-selector>
-  <ButtonFooter
-    id={triggerId}
-    data-language-trigger
-    className={iconOnly ? "!px-2" : ""}
-    type="button"
-    aria-expanded="false"
-    aria-haspopup="true"
-    aria-controls={dropdownId}
-  >
-    <IconGlobe />
-    <span class:list={{ "sr-only": iconOnly }}>{languages[currentLang]}</span>
-  </ButtonFooter>
+<ButtonFooter
+  id={id}
+  iconOnly={iconOnly}
+  type="button"
+  popovertarget={popoverId}
+  style={`anchor-name: ${anchorName}`}
+  aria-label={`${t('language.select')}: ${languages[currentLang]}`}
+>
+  <IconGlobe />
+  <span class:list={{ 'sr-only': iconOnly }}>{languages[currentLang]}</span>
+</ButtonFooter>
 
-  <div
-    id={dropdownId}
-    data-language-dropdown
-    class:list={[
-      'absolute z-50 hidden w-36 rounded-md border border-gray-200 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-gray-800',
-      iconOnly ? 'right-0 top-full mt-1 origin-top-right' : 'bottom-full left-0 mb-1 origin-bottom-left',
-    ]}
-    role="menu"
-    aria-orientation="vertical"
-    aria-labelledby={triggerId}
-  >
-    <div class="py-0" role="none">
-      {Object.entries(languages).map(([lang, name]) => (
-        <a
-          href={getLocalizedUrl(currentPath, lang as keyof typeof languages, currentLang)}
-          class={`block px-3 py-1.5 text-xs transition-colors duration-150 ${
-            lang === currentLang
-              ? 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
-              : 'text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-700'
-          }`}
-          role="menuitem"
-          aria-current={lang === currentLang ? 'page' : undefined}
-        >
-          <div class="flex items-center justify-between">
-            <span>{name}</span>
-            {lang === currentLang && (
-              <svg class="h-3 w-3 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-            )}
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
+<ul
+  id={popoverId}
+  popover="auto"
+  data-side={side}
+  style={`position-anchor: ${anchorName}`}
+  aria-label={t('language.select')}
+  class="language-popover w-48 max-w-[calc(100vw-1rem)] list-none rounded-2xl border border-gray-200 bg-white p-1.5 text-base text-gray-900 shadow-lg dark:border-slate-700 dark:bg-slate-800 dark:text-blue-200"
+>
+  {Object.entries(languages).map(([lang, name]) => (
+    <li>
+      <a
+        href={getLocalizedUrl(Astro.url.pathname, lang as keyof typeof languages, currentLang)}
+        lang={lang}
+        hreflang={lang}
+        aria-current={lang === currentLang ? 'page' : undefined}
+        class:list={[
+          'flex min-h-11 items-center justify-between gap-4 rounded-xl px-3 py-2 no-underline outline-none hover:bg-gray-100 focus-visible:shadow-card-ring dark:hover:bg-slate-700/50',
+          { 'bg-gray-100 font-bold dark:bg-slate-700/50': lang === currentLang },
+        ]}
+      >
+        {name}
+        {lang === currentLang && (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>
 
-<script>
-  function setupLanguageSelector() {
-    document.querySelectorAll<HTMLElement>('[data-language-selector]').forEach((selector) => {
-      if (selector.dataset.initialized) return;
-      const button = selector.querySelector<HTMLButtonElement>('[data-language-trigger]');
-      const dropdown = selector.querySelector<HTMLElement>('[data-language-dropdown]');
+<style>
+  /* Browsers without anchor positioning use the native centered popover. */
+  @supports (position-anchor: --language) {
+    .language-popover {
+      position: fixed;
+      inset: auto;
+      margin: 0;
+      position-visibility: anchors-visible;
+    }
 
-      if (!button || !dropdown) return;
-      selector.dataset.initialized = 'true';
+    .language-popover[data-side='bottom'] {
+      top: calc(anchor(bottom) + 0.5rem);
+      right: anchor(right);
+    }
 
-      function toggleDropdown() {
-        if (!dropdown || !button) return;
-        const isHidden = dropdown.classList.contains('hidden');
-
-        if (isHidden) {
-          dropdown.classList.remove('hidden');
-          button.setAttribute('aria-expanded', 'true');
-        } else {
-          dropdown.classList.add('hidden');
-          button.setAttribute('aria-expanded', 'false');
-        }
-      }
-
-      function closeDropdown() {
-        if (!dropdown || !button) return;
-        dropdown.classList.add('hidden');
-        button.setAttribute('aria-expanded', 'false');
-      }
-
-      button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleDropdown();
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!button.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
-          closeDropdown();
-        }
-      });
-
-      // Close dropdown on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !dropdown.classList.contains('hidden')) {
-          closeDropdown();
-          button.focus();
-        }
-      });
-
-      // Handle keyboard navigation
-      dropdown.addEventListener('keydown', (e) => {
-        const links = dropdown.querySelectorAll('a');
-        const currentIndex = Array.from(links).indexOf(document.activeElement as HTMLAnchorElement);
-
-        switch (e.key) {
-          case 'ArrowDown':
-            e.preventDefault();
-            const nextIndex = currentIndex < links.length - 1 ? currentIndex + 1 : 0;
-            (links[nextIndex] as HTMLAnchorElement).focus();
-            break;
-          case 'ArrowUp':
-            e.preventDefault();
-            const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
-            (links[prevIndex] as HTMLAnchorElement).focus();
-            break;
-          case 'Enter':
-          case ' ':
-            e.preventDefault();
-            (document.activeElement as HTMLAnchorElement).click();
-            break;
-        }
-      });
-    });
+    .language-popover[data-side='top'] {
+      bottom: calc(anchor(top) + 0.5rem);
+      left: anchor(left);
+    }
   }
-
-  // Setup on page load
-  document.addEventListener('DOMContentLoaded', setupLanguageSelector);
-  
-  // Setup after navigation (for SPA-like behavior)
-  document.addEventListener('astro:page-load', setupLanguageSelector);
-</script>
+</style>

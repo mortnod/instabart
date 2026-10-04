@@ -15,12 +15,12 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<ButtonFooter id={`${idPrefix}themeSelectDark`} data-theme="dark" type="button" className={`inline-flex dark:hidden ${iconOnly ? "!px-2" : ""}`}>
+<ButtonFooter id={`${idPrefix}themeSelectDark`} data-theme="dark" type="button" iconOnly={iconOnly} className="inline-flex dark:hidden">
   <IconMoon />
   <span class:list={{ 'sr-only': iconOnly }}>{t('theme.dark')}</span>
 </ButtonFooter>
 
-<ButtonFooter id={`${idPrefix}themeSelectLight`} data-theme="light" type="button" className={`hidden dark:inline-flex ${iconOnly ? "!px-2" : ""}`}>
+<ButtonFooter id={`${idPrefix}themeSelectLight`} data-theme="light" type="button" iconOnly={iconOnly} className="hidden dark:inline-flex">
   <IconSun />
   <span class:list={{ 'sr-only': iconOnly }}>{t('theme.light')}</span>
 </ButtonFooter>

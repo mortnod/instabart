@@ -46,5 +46,6 @@
   "dialog.close": "Close",
   "theme.light": "Light",
   "theme.dark": "Dark",
-  "theme.system": "System"
+  "theme.system": "System",
+  "language.select": "Choose language"
 }
