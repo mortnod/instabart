@@ -3,10 +3,12 @@ import ButtonPrimary from '../components/button/ButtonPrimary.astro';
 import ButtonSecondary from '../components/button/ButtonSecondary.astro';
 import Dialog from '../components/dialog/Dialog.astro';
 import Input from '../components/Input.astro';
+import IconCog from '../components/icons/IconCog.astro';
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const [hintBeforeSettings, hintAfterSettings] = t('schedule.settings.hint').split('{settings}');
 ---
 
 <Dialog id="schedule-settings">
@@ -18,7 +20,7 @@ const t = useTranslations(lang);
   <p class="mb-6 text-gray-500 dark:text-slate-300">
     {t('schedule.settings.description')}
   </p>
-  <form id="schedule-form">
+  <form id="schedule-form" data-required-message={t('schedule.settings.required')}>
     <Input placeholder={t('schedule.settings.placeholder')} class="mb-4" id="schedule-input" />
     <ButtonPrimary id="schedule-button-accept" class="mb-2" type="submit"
       >{t('schedule.settings.accept')}</ButtonPrimary
@@ -28,11 +30,11 @@ const t = useTranslations(lang);
     >{t('schedule.settings.decline')}</ButtonSecondary
   >
 
-  <p class="mt-6 text-xs text-gray-500 dark:text-slate-400" set:html={
-    t('schedule.settings.hint', {
-      icon: `<span class="font-bold dark:text-slate-300">⚙️</span>`
-    })
-  }>
+  <p class="mt-6 text-xs text-gray-500 dark:text-slate-400">
+    {hintBeforeSettings}<span class="font-bold dark:text-slate-300"><IconCog
+      class="inline size-[14px] stroke-gray-900 stroke-2 dark:stroke-slate-300"
+      aria-hidden="true"
+    /> {t('schedule.settings.hint_label')}</span>{hintAfterSettings}
   </p>
 </Dialog>
 
@@ -75,17 +77,8 @@ const t = useTranslations(lang);
   }
 
   if (input) {
-    input.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (input.value) {
-        input.setCustomValidity('');
-      }
-    });
-
-    input.addEventListener('keyup', () => {
-      if (input.value) {
-        input.setCustomValidity('');
-      }
+    input.addEventListener('input', () => {
+      input.setCustomValidity('');
     });
   }
 
@@ -95,7 +88,8 @@ const t = useTranslations(lang);
       if (input.value) {
         onClick(input.value);
       } else {
-        input.setCustomValidity('Fyll ut kalendernavn');
+        input.setCustomValidity(form.dataset.requiredMessage!);
+        input.reportValidity();
       }
     });
   }
