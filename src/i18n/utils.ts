@@ -15,9 +15,9 @@ const allTranslations = {
 
 // Language display names - add new languages here too
 export const languages = {
-  en: 'English',
   nb: 'Bokmål',
   nn: 'Nynorsk',
+  en: 'English',
   // Add new language display names here
 } as const;
 
