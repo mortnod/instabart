@@ -37,6 +37,8 @@ import Input from '../components/Input.astro';
 </Dialog>
 
 <script>
+  import { transliterateNorwegian } from '../utils/schedule';
+
   const form = document.getElementById('schedule-form');
   const declineButton = document.getElementById('schedule-button-decline');
   const input = document.getElementById('schedule-input') as HTMLInputElement;
@@ -51,12 +53,12 @@ import Input from '../components/Input.astro';
   if (storedScheduleName) {
     input.value = storedScheduleName;
   }
-
   const onClick = (scheduleName: string) => {
     localStorage.scheduleName = scheduleName;
 
     const scheduleBaseUrl = scheduleCard.dataset.baseUrl as string;
-    const newUrl = scheduleBaseUrl + scheduleName;
+    const safeName = transliterateNorwegian(scheduleName);
+    const newUrl = scheduleBaseUrl + safeName;
 
     scheduleCard.href = newUrl;
     dialog.close();
