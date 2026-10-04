@@ -43,7 +43,8 @@ import IconCalendar from '../components/icons/IconCalendar.astro';
     const scheduleName: string | undefined = localStorage.scheduleName;
 
     if (scheduleName && scheduleCard.href) {
-      scheduleCard.href = scheduleBaseUrl + transliterateNorwegian(scheduleName);
+      scheduleCard.href =
+        scheduleBaseUrl + transliterateNorwegian(scheduleName).toLowerCase();
     } else {
       scheduleCard.href = scheduleBaseUrl;
     }

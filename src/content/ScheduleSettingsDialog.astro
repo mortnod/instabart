@@ -57,7 +57,7 @@ import Input from '../components/Input.astro';
     localStorage.scheduleName = scheduleName;
 
     const scheduleBaseUrl = scheduleCard.dataset.baseUrl as string;
-    const safeName = transliterateNorwegian(scheduleName);
+    const safeName = transliterateNorwegian(scheduleName).toLowerCase();
     const newUrl = scheduleBaseUrl + safeName;
 
     scheduleCard.href = newUrl;
