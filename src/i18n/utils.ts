@@ -1,14 +1,12 @@
 // Import all translation files
 import en from './en.json';
 import nb from './nb.json';
-import nl from './nl.json';
 
 // Dynamically import any additional translation files
 // To add a new language, just add a JSON file and import it here
 const allTranslations = {
   en,
   nb,
-  nl,
   // Add new languages here by importing their JSON files
   // fr: () => import('./fr.json').then(m => m.default),
 } as const;
@@ -17,7 +15,6 @@ const allTranslations = {
 export const languages = {
   en: 'English',
   nb: 'Norsk',
-  nl: 'Nederlands',
   // Add new language display names here
 } as const;
 
