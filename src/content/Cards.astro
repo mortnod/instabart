@@ -8,7 +8,7 @@ import IconDumbbell from '../components/icons/IconDumbbell.astro';
 import IconGraduationCap from '../components/icons/IconGraduationCap.astro';
 import IconLanguage from '../components/icons/IconLanguage.astro';
 import IconMap from '../components/icons/IconMap.astro';
-import IconMicrosoft365 from '../components/icons/IconMicrosoft365.astro';
+import IconOneDrive from '../components/icons/IconOneDrive.astro';
 import IconPaperPlane from '../components/icons/IconPaperPlane.astro';
 import IconPdf from '../components/icons/IconPdf.astro';
 import IconPrinter from '../components/icons/IconPrinter.astro';
@@ -34,8 +34,10 @@ const t = useTranslations(currentLang);
 
 <ScheduleCard />
 
-<Card href="http://innsida.ntnu.no/o365" title={t('cards.microsoft365')} id="microsoft365">
-  <IconMicrosoft365 />
+<Card href="https://studntnu-my.sharepoint.com/my"
+      title={t('cards.onedrive')}
+      id="onedrive">
+  <IconOneDrive />
 </Card>
 
 <Card
